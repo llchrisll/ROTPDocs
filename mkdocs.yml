@@ -2,6 +2,7 @@ site_name: Test docs
 site_description: 'A docs test'
 site_author: 'Michael Hausenblas'
 docs_dir: docs/
+site_dir: _site/
 repo_name: 'mhausenblas/mkdocs-template'
 repo_url: 'https://github.com/mhausenblas/mkdocs-template'
 nav:
