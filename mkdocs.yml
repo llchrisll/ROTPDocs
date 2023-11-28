@@ -3,10 +3,10 @@ site_description: 'A docs test'
 site_author: 'Michael Hausenblas'
 docs_dir: docs/
 site_dir: _site/
-repo_name: 'mhausenblas/mkdocs-template'
+repo_name: 'SapitoSucio/mkdocstesting2'
 repo_url: 'https://github.com/mhausenblas/mkdocs-template'
 nav:
-    - Home: index.md
+    - Etto: index.md
     - Test: test2.md
 theme:
   name: 'material'
