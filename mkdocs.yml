@@ -7,5 +7,6 @@ repo_name: 'mhausenblas/mkdocs-template'
 repo_url: 'https://github.com/mhausenblas/mkdocs-template'
 nav:
     - Home: index.md
+    - Test: test2.md
 theme:
   name: 'material'
