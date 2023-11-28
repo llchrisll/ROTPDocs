@@ -1,24 +1,56 @@
-name: Publish docs via GitHub Pages
+name: Publish Guides
+
+
 on:
+  # Allow manual deployment
+  workflow_dispatch:
+  
+  # Trigger when code is merged to `master` branch
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
-    name: Deploy docs
+    name: Deploy Guides
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
         uses: actions/checkout@v2
-
+        with:
+            fetch-depth: 0
+            sparse-checkout: |
+              docs
+              guides
+              includes
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_DOMAIN: optionaldomain.com
-          CONFIG_FILE: docs/mkdocs.yml
-          EXTRA_PACKAGES: build-base
-          # GITHUB_DOMAIN: github.myenterprise.com
-          REQUIREMENTS: folder/requirements.txt
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
+          # REQUIREMENTS: .github/requirements.txt
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1.0.8
+
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
