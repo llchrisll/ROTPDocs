@@ -1,4 +1,2 @@
 cairosvg
-mkdocs-git-revision-date-localized-plugin
-mkdocs-git-committers-plugin
-mkdocs-git-authors-plugin
+mkdocs-material
