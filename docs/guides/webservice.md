@@ -1,4 +1,3 @@
-## Web Service  
 The year 2020 had a major change regarding Emblems and Hotkeys.  
 You need a extra Web Service, where all those informations are saved to and loaded from.
 ___

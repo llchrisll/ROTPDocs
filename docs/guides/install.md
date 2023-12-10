@@ -1,4 +1,3 @@
-# Installation
 If you have trouble using this translation project, here is a tutorial how to do so.
 
 ## Downloading
@@ -10,15 +9,15 @@ I recommend you to use TortoiseGit to download this project.
 Optional is that you download the repository, in a Zip format, but then you have to download the whole project again when I make updates, not just the updated files.
 
 ## Translation Folder
-With commit of [25th January 2021](https://github.com/llchrisll/ROenglishRE/commit/89726979a367bd6cd182b31265d79dc7d35c4fc1), the default version of this project is 2015-10-29 again!
+With commit of [10th December 2023](https://github.com/llchrisll/ROenglishRE/commit/649d35f956a1a5cee088557194b99822d132a5ad), the default version of this project is 2015-10-29 again!
 Therefore I added a few simple .bat files to generate the desired Client folder.
 
- * [ClientGenerator.bat](https://github.com/llchrisll/ROenglishRE/blob/reorganize/Tools/ClientGenerator.bat)  
+ * [ClientGenerator.bat](https://github.com/llchrisll/ROenglishRE/blob/master/Tools/ClientGenerator.bat)  
    Copies the necessary files based on selected type and client date into a generated Client folder.  
- * [CLSGenerator.bat](https://github.com/llchrisll/ROenglishRE/blob/reorganize/Tools/CLSGenerator.bat)  
-   Copies the CLS (Custom Lua Support) based on your selection into a generated Client folder  
- * [AdditionsGenerator.bat](https://github.com/llchrisll/ROenglishRE/blob/reorganize/Tools/AdditionsGenerator.bat)    
+ * [AdditionsGenerator.bat](https://github.com/llchrisll/ROenglishRE/blob/master/Tools/AdditionsGenerator.bat)    
    Copies files from the Additions folder based on your selection into a generated Client folder  
+ * [CLSGenerator.bat](https://github.com/llchrisll/ROenglishRE/blob/master/Tools/CLSGenerator.bat)  
+   Copies the CLS (Custom Lua Support) based on your selection into a generated Client folder  
   
 ### Data Folder Setup
 #### Non-GRF Version

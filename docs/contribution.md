@@ -1,16 +1,16 @@
 #Contribution
-You are free to help me with any kind of translation/work.
-Finding typos, mistranslations or even making me notice that there are missing items in the project itself.
-I welcome everything (less work for me).
+You are free to help me with any kind of translation/work.  
+Finding typos, mistranslations or even making me notice that there are missing items in the project itself.  
+I welcome everything (less work for me).  
 Be sure to post it in the Discord in the #feedback channel.
 
 ## Text Editor Settings
-Most files here, including itemInfo.lua, were edited by using [Notepad++](https://notepad-plus-plus.org/).
-If you're interested in translating, the default settings of NPP aren't suited for editing itemInfo.lua,
+Most files here, including itemInfo.lua, were edited by using [Notepad++](https://notepad-plus-plus.org/).  
+If you're interested in translating, the default settings of NPP aren't suited for editing itemInfo.lua,  
 because there are 4 type of fonts that came from 4 main official servers (kRO, jRO, twRO and iRO) that could break items' resource names.
 
-Thus, you need to set up your NPP to:
-1. Open Tab **Settings** > **Preferences** > **New Document**, then change **Encoding** to ANSI
+Thus, you need to set up your NPP to:  
+1. Open Tab **Settings** > **Preferences** > **New Document**, then change **Encoding** to ANSI  
 2. Open Tab **Settings** > **Preferences** > **MISC.**, then DESELECT **Autodetect character encoding**
 
 That way, when you open itemInfo.lua for the first time, it should look like this:

@@ -10,14 +10,16 @@ nav:
     - Home: index.md
     - Guides:
       - Project Installation: guides/install.md
-      - Client Features&Issues: guides/client.md
+      - Client Features & Issues: guides/client.md
       - Web Service: guides/webservice.md
       - Customization: guides/customs.md
     - Addons: addons/index.md
     - FAQ: FAQ.md
     - Contribution: contribution.md
+    - Links:
+      - Discord: https://discord.gg/sagbPhH
     
-theme: ## https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes
+theme:
   icon:
     repo: fontawesome/brands/github-alt
   name: 'material'
