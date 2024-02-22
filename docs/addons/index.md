@@ -130,7 +130,7 @@ Just place those files in the `data/luafiles514/lua files/navigation/` folder ag
 ## [Signboard Legacy](https://github.com/llchrisll/ROenglishRE/tree/master/Addons/Signboard%20Legacy)
 As I removed the `signboard.lub` file from the project with [8th April 2022](https://github.com/llchrisll/ROenglishRE/commit/e85d3883a7822308008bcbef3877d5ab25fff21f) and implemented the `System/Sign_Data_EN.lub` as well as the edited `signboard_f.lub` file, I decided recently ([22 March 2023](https://github.com/llchrisll/ROenglishRE/commit/6e08f70384572d64af25eea6176ca4a69999cf05)) to re-upload the old `signboardlist.lub` seperatly as well.
 
-## [Revised Pre-Renewal Skill Info](https://github.com/llchrisll/ROenglishRE/tree/reorganize/Addons/Revised%20Pre-Re%20SkillInfoz)
+## [Revised Pre-Renewal Skill Info](https://github.com/llchrisll/ROenglishRE/tree/master/Addons/Revised%20Pre-Re%20SkillInfoz)
 This skilldescript.lub contains revised skill descriptions for pre-renewal,  
 containing comments how the skill works and how effects like stats are calculated.
 

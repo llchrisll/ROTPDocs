@@ -2,9 +2,9 @@ The year 2020 had a major change regarding Emblems and Hotkeys.
 You need a extra Web Service, where all those informations are saved to and loaded from.
 ___
 _Client Setup_  
-If you need more info about these service_ folders, see [below](#service_-folder).
+If you need more info about these service_* folders, see [below](#service_-folder).
 
-1. Open up the `service_ExternalSettings_.lub` and go to the following lines
+1. Open up the `service_*\ExternalSettings_*.lub` and go to the following lines
 ```
 AssistAddr = 0.0.0.03000
 -----------------------------------------
@@ -37,7 +37,8 @@ The files in the service_ folder is basically responsible for the EmblemHotkeys 
 It also is responsible for displaying the Aura based on the class and level.
 (Still requires the server side changes to send the packets to the client)
 
-Based on the langtype set from below, it reads a certain folder, but you can also force the client to read only the [service_korea](https://github.com/llchrisll/ROenglishRE/tree/master/Renewal/data/luafiles514/lua%20files/service_korea) folder with the patch Always load Korea ExternalSettings lua file.
+Based on the langtype set from below, it reads a certain folder,  
+but you can also force the client to read only the [service_korea](https://github.com/llchrisll/ROenglishRE/tree/master/Translation/Renewal/data/luafiles514/lua%20files/service_korea) folder with the patch `Always load Korea ExternalSettings lua file`.
 
 In case that patch doesn't work or is not available, you need to rename the service_korea folder,
 depending on the langtype.

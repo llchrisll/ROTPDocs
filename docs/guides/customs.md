@@ -26,7 +26,7 @@ Of course you need respective files for your custom items to work.
 The basic setup contains 3 files, which is used for every other item as well.  
 But depending on the item type you want to add you require additional files to see the item correctly, which are descriped in the sections below.
 
-* DropDrag Sprite  
+* Drop & Drag Sprite  
    `data\sprite\¾ÆÀÌÅÛ`  
     Responsible to show a sprite if the item is being dropped or dragged, if you don't have one you mostly crash.
 * Texture Files  
@@ -84,18 +84,23 @@ change the `costume = false` to `costume = true` in the `itemInfo.lub`, tho the 
 ___
 ## Weapons
 Adding a custom Weapon can be done with it's own animation files or without.  
-  With Custom Animation Files
+
+Custom Animation Files
   
    1. Open the `data\luafiles514\lua files\datainfo\weapontable.lub` (See explanation below)  
       Note Add your entries always after the last entry and to add a `,` after the previous one.
-   2. `Weapon_IDs`  `WEAPONTYPE_CustomWeapon = 103`
-   3. `WeaponNameTable`   `[Weapon_IDs.WEAPONTYPE_CustomWeapon] = _customweapon`
-   4. `Expansion_Weapon_IDs`  `[Weapon_IDs.WEAPONTYPE_CustomWeapon] = Weapon_IDs.WEAPONTYPE_`  
+   2. `Weapon_IDs`  
+      `WEAPONTYPE_CustomWeapon = 103`
+   3. `WeaponNameTable`  
+      `[Weapon_IDs.WEAPONTYPE_CustomWeapon] = _customweapon`
+   4. `Expansion_Weapon_IDs`  
+      `[Weapon_IDs.WEAPONTYPE_CustomWeapon] = Weapon_IDs.WEAPONTYPE_`  
        Assign a weapon type based on the `Weapon_IDs` table but only up to `WEAPONTYPE_SWORD_AXE = 30` are valid
-   5. `BowTypeList`  `Weapon_IDs.WEAPONTYPE_CustomWeapon`
-       This is only used for bows obviously.
-   6. Sprite Files
-       `dataspriteÀÎ°£Á·` = Main Folder for Weapon Sprites  
+   5. `BowTypeList`  
+	  `Weapon_IDs.WEAPONTYPE_CustomWeapon`
+       This is only used for bows obviously.  
+   6. Sprite Files  
+       `data\sprite\ÀÎ°£Á·` = Main Folder for Weapon Sprites  
         Each class has it's own folder and requires 2 files (.act.spr) of your custom weapon per gender.  
         While you can duplicate them and just rename it for a different class and gender, but the animations won't match the class' movement at all.  
         The file name depends on your `WeaponNameTable` entry above.  
@@ -113,14 +118,18 @@ ___
 [Original by  Froost](https://rathena.org/board/topic/128738-guide-robewings-installation-guide-2021/#comment-398328)
 
 ##### Files  
-Note I will use `Angel_Wing` as example.  
-The Client requires for each class and per gender 2 files (.spr.act), but since that might take a while to do and rename, you can use a generator like this, [Garment Generator](https://rathena.org/board/files/file/3585-saders-garment-files-generator/), and generate the required files for all classes (I haven’t tested it yet)
+Note: I will use `Angel_Wing` as example.  
+The Client requires for each class and per gender 2 files (.spr & .act),  
+but since that might take a while to do and rename,  
+you can use a generator like this, [Garment Generator](https://rathena.org/board/files/file/3585-saders-garment-files-generator/)  
+and generate the required files for all classes (I haven’t tested it yet)
 
-But let’s test only with 1 class to test, I’ll use `Novice` (Male), the sprite name for that is `ÃÊº¸ÀÚ_³²`  
+But let’s test only with 1 class to test:  
+I’ll use `Novice` (Male), the sprite name for that is `ÃÊº¸ÀÚ_³²`  
 ##### Sprites
  
-- robe (male) = data\sprite\·Îºê\Angel_Wing\³²
-- robe (Female) = data\sprite\·Îºê\Angel_Wing\¿©  
+- robe (male) = `data\sprite\·Îºê\Angel_Wing\³²`
+- robe (Female) = `data\sprite\·Îºê\Angel_Wing\¿©  `
 
 Note: You can copy&paste the male sprites into the female folder and rename them like mentioned above.
 
@@ -135,17 +144,20 @@ Add `ROBE_Angel_Wing = 84` at the end and a `,` after the last entry before your
 2. At the end of `RobeTopLayer` add `SPRITE_ROBE_IDs.ROBE_Angel_Wing` (remember the `,`)
 
 ##### TransparentItem  
-If the Wing appears on the ALT+Q but does not appear on the character itself,  you need to make an additional edit in the `transparentItemtransparentItem.lub`.  
-It's an extra file that controls the transparency of the item, this file’s default for non-existent ids is 0 (transparent)  
-so you just open it and add at the end  
+If the Wing appears on the ALT+Q but does not appear on the character itself,  
+you need to make an additional edit in the `transparentItem\transparentItem.lub`.  
+It's an extra file that controls the transparency of the item,  
+this file’s default for non-existent ids is 0 (transparent) so you just open it and add at the end  
 `{ 84, 255, 255, 0 },`  
-84 = is ID
+84 = is the ID
 
 ### Convert Custom Wings (Headgears) to Robes
 [Original by madtoyz](https://rathena.org/board/topic/72734-guide-custom-wings-at-robe-place/#comment-148019)
 
 Converting your custom Wings, which can be headgears is fairly simple  
-Take the guide above in consideration, but instead of extra files for robes, you take the headgears files from `¾Ç¼¼»ç¸®³²` and `¾Ç¼¼»ç¸®¿©` as base and insert them the same way as above in the `·Îºê` folder.
+Take the guide above in consideration, but instead of extra files for robes,  
+you take the headgears files from `data\sprite\¾Ç¼¼»ç¸®\³²` and `data\sprite\¾Ç¼¼»ç¸®\¿©`  
+as base and insert them the same way as above in the `·Îºê` folder.
 ___
 ## Hat Effect
 [Original by khyle650](https://rathena.org/board/topic/132752-guide-add-new-hateffect-aura-style/#comment-412723)
