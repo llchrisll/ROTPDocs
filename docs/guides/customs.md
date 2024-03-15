@@ -3,24 +3,28 @@ I will only provide the client-side steps required to make it work,
 please visit the original topic, if there is one, for more information about the server-side it.
 
 ## Multi-Iteminfo Support
-The best way in my opinion is to use a Multi-Item Info in addition to this translation project.
-Cause you then have your custom items seperated from the translated files, which might overwrite your items on every update.
+With the pull request [PR #67](https://github.com/llchrisll/ROenglishRE/pull/67), I have implemented [NeoMind](https://rathena.org/board/topic/98148-guide-how-to-use-a-secondary-iteminfo-file/)'s Multi-Iteminfo Support  
+into the project, which also changed the iteminfo location and definition.  
 
-1. [sader1992](https://rathena.org/board/topic/118340-client-resource-customize-your-iteminfo-with-import/)
-2. [NeoMind](https://rathena.org/board/topic/98148-guide-how-to-use-a-secondary-iteminfo-file/)
-3. [Cydh](https://pservero.com/2015/02/07/multi-iteminfo-files/)
-
-What I personally use is NeoMind's option, as this project is mixed version of every RO (kRO,jRO and iRO mostly).
-I didn't test the other's yet, but they look awesome as well.
+ * System\itemInfo_EN.lua  
+	This file contains now the table for your custom entries,   
+	as well as the possbility to override offical items, like in Neo's original version.
+  
+	There you also have additional configs/variables for additional and automatic lines,  
+	like Item ID, link to Divine-Pride database and displaying the Server where it's originated from.  
+	These configs can be changed as you like, just follow the values available and you are good to go.
+  
+  * System\LuaFile514\itemInfo.lua  
+    This is now the itemInfo for translated items, just like the itemInfo_EN.lua before.  
+	The only difference is that it now contains every argument (costume and EffectID).  
+	And I split the function lines at the end into it's own file to make the thing above possible,
+	which was also the reason why they were split.
+	
+  * System/LuaFiles514\itemInfo_f.lua  
+	Like mentioned above, this now contains the function lines for the itemInfo and will now be the key to overwrite  
+	depending on the client you are using.
 ___
 ## Custom Items
-There are 2 ways to add your custom items
-
-1. Multi-Item Info Support (I will call it MII)  
-2. System\itemInfo.lua (if you use this project itemInfo_EN.lua)
-
-Both work in the same way, but in case of the MII your custom items are seperately loaded from the translationoriginal itemInfo file, which makes it easier to manage.
-
 ##### Resource Files  
 Of course you need respective files for your custom items to work.  
 The basic setup contains 3 files, which is used for every other item as well.  
@@ -53,14 +57,14 @@ Once your files are in place, it's time to open your itemInfo file.
 	},
 ```
 ##### Explanation  
-The only difference between the first three arguments is that it depends on if the item was Identified or not
+The only difference between the first six arguments is that it depends on if the item was Identified or not.
 
 - DisplayName = Display Name
 - ResourceName = File Name
 - DescriptionName = Description
-- slotCount = Defines the visual aspect of card slots
-- ClassNum = Defines the View ID for HeadgearsWeapons and Costume Garments
-- costume = true/false, defines if the item is a costume (showing in differently in certain tabs)
+- slotCount = Defines the amount of visual card slots
+- ClassNum = Defines the View ID for Headgears/Weapons/Costume Garments and Shields
+- costume = true/false, defines if the item is a costume (showing in a different tab in the storage)
 ___
 ## Headgears
 Adding custom headgears requires 4 additional files and 2 more lua files to adjust.  
@@ -73,13 +77,21 @@ There are 2 folders, which are for the gender.
  
 ##### Lua Files
 * `data\luafiles514\lua files\datainfo\accessoryid.lub`  
-   View ID(Item DB)ClassNum(itemInfo.lub)  
+	Contains the ViewID/ClassNum of your headgear.
+  > View ID for Item DB  
+  > ClassNum for itemInfo.lub
+   
+	Note: Clients have a hardcoded View ID limit, depending on client, it might vary.  
+	2018-06-20 as example has 2000 (I think), so to use a value higher than that  
+	you need to apply the client patch "Increase Headgear ViewID".  
+	Like you want to use 6000 as start then input 7000 or more in the patch.  
+
 * `data\luafiles514\lua files\datainfo\accname.lub`  
-   File Name Entry, only consisting of `_name`, meaning the client will automatically add the gender at the front.
+	File Name Entry, only consisting of `_name`, meaning the client will automatically add the gender at the front.
 
 ### Costume Headgears
 Adding Costume Headgears is no different from regular heagears,  
-you just change the `Location` node (YML) in the item database on your server and  
+you just change the `Locations` node (YML) in the item database on your server and  
 change the `costume = false` to `costume = true` in the `itemInfo.lub`, tho the lua part is optional.
 ___
 ## Weapons
@@ -207,8 +219,8 @@ ___
 
 ##### Sprite Folders
  
-- MobPet `data\sprite\¸ó½ºÅÍ`  
-- NPC `data\sprite\npc`
+- Mob and Pet: `data\sprite\¸ó½ºÅÍ`  
+- NPC: `data\sprite\npc`
 
 ##### PetInfo.lub
  
@@ -398,8 +410,8 @@ Remember that there is documentation of how to add random options to items and a
 ___
 ## Enchant System
 [Original by khyle650](https://rathena.org/board/topic/132764-the-new-enchant-system-cannot-be-openedused-correctly/#comment-412806)  
-You need add an entry in `data\luafiles514\lua files\ItemDBNameTbl.lub` of your item  
-and enchant details in `data\luafiles514\lua files\Enchant\EnchantList.lub`
+You need to add an entry in `data\luafiles514\lua files\ItemDBNameTbl.lub` of your item  
+and the enchant details in `data\luafiles514\lua files\Enchant\EnchantList.lub`.
 
 ### ItemDBNameTbl.lub Example
 ```
