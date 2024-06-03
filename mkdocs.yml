@@ -1,5 +1,5 @@
 site_name: RO Translation Project Documentation
-site_url: 'https://llchrisll.github.io/ROenglishRE/'
+site_url: 'https://llchrisll.github.io/ROTPDocs'
 site_description: 'ROTP and Client-side Guides'
 site_author: 'Houndeye aka llchrisll'
 docs_dir: docs/
@@ -10,12 +10,11 @@ nav:
     - Home: index.md
     - Guides:
       - Project Installation: guides/install.md
-      - Client Features & Issues: guides/client.md
       - Web Service: guides/webservice.md
       - Customization: guides/customs.md
     - Addons: addons/index.md
-    - FAQ: FAQ.md
     - Contribution: contribution.md
+    - FAQ: FAQ.md
     - Links:
       - Discord: https://discord.gg/sagbPhH
       - rAthena: http://rathena.org/board/

@@ -6,23 +6,24 @@ If you need more info about these service_* folders, see [below](#service_-folde
 
 1. Open up the `service_*\ExternalSettings_*.lub` and go to the following lines
 ```
-AssistAddr = 0.0.0.03000
+-- Change the "AssistAddr" to your IP
+AssistAddr = "127.0.0.1:8888"
 -----------------------------------------
 -- Old client compatibility [Secret]
--- (Just change the AssistAddr to your IP)
+-- DON'T TOUCH ANYTHING BELOW
 -----------------------------------------
-Url = { TwitterUrl = 'http'..AssistAddr }
+Url = { TwitterUrl = 'http://'..AssistAddr }
 AccountLinkedUserDataUrl = {
-	Save = 'http'..AssistAddr..'userconfigsave',
-	Load = 'http'..AssistAddr..'userconfigload'
+	Save = 'http://'..AssistAddr..'/userconfig/save',
+	Load = 'http://'..AssistAddr..'/userconfig/load'
 }
 TwitterDataUrl = {
-	Auth = 'http'..AssistAddr..'twitteruser-auth',
-	Upload = 'http'..AssistAddr..'twitterupload'
+	Auth = 'http://'..AssistAddr..'/twitter/user-auth',
+	Upload = 'http://'..AssistAddr..'/twitter/upload'
 }
 EmblemDataUrl = {
-	Upload = 'http'..AssistAddr..'emblemupload',
-	Download = 'http'..AssistAddr..'emblemdownload'
+	Upload = 'http://'..AssistAddr..'/emblem/upload',
+	Download = 'http://'..AssistAddr..'/emblem/download'
 }
 ```
 2. Now edit the IP+Port in `AssistAddr` to your server IP and Port (8888) from the web service.
@@ -70,4 +71,6 @@ What else does the langtype define
 * Font the client uses  
 * Login packets, most are supported by rAthena.
 
-Note A detailed list of the langtypes and other important values in sclientinfo.xml, can be found [here](https://github.com/rathena/rathena/wiki/Clientinfo.xml)
+**Note**  
+A detailed list of the langtypes and other important values in sclientinfo.xml,  
+can be found [here](https://github.com/rathena/rathena/wiki/Clientinfo.xml).

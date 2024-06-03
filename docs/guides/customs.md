@@ -1,30 +1,221 @@
 # Customization
 I will only provide the client-side steps required to make it work,  
-please visit the original topic, if there is one, for more information about the server-side it.
+please visit the original topic, if there is one, for more information about the server-side of it.
 
 ## Multi-Iteminfo Support
 With the pull request [PR #67](https://github.com/llchrisll/ROenglishRE/pull/67), I have implemented [NeoMind](https://rathena.org/board/topic/98148-guide-how-to-use-a-secondary-iteminfo-file/)'s Multi-Iteminfo Support  
 into the project, which also changed the iteminfo location and definition.  
 
- * System\itemInfo_EN.lua  
-	This file contains now the table for your custom entries,   
-	as well as the possbility to override offical items, like in Neo's original version.
+#### System\itemInfo_EN.lua  
+This file contains now the table for your custom entries,   
+as well as the possbility to override offical items, like in Neo's original version.  
   
-	There you also have additional configs/variables for additional and automatic lines,  
-	like Item ID, link to Divine-Pride database and displaying the Server where it's originated from.  
-	These configs can be changed as you like, just follow the values available and you are good to go.
-  
-  * System\LuaFile514\itemInfo.lua  
-    This is now the itemInfo for translated items, just like the itemInfo_EN.lua before.  
-	The only difference is that it now contains every argument (costume and EffectID).  
-	And I split the function lines at the end into it's own file to make the thing above possible,
-	which was also the reason why they were split.
+Below I will try to explain the configs which are possible:  
+```
+-- Load the splited function file
+require("System/LuaFiles514/itemInfo_f")
+
+-- Load the translation file
+dofile("System/LuaFiles514/itemInfo.lua")
+
+-- Load the additional files
+-- Example: (Yes you could add kRO itemInfo itself, but prepare for lua errors)
+--dofile("System/itemInfo_true.lub")
+
+-- Additional Configs
+-- Display origin server based on translation file's Server argument
+-- 0 = disable/1 = top of description/2 = bottom of description
+DisplayOrigin = 1
+
+-- Show ItemID at bottom
+-- 0 = disable/1 = top of description/2 = bottom of description
+DisplayItemID = 2
+
+-- Display a database link at bottom of description (true/false)
+-- The item id will be automically parsed at the end of 'DbUrl/CustomDbUrl',
+-- example: 'https://www.divine-pride.net/database/item/512'
+DisplayDatabase = true
+DbURL = 'https://www.divine-pride.net/database/item/'
+DbDisplay = 'Divine-Pride.net'
+-- Database link for custom items, like fluxcp
+-- example: 'http://127.0.0.1/?module=item&action=view&id=512'
+CustomDbUrl = 'http://127.0.0.1/?module=item&action=view&id='
+CustomDbDisplay = 'Database'
+
+-- Server Name for your custom items
+ServerName = 'ExampleRO'
+
+-- Define the colour in which the Server Name should be shown (affects official, if enabled, and custom items)
+-- Format: '^<RRGGBB>'
+-- '' = same color as "Server: " (blue)
+-- '^FFFFFF' = white
+ServerColour = ''
+```
+
+* `require` is most important and loads the function, which were split from the original iteminfo.  
+This allows me to only have one global itemInfo.lua with all arguments,  
+which are normally read by newer clients only, like `EffectID` and `costume`.  
+* `dofile` loads files additionally to the `itemInfo_EN.lua`.  
+Yes, it is possible to add multiple iteminfos, like what I do:  
+```
+-- Load the additional files
+-- Example: (Yes you could add kRO itemInfo itself, but prepare for lua errors)
+--dofile("System/itemInfo_true.lub")
+dofile("System/item_kro.lua")
+dofile("System/item_jro.lua")
+dofile("System/item_iro.lua")
+dofile("System/item_bro.lua")
+dofile("System/item_idro.lua")
+dofile("System/item_ghhro.lua")
+dofile("System/item_twro.lua")
+```
+![](../images/itemInfo_dofile.png)  
+But to actually merge them into the main `tbl` via the `itemInfoMerge` function, you still need add a few lines which is explained at the end.  
+**Note**  
+These files contain missing and untranslated items from each server and are able to download from my discord in the [contribution](https://discord.com/channels/632937952997277696/721722941464903741/1159571115790827641) channel.
+
+
+* `DisplayOrigin` reads the custom `Server` argument and displays it based on the value you put it on, like this:  
+![](../images/itemInfo_Server.png)  
+* `DisplayItemID` displays the Item ID based on the value you put, like this:  
+![](../images/itemInfo_ID.png)  
+* `DisplayDatabase` displays an URL (opens in your webbrowser) to a database based on the value you put, which can define via `DbURL` and `DbDisplay`, like this:  
+![](../images/itemInfo_Link.png)  
+The same works for custom items via `CustomDbUrl` and only works if `DisplayDatabase` is enabled(true).  
+![](../images/itemInfo_Link2.png)  
+* `ServerName` holds the name of your Server, which will be display for your custom items if `DisplayOrigin` is enabled.  
+* `ServerColour` defines in which color your name will be highlighted.  
+Example:  
+`ServerColour = '^FF0000'`  
+![](../images/itemInfo_Color.png)  
+---
+```
+-- Table for Custom Items
+tbl_custom = {
+	--[[ Template
+	[ID] = {
+		unidentifiedDisplayName = "Unknown Item",
+		unidentifiedResourceName = "",
+		unidentifiedDescriptionName = { "" },
+		identifiedDisplayName = "Item",
+		identifiedResourceName = "",
+		identifiedDescriptionName = {
+			"Line 1",
+			"Line 2"
+		},
+		slotCount = 0,
+		ClassNum = 0,
+		costume = false
+	},
+	]]
+}
+
+-- Table for Official Overrides
+tbl_override = {
+	--[[ Template
+	[ID] = {
+		unidentifiedDisplayName = "Unknown Item",
+		unidentifiedResourceName = "",
+		unidentifiedDescriptionName = { "" },
+		identifiedDisplayName = "Item",
+		identifiedResourceName = "",
+		identifiedDescriptionName = {
+			"Line 1",
+			"Line 2"
+		},
+		slotCount = 0,
+		ClassNum = 0,
+		costume = false
+	},
+	]]
+}
+```
+
+* `tbl_custom` holds the entries for your custom items.  
+* `tbl_override` holds items you want to change,  
+   overriding the official ones without touching the translation file directly.
+---
+```
+function itemInfoMerge(src, state)
+	if src == nil then
+		return
+	end
+	for ItemID,DESC in pairs(src) do
+		if state == false then
+			if not tbl[ItemID] then
+				tbl[ItemID] = {}
+				tbl[ItemID] = DESC
+			end
+		else
+			tbl[ItemID] = DESC
+		end
+		if src == tbl_custom then
+			if ServerName ~= nil and tbl[ItemID].Server == nil then
+				tbl[ItemID].Server = ServerName
+			end
+			if DisplayDatabase == true then
+				tbl[ItemID].CustomDB = true
+			end
+		end
+	end
+	return
+end
+
+-- itemInfoMerge(src, state)
+-- @src = table for merge into tbl
+-- @state = overwrite existing entries (true) or not (false)
+
+itemInfoMerge(tbl_override, true) -- official overrides
+itemInfoMerge(tbl_custom, false) -- custom items
+--itemInfoMerge(tbl, false) -- original kRO iteminfo
+```
+**DON'T TOUCH** the function `itemInfoMerge` unless you know what you are doing.  
+I don't take responsiblity, if you change it without my knowledge.  
+
+Like stated above, you also need to add a new function call with the new table, but be sure that it holds a different name than any present ones.  
+See the commented one as example, which would merge the original kRO iteminfo into the global `tbl`.
+
+My lines mentioned above:  
+```
+-- itemInfoMerge(src, state)
+-- @src = table for merge into tbl
+-- @state = overwrite existing entries (true) or not (false)
+
+itemInfoMerge(tbl_override, true) -- official overrides
+itemInfoMerge(tbl_custom, false) -- custom items
+--itemInfoMerge(tbl, false) -- original kro iteminfo
+
+itemInfoMerge(tbl_kro, false) -- kro
+itemInfoMerge(tbl_jro, false) -- jro
+itemInfoMerge(tbl_iro, false) -- iro
+itemInfoMerge(tbl_idro, false) -- idro
+itemInfoMerge(tbl_bro, false) -- bro
+itemInfoMerge(tbl_ghhro, false) -- ghhro
+itemInfoMerge(tbl_twro, false) -- twro
+```
+#### System\LuaFile514\itemInfo.lua  
+This is now the itemInfo for translated items, just like the itemInfo_EN.lua before.  
+The only difference is that it now contains every argument (costume and EffectID).  
 	
-  * System/LuaFiles514\itemInfo_f.lua  
-	Like mentioned above, this now contains the function lines for the itemInfo and will now be the key to overwrite  
-	depending on the client you are using.
+#### System\LuaFiles514\itemInfo_f.lua  
+This contains the function lines for the itemInfo and will now be the key to overwrite  
+depending on the client you are using.
+___
+## Custom Files Generator by Chaos92
+![](../images/Chaos92_Generator.png)  
+[Chaos92](https://rathena.org/board/profile/6755-chaos92/), made a simple website to generate the file (lua, yml, etc) with entries for your custom items/npcs/etc based on the item you want to create.  
+Currently it supports a few simple generators.  
+
+Link to the guide can be found [here](https://rathena.org/board/topic/140207-multiple-custom-files-generator/),
+here the actual [generator](https://x-files.amirazman.my/customfilegenerator/).
+
+If you have issues, suggestions or anything else, feel free to contact him about it :).
 ___
 ## Custom Items
+Before editing any kind of lua file in this project, I would recommend to check the [Text Editor Settings](https://llchrisll.github.io/ROTPDocs/contribution/#text-editor-settings).  
+As I use Notepad++, I can only provide a "guide" for that.
+
+
 ##### Resource Files  
 Of course you need respective files for your custom items to work.  
 The basic setup contains 3 files, which is used for every other item as well.  
@@ -42,14 +233,14 @@ But depending on the item type you want to add you require additional files to s
 Once your files are in place, it's time to open your itemInfo file.  
 ```
 	[ID] = {
-		unidentifiedDisplayName = Unknown Item,
-		unidentifiedResourceName = ,
-		unidentifiedDescriptionName = {  },
-		identifiedDisplayName = Item,
-		identifiedResourceName = ,
+		unidentifiedDisplayName = "Unknown Item",
+		unidentifiedResourceName = "",
+		unidentifiedDescriptionName = { "" },
+		identifiedDisplayName = "Item",
+		identifiedResourceName = "",
 		identifiedDescriptionName = {
-			Line 1,
-			Line 2
+			"Line 1",
+			"Line 2"
 		},
 		slotCount = 0,
 		ClassNum = 0,
@@ -99,12 +290,13 @@ Adding a custom Weapon can be done with it's own animation files or without.
 
 Custom Animation Files
   
-   1. Open the `data\luafiles514\lua files\datainfo\weapontable.lub` (See explanation below)  
-      Note Add your entries always after the last entry and to add a `,` after the previous one.
+   1. Open the `data\luafiles514\lua files\datainfo\weapontable.lub`  
+     (See explanation below)  
+      Note: Add your entries always after the last entry and to add a `,` after the previous one.
    2. `Weapon_IDs`  
       `WEAPONTYPE_CustomWeapon = 103`
    3. `WeaponNameTable`  
-      `[Weapon_IDs.WEAPONTYPE_CustomWeapon] = _customweapon`
+      `[Weapon_IDs.WEAPONTYPE_CustomWeapon] = "_customweapon"`
    4. `Expansion_Weapon_IDs`  
       `[Weapon_IDs.WEAPONTYPE_CustomWeapon] = Weapon_IDs.WEAPONTYPE_`  
        Assign a weapon type based on the `Weapon_IDs` table but only up to `WEAPONTYPE_SWORD_AXE = 30` are valid
@@ -152,7 +344,7 @@ Afterwards we need to add some entries in the `spriterobename.lub` and `spritero
 Add `ROBE_Angel_Wing = 84` at the end and a `,` after the last entry before yours.  
 
 ##### SpriteRobeName
-1. Go to the end of the table `RobeNameTable` and `RobeNameTable_Eng`, add `[SPRITE_ROBE_IDs.ROBE_Angel_Wing ] = Angel_Wing` at the end and a `,` after the last entry before yours.
+1. Go to the end of the table `RobeNameTable` and `RobeNameTable_Eng`, add `[SPRITE_ROBE_IDs.ROBE_Angel_Wing ] = "Angel_Wing"` at the end and a `,` after the last entry before yours.
 2. At the end of `RobeTopLayer` add `SPRITE_ROBE_IDs.ROBE_Angel_Wing` (remember the `,`)
 
 ##### TransparentItem  
@@ -185,7 +377,7 @@ Note I will use `c_hateffect` and `HAT_EF_c_hateffect` as example
 7. Use the following layout entry as base (remember to put an `,` after the last entry)  
 ```
     [HatEFID.HAT_EF_c_hateffect] = {  
-        resourceFileName = c_hateffectc_hateffect.str,  
+        resourceFileName = "c_hateffect\\c_hateffect.str",  
         hatEffectPos = -1,  
         hatEffectPosX = 0,  
         isRenderBeforeCharacter = false,  
@@ -373,7 +565,7 @@ maybe the range will not be recognized and it will pop up a warning of cant get 
 ```
 [sKID. "the exactly name of the skill must be added there, don't mess with that."] = {  
 "ICON NAME";  
-SkillName = "This is the tex that the character will display when casting the skill",  
+SkillName = "This is the text that the character will display when casting the skill",  
 MaxLv = the max level of the skill existing in the skilldb.txt.  
 SpAmount = { sp consumed by level according to the skilldb structure, this will be showed in the player skill window}  
 bSeperateLv = true for seperated skill leves such as warmwind, teleport, gospel etc, false to fix the skill to the last level applied,  
@@ -600,8 +792,6 @@ Table[68].Slot[1]:AddUpgradeEnchant("·°2", "·°3", 1000000)
 Table[68].Slot[1]:AddUpgradeEnchant("µ¦1", "µ¦2", 500000)
 Table[68].Slot[1]:AddUpgradeEnchant("µ¦2", "µ¦3", 1000000)
 ```
-Note by llchrisll:  
-Maybe I will dive into it some time how the EnchantList.lub is structured.
 ___
 Disclaimer  
 I don't take any credit for any of the copied guides.
