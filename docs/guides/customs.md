@@ -24,8 +24,11 @@ dofile("System/LuaFiles514/itemInfo.lua")
 
 -- Additional Configs
 -- Display origin server based on translation file's Server argument
--- 0 = disable/1 = top of description/2 = bottom of description
+-- 0 = disable/1 = in Item Name/2 = top of description/3 = bottom of description
 DisplayOrigin = 1
+-- Defines how the item id will be shown in item name, doesn't take effect in other settings
+TagStart = '['
+TagEnd = ']'
 
 -- Show ItemID at bottom
 -- 0 = disable/1 = top of description/2 = bottom of description
@@ -77,6 +80,8 @@ These files contain missing and untranslated items from each server and are able
 
 * `DisplayOrigin` reads the custom `Server` argument and displays it based on the value you put it on, like this:  
 ![](../images/itemInfo_Server.png)  
+* `TagStart` and `TagEnd` defines how the server name is seperated from the Item Name and can be anything (tested with [] and () )  
+![](../images/itemInfo_Server2.png) ![](../images/itemInfo_Server3.png)  
 * `DisplayItemID` displays the Item ID based on the value you put, like this:  
 ![](../images/itemInfo_ID.png)  
 * `DisplayDatabase` displays an URL (opens in your webbrowser) to a database based on the value you put, which can define via `DbURL` and `DbDisplay`, like this:  
