@@ -8,11 +8,23 @@ repo_name: 'llchrisll/ROenglishRE/'
 repo_url: 'https://github.com/llchrisll/ROenglishRE\'
 nav:
     - Home: index.md
-    - Guides:
-      - Project Installation: guides/install.md
-      - Web Service: guides/webservice.md
-      - Customization: guides/customs.md
+    - Project Installation: guides/install.md
+    - Multi-ItemInfo Support: guides/multiitem.md
     - Addons: addons/index.md
+    - Web Service: guides/webservice.md
+    - Customization Guides:
+      - Basic Setup: guides/basic_custom.md
+      - Custom Files Generator: guides/custom_generator.md
+      - Headgears: guides/headgears.md
+      - Weapons: guides/weapons.md
+      - Garments: guides/garments.md
+      - Hat Effects: guides/hateffects.md
+      - Mob/NPC/Pet: guides/npc_mob_pet.md
+      - Navigation: guides/navigation.md
+      - Skill Icons: guides/skill_icons.md
+      - Random Options: guides/random_options.md
+      - Enchant System: guides/enchant_system.md
+      - Disable Doram: guides/disable_doram.md
     - Contribution: contribution.md
     - FAQ: FAQ.md
     - Links:
@@ -23,6 +35,8 @@ nav:
 theme:
   icon:
     repo: fontawesome/brands/github-alt
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
   name: 'material'
   custom_dir: docs/overrides
   features:
