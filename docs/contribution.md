@@ -26,26 +26,27 @@ I would like to ask you to pretty much follow this format:
 ```
   * Elements:
     ^FF0000 = Fire
-    ^0000BB = Water
-    ^CC5500 = Earth
-    ^33CC00 = Wind
-    ^663399 = Poison
-    ^777777 = Ghost, Undead, Holy, Shadow and Neutral = iteminfo
-    ^009999 = Ghost, Undead, Holy, Shadow and Neutral = skillinfo
+	^0000BB = Water
+	^CC5500 = Earth
+	^33CC00 = Wind
+	^663399 = Poison
+	^777777 = Ghost, Undead, Holy, Shadow and Neutral = iteminfo
+	^009999 = Ghost, Undead, Holy, Shadow and Neutral = skillinfo
   	
   * Misc
     ^CC6600 = Status (STR,AGI,...)/Base Level
-    ^0000FF = Numbers
-    ^663399 = Debuff (Curse, Freeze,...)
-    ^0033CC = Location
-    ^FF0000 = Race/Size
-    ^0033CC = Job Classes
+	^0000FF = Numbers
+	^663399 = Debuff (Curse, Freeze,...)
+	^0033CC = Location
+	^FF0000 = Race/Size
+	^0033CC = Job Classes
 
    * Google Translation of Elements:
     fury = Fire
-    cancer = Shadow
-    castle = Holy
-    immortality = Undead
+	cancer = Shadow
+	castle = Holy
+	immortality = Undead
+	flame = Ghost
 
     unidentifiedDescriptionName = { "Can be identified by using a ^990099Magnifier^000000." },
 	
@@ -54,10 +55,13 @@ I would like to ask you to pretty much follow this format:
 	"Bonus ^CC6600STR^000000 at least ^FF0000+10^000000:",
 	"^CC6600Base Level^000000 at least ^FF0000100^000000:",
 	"^CC6600Base Level^000000 is ^FF000099^000000 or less:",
+	"^CC6600Base Level^000000 between ^FF0000100~169^000000:",
 	"^CC6600Base Level^000000 less than ^FF0000175^000000:",
 	"For each ^0000FF20^000000 base ^CC6600STR^000000:",
-	"For each ^0000FF20^000000 combined sum of base ^CC6600AGI^000000 and ^CC6600VIT^000000:",
 	"For each ^0000FF50 ^CC6600Base Level^000000:",
+	"For each ^0000FF20^000000 combined sum of base ^CC6600AGI^000000 and ^CC6600VIT^000000:",
+	"When total combined sum of base ^CC6600VIT^000000 and ^CC6600STR^000000 is ^0000FF250^000000:",
+	
 	"STR +",
 	"AGI +",
 	"VIT +",
@@ -76,6 +80,10 @@ I would like to ask you to pretty much follow this format:
 	"Increases HP Recovery Rate by %.",
 	"Increases SP Recovery Rate by %.",
 	"Attack Range: x cells",
+	"Prevents ^663399<Status^000000 status.",
+	"Increases resistance to ^663399<Status>^000000 status by %.",
+	"Increases Attack Speed (decreases After Attack Delay by %).",
+	"All Basic Stats +",
 	
 	> 4th Classes:
 	"POW +",
@@ -90,6 +98,7 @@ I would like to ask you to pretty much follow this format:
 	"C.RATE +",
 	"RES +",
 	"MRES +",
+	"All Trait Stats +",
 	
 	- Damage Descriptions:
 	"Inflict % more damage on ^0033CC<Monster>^000000.",
@@ -116,9 +125,11 @@ I would like to ask you to pretty much follow this format:
 	"Decreases damage taken from monsters of ^FF000<Race/Size/Class>^000000 race/size/class by %.",
 	"Decreases damage taken from monsters of every race/size/class by %.",
 	"Decreases damage taken from monsters of ^<Element>^000000 element by %.",
+	"Decreases damage taken from ranged physical attacks by 20%.",
 	
 	"Increases experience gained from defeating ^FF0000<Race>^000000 race monsters by %.",
 	"Increases experience gained from defeating ^<Element>^000000 elemental monsters by %.",
+	"Increases experience gained by 100% and item drop chance by 50%.",
 	
 	"Ignores physical and magical defense of every race, except ^FF0000Players^000000, by %.",
 	
@@ -135,9 +146,11 @@ I would like to ask you to pretty much follow this format:
 	"Increases damage of ^009900<Skill>^000000 by %.",
 	"Enables the use of ^0000FF<Skill>^000000.",
 	"Enables the use of Level X ^0000FF<Skill>^000000.",
+	"Enables the use of ^0000FF<Skill>^000000 at the same level as the ^0000FFRefine Level^000000.",
 	"When ^009900<Skill>^000000 is used:",
 	"When ^009900<Skill>^000000 is mastered:",
 	"When Level X ^009900<Skill>^000000 is learned:",
+	"Gain following effects when Level X ^009900<Skill>^000000 is learned:",
 	"When ^0033CC<Base Class>^000000 classes uses ^009900<Skill List>^000000 or ^009900<Last Skill>^000000:",
 	
 	"Skill casting cannot be interrupted.",
@@ -231,8 +244,15 @@ Equipment Info Layout:
 			"_______________________",
 			"^0000CCType:^000000 ",
 			"^0000CCAttack:^000000 ",
-			"^0000CCDefense:^000000 ",
+			"^0000CCDefense:^000000 ", - Removed for Accessories/Costumes
 			"^0000CCPosition:^000000 ",
+			- Accessory Positions:
+			> kRO:
+			  - ¾×¼¼¼­¸®(¿ÞÂÊ) = Accessory Left
+			  - ¾×¼¼¼­¸®(¿À¸¥ÂÊ) = Accessory Right
+			> jRO:
+			  - ƒAƒNƒZƒTƒŠ[(1) = Accessory Left
+			  - ƒAƒNƒZƒTƒŠ[(2) = Accessory Right
 			"^0000CCElement:<Element Color Code> ", > Look at the beginning of this file
 			"^0000CCWeight:^000000 ",
 			"^0000CCArmor Level:^000000 ",
@@ -291,6 +311,7 @@ Exchange NPC Locations:
 	"<NAVI>[Prontera Family Relations Guide]<INFO>prt_in,285,171,0,100,0,0</INFO></NAVI>",
 	"<NAVI>[Lasagna Independent Helper]<INFO>lasagna,100,200,0,100,0,0</INFO></NAVI>",
 	"<NAVI>[Beginner's Weapon Manager]<INFO>prontera,157,191,0,100,0,0</INFO></NAVI>",
+	"Please visit <NAVI>[Gratin Gracias]<INFO>prontera,88,332,0,100,0,0</INFO></NAVI> with this.",
 	"Take it to <NAVI>[Equipment Support Manager]<INFO>prontera,157,279,0,100,0,0</INFO></NAVI>.",
 	"Take it to <NAVI>[Centro]<INFO>prontera,148,282,0,100,0,0</INFO></NAVI> and exchange it for one of the items below:",
 	"Go to <NAVI>[Special Equipment Researcher]<INFO>rgsr_in,136,171,0,100,0,0</INFO></NAVI> to upgrade your helmet.",
@@ -395,13 +416,14 @@ jRO Egg Description:
 ## ItemReformSystem
 ```
 	- InformationString:
-	"<B>Á¶ÇÕ °á°ú Á¤º¸ ¾È³»</B>"
-	> "<B>Combination Result</B>"
+	<B>Á¶ÇÕ °á°ú Á¤º¸ ¾È³»</B>
+	> <B>Combination Result</B>
 	
 	Á¦·Ãµµ :
 	> Refine Level:
 	
 	·£´ý ¿É¼Ç Á¤º¸ :
+	·£´ý¿É¼Ç :
 	> Random Options:
 	
 	Ä«µå ¹× ÀÎÃ¦Æ® Á¤º¸ :
@@ -410,11 +432,14 @@ jRO Egg Description:
 	µî±Þ Á¤º¸ :
 	> Grade Rating:
 	
+	Á¾ºÎ¿© = types granted
+	
 	ÀÌÀüµÊ = Transfered
 	À¯ÁöµÊ = Transfered
 	Á¦°ÅµÊ = Removed
 	Á¦°Å = Removed
 	ÃÊ±âÈ­ = Reset
+	»èÁ¦µÊ = Deleted
 ```
 ## EnchantList
 ```	
@@ -425,26 +450,24 @@ jRO Egg Description:
 	ÃÊ±âÈ­ È®·ü > Reset Chance:
 	 ½ÇÆÐ½Ã ÆÄ±«¾ÈµÊ > , will not be destroyed on failure 
 	 ÀÎÃ¦Æ® ÃÊ±âÈ­ °¡´É > Enchantments can be reset
+	 ÀÎÃ¦Æ® ÃÊ±âÈ­ ºÒ°¡ > Enchantments cannot be reset
 ```
 ## SkillDescript
 ```
-   * General
     ^0000FF = Skill Names + Status (Hiding,...)/Elementals/Machines/Creatures
     ^990099 = Item Names + Skill Requirements (Spirit Spheres, Mounts,...)
     ^00A100 = Race/Class/Size
 	
     "Max Level:
  
-  * Skill Requirements	
     "^CC3399Requirement: Divine Protection 5^000000",
      with Job ID before:
     "4^CC3399Requirement: Heal 2^000000",
-  * Form
+	
     "Skill Form: ^6666CCPassive^000000",
     "Skill Form: ^3F0099Active^000000",
     "Skill Form: ^3F0099Active (Toggle)^000000"
 	
-  * Types
     "Type: ^339900Supportive^000000",
     "Type: ^339900Recovery^000000",
     "Type: ^339900Designation^000000",
@@ -472,11 +495,9 @@ jRO Egg Description:
     "Type: ^FF0000Magical, AoE^000000",
     "Type: ^FF0000Magical, Debuff^000000",
 	
-   * Range
     "Range: ^7777779x9 AoE^000000",
     "Range: ^777777^000000",
 	
-   * Target
     "Target: ^6666CCHomunculus^000000",
     "Target: ^6666CCSummon^000000",
     "Target: ^6666CCElemental^000000", = Sorcerer Summon
@@ -490,30 +511,44 @@ jRO Egg Description:
     "Target: ^6666CCCaster and Party Members^000000",
     "Target: ^6666CC1 Party Member^000000",
 	
-    "Description: ^777777 ^000000",
+	"Description: ^777777 ^000000",
 
-   * Damage Modifications and Critical Damage:
-    "Damage additionally increases according",
-    "to the caster's ^CC6600Base Level^777777 and ^CC6600STR^777777,",
-    "can inflict half of the total ^CC6600Critical Damage^777777",
-    "based on the caster's ^CC6600Critical^777777 chance.",
+	- Damage Modifications:
+	"Inflicts more damage when under the ^0000FFAxe Stomp^777777 effect.",
 	
-   * 4th Classes:
-    "Skill Form: ^3F0099Active(AP)^000000",
-    "Recover: ^0054FF AP^000000",
-    "Cost: ^FF0000 AP^000000",
+	"Damage is additionaly increased according",
+	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777.",
 	
-     * Level Descriptions with modifiers:
+	"Damage additionally increases according",
+	"to the caster's ^CC6600Base Level^777777 and ^CC6600STR^777777,",
+	"can inflict half of the total ^CC6600Critical Damage^777777",
+	"based on the caster's ^CC6600Critical^777777 chance.",
 	
-	* Race (More than one line)
+	"Damage additionally increases according",
+	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777,",
+	"can inflict ^CC6600Critical Damage^777777",
+	"based on the caster's ^CC6600Critical^777777 chance.",
+	
+	"Damage additionally increases according",
+	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777,",
+	"can inflict half of the total ^CC6600Critical Damage^777777",
+	"based on half of the caster's ^CC6600Critical^777777 chance.^000000",
+	
+	- 4th Classes:
+	"Skill Form: ^3F0099Active(AP)^000000",
+	"AP Recovery: ^0054FF^000000",
+	"AP Cost: ^FF0000^000000",
+	
+	- Level Descriptions with modifiers:
+	> Race if it doesn't fit in one line:
 	"[Lv 1]: ^777777ATK 950%,",
 	"^0033CCDemi-Human/Angel^777777: ATK 1400%^000000",
 	
-	* Race (one line)
+	> Race if it fit one line:
 	"[Lv 1]: ^777777ATK 1750%/2000% (^0033CCPlant/Insect^000000)^000000",
 	
-	* Skill/Effects
+	> Skill/Effects:
 	"[Lv 1]: ^777777MATK 320+(Mastery Lv x5)%",
 	"^0000FFHoly Shield^777777: MATK 450+(Mastery Lv x10)%",
 ```
-If you have suggestions regarding the colorization, you can even do that, also join the Discord Server for faster responses.
+If you have suggestions regarding the colorization, you can do that.
