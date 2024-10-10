@@ -5,13 +5,14 @@ site_author: 'Houndeye aka llchrisll'
 docs_dir: docs/
 site_dir: _site/
 repo_name: 'llchrisll/ROenglishRE/'
-repo_url: 'https://github.com/llchrisll/ROenglishRE\'
+repo_url: 'https://github.com/llchrisll/ROenglishRE/'
 nav:
     - Home: index.md
     - Project Installation: guides/install.md
-    - Multi-ItemInfo Support: guides/multiitem.md
+    - Additional Guides: 
+      - Multi-ItemInfo Support: guides/multiitem.md
+      - Web Service: guides/webservice.md
     - Addons: addons/index.md
-    - Web Service: guides/webservice.md
     - Customization Guides:
       - Basic Setup: guides/basic_custom.md
       - Custom Files Generator: guides/custom_generator.md
@@ -26,9 +27,10 @@ nav:
       - Enchant System: guides/enchant_system.md
       - Disable Doram: guides/disable_doram.md
     - Contribution: contribution.md
+    - Sprite Folder: spritelist.md
     - FAQ: FAQ.md
     - Links:
-      - Discord: https://discord.gg/sagbPhH
+      - Project Discord: https://discord.gg/sagbPhH
       - rAthena: http://rathena.org/board/
       - Hercules: https://board.herc.ws
     
