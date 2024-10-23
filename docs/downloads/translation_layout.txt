@@ -1,59 +1,133 @@
-#Contribution
-You are free to help me with any kind of translation/work.  
-Finding typos, mistranslations or even making me notice that there are missing items in the project itself.  
-I welcome everything (less work for me).  
-Be sure to post it in the Discord in the #feedback channel.
+Lua Translation
 
-I have made and uploaded a video to help you visually:  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CQ1WJzq990o?si=iKFPB00Ha6h1jgBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## Text Editor Settings
-Most files here, including itemInfo.lua, were edited by using [Notepad++](https://notepad-plus-plus.org/).  
-If you're interested in translating, the default settings of NPP aren't suited for editing itemInfo.lua,  
-because there are 4 type of fonts that came from 4 main official servers (kRO, jRO, twRO and iRO) that could break items' resource names.
-
-Thus, you need to set up your NPP to:  
-1. Open Tab **Settings** > **Preferences** > **New Document**, then change **Encoding** to ANSI  
-2. Open Tab **Settings** > **Preferences** > **MISC.**, then DESELECT **Autodetect character encoding**
-
-That way, when you open itemInfo.lua for the first time, it should look like this:
-![sample1](https://i.ibb.co/wMH3Hyh/Sample1.jpg)
-
-Other things, like choice of font or style, are up to you.
-
-## Translation Layout
-In case you still want to participate and got your Notepad++ or similar ready to go.  
-I would like to ask you to pretty much follow this format:  
-
-You can also download the file in it's full glory [here](../downloads/translation_layout.txt){:download="translation_layout.txt"}.
-
-## itemInfo
-```
-  * Elements:
-    ^FF0000 = Fire
+	Elements:
+	^FF0000 = Fire
 	^0000BB = Water
 	^CC5500 = Earth
 	^33CC00 = Wind
 	^663399 = Poison
 	^777777 = Ghost, Undead, Holy, Shadow and Neutral = iteminfo
 	^009999 = Ghost, Undead, Holy, Shadow and Neutral = skillinfo
-  	
-  * Misc
-    ^CC6600 = Status (STR,AGI,...)/Base Level
+  
+	Misc
+	^CC6600 = Status (STR,AGI,...)/Base Level
 	^0000FF = Numbers
 	^663399 = Debuff (Curse, Freeze,...)
 	^0033CC = Location
 	^FF0000 = Race/Size
 	^0033CC = Job Classes
-
-   * Google Translation of Elements:
-    fury = Fire
+	
+	Google Translation of Elements:
+	fury = Fire
 	cancer = Shadow
 	castle = Holy
 	immortality = Undead
 	flame = Ghost
 
-    unidentifiedDescriptionName = { "Can be identified by using a ^990099Magnifier^000000." },
+Skill Description
+    ^0000FF = Skill Names + Status (Hiding,...)/Elementals/Machines/Creatures
+    ^990099 = Item Names + Skill Requirements (Spirit Spheres, Mounts,...)
+    ^00A100 = Race/Class/Size
+	
+	"Max Level:
+	
+	"^CC3399Requirement: Divine Protection 5^000000",
+	with Job ID before:
+	"4^CC3399Requirement: Heal 2^000000",
+
+	"Skill Form: ^6666CCPassive^000000",
+	"Skill Form: ^3F0099Active^000000",
+	"Skill Form: ^3F0099Active (Toggle)^000000",
+	
+	"Type: ^339900Supportive^000000",
+	"Type: ^339900Recovery^000000",
+	"Type: ^339900Designation^000000",
+	"Type: ^339900Crafting^000000",
+	"Type: ^339900FAW^000000",
+	"Type: ^339900Summon^000000",
+	"Type: ^339900Effect^000000",
+	
+	"Type: ^000099Trap (Hidden)^000000",
+	"Type: ^000099Trap (Visible)^000000",
+	"Type: ^000099Trap^000000",
+	"Type: ^000099Planting^000000",
+	"Type: ^000099Song Skill^000000",
+	"Type: ^000099Dance Skill^000000",
+	"Type: ^000099Ensemble Skill^000000",
+	"Type: ^000099Stance Skill^000000",
+	
+	"Type: ^FF0000Debuff^000000",
+	"Type: ^FF0000Physical Melee^000000",
+	"Type: ^FF0000Physical Ranged^000000",
+	"Type: ^FF0000Special^000000",
+	"Type: ^FF0000Special Physical^000000",
+	"Type: ^FF0000Special Physical Ranged^000000",
+	
+	"Type: ^FF0000Magical^000000",
+	"Type: ^FF0000Magical, AoE^000000",
+	"Type: ^FF0000Magical, Debuff^000000",
+	
+	"Range: ^7777779x9 AoE^000000",
+	"Range: ^777777^000000",
+	
+	"Target: ^6666CCHomunculus^000000",
+	"Target: ^6666CCSummon^000000",
+	"Target: ^6666CCElemental^000000", = Sorcerer Summon
+	"Target: ^6666CCCaster^000000",
+	"Target: ^6666CCGround^000000",
+	"Target: ^6666CC1 Character^000000",
+	"Target: ^6666CCEnemies on the screen^000000",
+	"Target: ^6666CCEnemies around the caster^000000",
+	"Target: ^6666CCAround the caster^000000",
+	"Target: ^6666CCCaster's View Range^000000",
+	"Target: ^6666CCCaster and Party Members^000000",
+	"Target: ^6666CC1 Party Member^000000",
+	
+	"Description: ^777777 ^000000",
+
+	- Damage Modifications:
+	"Inflicts more damage when under the ^0000FFAxe Stomp^777777 effect.",
+	
+	"Damage is additionaly increased according",
+	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777.",
+	
+	"Damage additionally increases according",
+	"to the caster's ^CC6600Base Level^777777 and ^CC6600STR^777777,",
+	"can inflict half of the total ^CC6600Critical Damage^777777",
+	"based on the caster's ^CC6600Critical^777777 chance.",
+	
+	"Damage additionally increases according",
+	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777,",
+	"can inflict ^CC6600Critical Damage^777777",
+	"based on the caster's ^CC6600Critical^777777 chance.",
+	
+	"Damage additionally increases according",
+	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777,",
+	"can inflict half of the total ^CC6600Critical Damage^777777",
+	"based on half of the caster's ^CC6600Critical^777777 chance.^000000",
+	
+	- 4th Classes:
+	"Skill Form: ^3F0099Active(AP)^000000",
+	"AP Recovery: ^0054FF^000000",
+	"AP Cost: ^FF0000^000000",
+	
+	- Level Descriptions with modifiers:
+	> Race if it doesn't fit in one line:
+	"[Lv 1]: ^777777ATK 950%,",
+	"^0033CCDemi-Human/Angel^777777: ATK 1400%^000000",
+	
+	> Race if it fit one line:
+	"[Lv 1]: ^777777ATK 1750%/2000% (^0033CCPlant/Insect^000000)^000000",
+	
+	> Skill/Effects:
+	"[Lv 1]: ^777777MATK 320+(Mastery Lv x5)%",
+	"^0000FFHoly Shield^777777: MATK 450+(Mastery Lv x10)%",
+	
+	> Damage Types:
+
+Item Description
+
+	unidentifiedDescriptionName = { "Can be identified by using a ^990099Magnifier^000000." },
 	
 	- Stats Codings:
 	"Base ^CC6600AGI^000000 at least ^FF000070^000000:",
@@ -87,7 +161,7 @@ You can also download the file in it's full glory [here](../downloads/translatio
 	"Attack Range: x cells",
 	"Prevents ^663399<Status^000000 status.",
 	"Increases resistance to ^663399<Status>^000000 status by %.",
-	"ÂIncreases Attack Speed (decreases After Attack Delay by %).",
+	"Increases Attack Speed (decreases After Attack Delay by %).",
 	"All Basic Stats +",
 	
 	> 4th Classes:
@@ -249,15 +323,15 @@ Equipment Info Layout:
 			"_______________________",
 			"^0000CCType:^000000 ",
 			"^0000CCAttack:^000000 ",
-			"^0000CCDefense:^000000 ", - Removed for Accessories/Costumes
+			"^0000CCDefense:^000000 ", - Removed for Costumes
 			"^0000CCPosition:^000000 ",
 			- Accessory Positions:
 			> kRO:
-			  - Â¾Ã—Â¼Â¼Â¼Â­Â¸Â®(Â¿ÃÃ‚ÃŠ) = Accessory Left
-			  - Â¾Ã—Â¼Â¼Â¼Â­Â¸Â®(Â¿Ã€Â¸Â¥Ã‚ÃŠ) = Accessory Right
+			  - ¾×¼¼¼­¸®(¿ŞÂÊ) = Accessory Left
+			  - ¾×¼¼¼­¸®(¿À¸¥ÂÊ) = Accessory Right
 			> jRO:
-			  - Æ’AÆ’NÆ’ZÆ’TÆ’Å Â[(1) = Accessory Left
-			  - Æ’AÆ’NÆ’ZÆ’TÆ’Å Â[(2) = Accessory Right
+			  - ƒAƒNƒZƒTƒŠ[(1) = Accessory Left
+			  - ƒAƒNƒZƒTƒŠ[(2) = Accessory Right
 			"^0000CCElement:<Element Color Code> ", > Look at the beginning of this file
 			"^0000CCWeight:^000000 ",
 			"^0000CCArmor Level:^000000 ",
@@ -344,18 +418,18 @@ Shadow Equipment:
 	"A pair of shoes worn on top of normal shoes for additional defense. Needs a complete set to have bonus effect.",
 
 Unidentified Item Display Names when certain Resource Name is given:
-	Â¸Â®ÂºÂ» = Ribbon
-	Â¸Ã“Â¸Â®Â¶Ã¬ = Hairband
-	Ã„Â¸ / Ã‡Ã = Hat
-	Â±Ã›Â·Â¡Â½Âº = Glasses
-	Â¸Â¶Â½ÂºÃ…Â© = Mask
-	Ã‡Ã¯Â¸Â§ = Helmet
-	Â°Â¡ÂµÃ¥ = Shield
-	Â½Â´ÃÃ® = Shoes
-	ÃˆÃ„ÂµÃ¥ = Garment
-	Ã…Â¬Â¸Â³ = Accessory
-	Â¹Ã™Â½ÂºÃ…Â¸ÂµÃ¥Â¼Ã’ÂµÃ¥ = Sword
-	Ã„ÃšÃ†Â°Â¼Ã…ÃƒÃ· = Clothing
+	¸®º» = Ribbon
+	¸Ó¸®¶ì = Hairband
+	Ä¸ / ÇŞ = Hat
+	±Û·¡½º = Glasses
+	¸¶½ºÅ© = Mask
+	Çï¸§ = Helmet
+	°¡µå = Shield
+	½´Áî = Shoes
+	ÈÄµå = Garment
+	Å¬¸³ = Accessory
+	¹Ù½ºÅ¸µå¼Òµå = Sword
+	ÄÚÆ°¼ÅÃ÷ = Clothing
 
 Enchant Stones:
 	Item Display Names:
@@ -417,143 +491,41 @@ jRO Egg Description:
 			"- Costume ^000000",
 			"_______________________",
 			"^0000CCWeight:^000000 1"
-```
-## ItemReformSystem
-```
+			
+			
+ItemReformSystem:
 	- InformationString:
-	<B>ÃÂ¶Ã‡Ã• Â°Ã¡Â°Ãº ÃÂ¤ÂºÂ¸ Â¾ÃˆÂ³Â»</B>
+	<B>Á¶ÇÕ °á°ú Á¤º¸ ¾È³»</B>
 	> <B>Combination Result</B>
 	
-	ÃÂ¦Â·ÃƒÂµÂµ :
+	Á¦·Ãµµ :
 	> Refine Level:
 	
-	Â·Â£Â´Ã½ Â¿Ã‰Â¼Ã‡ ÃÂ¤ÂºÂ¸ :
-	Â·Â£Â´Ã½Â¿Ã‰Â¼Ã‡ :
+	·£´ı ¿É¼Ç Á¤º¸ :
+	·£´ı¿É¼Ç :
 	> Random Options:
 	
-	Ã„Â«ÂµÃ¥ Â¹Ã— Ã€ÃÃƒÂ¦Ã†Â® ÃÂ¤ÂºÂ¸ :
+	Ä«µå ¹× ÀÎÃ¦Æ® Á¤º¸ :
 	> Cards:
 	
-	ÂµÃ®Â±Ã ÃÂ¤ÂºÂ¸ :
+	µî±Ş Á¤º¸ :
 	> Grade Rating:
 	
-	ÃÂ¾ÂºÃÂ¿Â© = types granted
+	Á¾ºÎ¿© = types granted
 	
-	Ã€ÃŒÃ€Ã¼ÂµÃŠ = Transfered
-	Ã€Â¯ÃÃ¶ÂµÃŠ = Transfered
-	ÃÂ¦Â°Ã…ÂµÃŠ = Removed
-	ÃÂ¦Â°Ã… = Removed
-	ÃƒÃŠÂ±Ã¢ÃˆÂ­ = Reset
-	Â»Ã¨ÃÂ¦ÂµÃŠ = Deleted
-```
-## EnchantList
-```	
+	ÀÌÀüµÊ = Transfered
+	À¯ÁöµÊ = Transfered
+	Á¦°ÅµÊ = Removed
+	Á¦°Å = Removed
+	ÃÊ±âÈ­ = Reset
+	»èÁ¦µÊ = Deleted
+	
+EnchantList:
 	- SetCaution:
-	Â±Ã¢ÂºÂ» Â¼ÂºÂ°Ã¸ÃˆÂ®Â·Ã¼ > Success Chance:
-	Ã€ÃÃƒÂ¦Ã†Â® Â¼ÂºÂ°Ã¸ÃˆÂ®Â·Ã¼ > Success Chance:
-	Ã€ÃÃƒÂ¦Ã†Â® ÃƒÃŠÂ±Ã¢ÃˆÂ­ ÃˆÂ®Â·Ã¼: > Reset Chance:
-	ÃƒÃŠÂ±Ã¢ÃˆÂ­ ÃˆÂ®Â·Ã¼ > Reset Chance:
-	 Â½Ã‡Ã†ÃÂ½Ãƒ Ã†Ã„Â±Â«Â¾ÃˆÂµÃŠ > , will not be destroyed on failure 
-	 Ã€ÃÃƒÂ¦Ã†Â® ÃƒÃŠÂ±Ã¢ÃˆÂ­ Â°Â¡Â´Ã‰ > Enchantments can be reset
-	 Ã€ÃÃƒÂ¦Ã†Â® ÃƒÃŠÂ±Ã¢ÃˆÂ­ ÂºÃ’Â°Â¡ > Enchantments cannot be reset
-```
-## SkillDescript
-```
-    ^0000FF = Skill Names + Status (Hiding,...)/Elementals/Machines/Creatures
-    ^990099 = Item Names + Skill Requirements (Spirit Spheres, Mounts,...)
-    ^00A100 = Race/Class/Size
-	
-    "Max Level:
- 
-    "^CC3399Requirement: Divine Protection 5^000000",
-     with Job ID before:
-    "4^CC3399Requirement: Heal 2^000000",
-	
-    "Skill Form: ^6666CCPassive^000000",
-    "Skill Form: ^3F0099Active^000000",
-    "Skill Form: ^3F0099Active (Toggle)^000000"
-	
-    "Type: ^339900Supportive^000000",
-    "Type: ^339900Recovery^000000",
-    "Type: ^339900Designation^000000",
-    "Type: ^339900Crafting^000000",
-    "Type: ^339900FAW^000000",
-    "Type: ^339900Summon^000000",
-	
-    "Type: ^000099Trap (Hidden)^000000",
-    "Type: ^000099Trap (Visible)^000000",
-    "Type: ^000099Trap^000000",
-    "Type: ^000099Planting^000000",
-    "Type: ^000099Song Skill^000000",
-    "Type: ^000099Dance Skill^000000",
-    "Type: ^000099Ensemble Skill^000000",
-    "Type: ^000099Stance Skill^000000",
-	
-    "Type: ^FF0000Debuff^000000",
-    "Type: ^FF0000Physical Melee^000000",
-    "Type: ^FF0000Physical Ranged^000000",
-    "Type: ^FF0000Special^000000",
-    "Type: ^FF0000Special Physical^000000",
-    "Type: ^FF0000Special Physical Ranged^000000",
-	
-    "Type: ^FF0000Magical^000000",
-    "Type: ^FF0000Magical, AoE^000000",
-    "Type: ^FF0000Magical, Debuff^000000",
-	
-    "Range: ^7777779x9 AoE^000000",
-    "Range: ^777777^000000",
-	
-    "Target: ^6666CCHomunculus^000000",
-    "Target: ^6666CCSummon^000000",
-    "Target: ^6666CCElemental^000000", = Sorcerer Summon
-    "Target: ^6666CCCaster^000000",
-    "Target: ^6666CCGround^000000",
-    "Target: ^6666CC1 Character^000000",
-    "Target: ^6666CCEnemies on the screen^000000",
-    "Target: ^6666CCEnemies around the caster^000000",
-    "Target: ^6666CCAround the caster^000000",
-    "Target: ^6666CCCaster's View Range^000000",
-    "Target: ^6666CCCaster and Party Members^000000",
-    "Target: ^6666CC1 Party Member^000000",
-	
-	"Description: ^777777 ^000000",
-
-	- Damage Modifications:
-	"Inflicts more damage when under the ^0000FFAxe Stomp^777777 effect.",
-	
-	"Damage is additionaly increased according",
-	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777.",
-	
-	"Damage additionally increases according",
-	"to the caster's ^CC6600Base Level^777777 and ^CC6600STR^777777,",
-	"can inflict half of the total ^CC6600Critical Damage^777777",
-	"based on the caster's ^CC6600Critical^777777 chance.",
-	
-	"Damage additionally increases according",
-	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777,",
-	"can inflict ^CC6600Critical Damage^777777",
-	"based on the caster's ^CC6600Critical^777777 chance.",
-	
-	"Damage additionally increases according",
-	"to the caster's ^CC6600Base Level^777777 and ^CC6600POW^777777,",
-	"can inflict half of the total ^CC6600Critical Damage^777777",
-	"based on half of the caster's ^CC6600Critical^777777 chance.^000000",
-	
-	- 4th Classes:
-	"Skill Form: ^3F0099Active(AP)^000000",
-	"AP Recovery: ^0054FF^000000",
-	"AP Cost: ^FF0000^000000",
-	
-	- Level Descriptions with modifiers:
-	> Race if it doesn't fit in one line:
-	"[Lv 1]: ^777777ATK 950%,",
-	"^0033CCDemi-Human/Angel^777777: ATK 1400%^000000",
-	
-	> Race if it fit one line:
-	"[Lv 1]: ^777777ATK 1750%/2000% (^0033CCPlant/Insect^000000)^000000",
-	
-	> Skill/Effects:
-	"[Lv 1]: ^777777MATK 320+(Mastery Lv x5)%",
-	"^0000FFHoly Shield^777777: MATK 450+(Mastery Lv x10)%",
-```
-If you have suggestions regarding the colorization, you can do that.
+	±âº» ¼º°øÈ®·ü > Success Chance:
+	ÀÎÃ¦Æ® ¼º°øÈ®·ü > Success Chance:
+	ÀÎÃ¦Æ® ÃÊ±âÈ­ È®·ü: > Reset Chance:
+	ÃÊ±âÈ­ È®·ü > Reset Chance:
+	 ½ÇÆĞ½Ã ÆÄ±«¾ÈµÊ > , will not be destroyed on failure 
+	 ÀÎÃ¦Æ® ÃÊ±âÈ­ °¡´É > Enchantments can be reset
+	 ÀÎÃ¦Æ® ÃÊ±âÈ­ ºÒ°¡ > Enchantments cannot be reset
