@@ -51,7 +51,7 @@ In this file you can decide which the paths should be applied and which not:<br/
 If you want to disable certain entries, put an `#` in front of them.<br/>
 ![](../images/warp_config.png)
 
-Update: Duo to the recent changes [DATE](<add commit>) the original file will look different than shown above,  
+Update: Duo to the recent changes [18th January 2025](https://github.com/llchrisll/ROenglishRE/commit/37bab01813ce141f2de4123c9e59d2535ebe82ad) the original file will look different than shown above,  
 until WARP updates from my PR.
 So until the PR were merged or the files updated, please use this to overwrite it:  
 **Note**: This will be deleted afterwards of course.
@@ -144,7 +144,7 @@ Below you can find a list, which files are connected with each other to prevent 
 Just apply the patches you want and it should work!<br/>
 ![](../images/nemo_patches.png)
 
-Update: Duo to the recent changes [DATE](<add commit>) the current patch file needs some adjustments,  
+Update: Duo to the recent changes [18th January 2025](https://github.com/llchrisll/ROenglishRE/commit/37bab01813ce141f2de4123c9e59d2535ebe82ad) the current patch file needs some adjustments,  
 until NEMO updates from my PR.
 So until the PR was merged or the files updated, please follow these steps to make sure the patches will work:
 
