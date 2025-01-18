@@ -17,9 +17,19 @@ dofile("SystemEN/LuaFiles514/itemInfo.lua")
 -- Load the file for custom items and overrides
 -- dofile("SystemEN/itemInfo_C.lua")
 
--- Load the additional files
--- Example: (Yes you could add kRO itemInfo itself, but prepare for lua errors)
---dofile("System/itemInfo_true.lub")
+-- Load additional files, like custom items, overrides and others
+-- New tables needs unique names, to import them you need to copy a "itemInfoMerge"
+-- line at the end and adjust it accordingly.
+
+-- Place all files in the "SystemEN" folder, the rest will be automatically added.
+ImportFiles = {
+	"itemInfo_C.lua", -- custom items
+}
+-- Just define the table postfix, 'tbl_' will be automatically added
+-- Note: The "tbl_override" is handled separately at the end.
+ImportTables = {
+	"custom",
+}
 ```
 
 * `require` is most important and loads the function, which were split from the original iteminfo.  
@@ -28,19 +38,30 @@ which are normally read by newer clients only, like `EffectID` and `costume`.
 * `dofile` loads files additionally to the `itemInfo.lua`.  
 Yes, it is possible to add multiple iteminfos, like what I do:  
 ```
--- Load the additional files
--- Example: (Yes you could add kRO itemInfo itself, but prepare for lua errors)
---dofile("System/itemInfo_true.lub")
-dofile("SystemEN/item_kro.lua")
-dofile("SystemEN/item_jro.lua")
-dofile("SystemEN/item_iro.lua")
-dofile("SystemEN/item_bro.lua")
-dofile("SystemEN/item_idro.lua")
-dofile("SystemEN/item_ghhro.lua")
-dofile("SystemEN/item_twro.lua")
+-- Place all files in the "SystemEN" folder, the rest will be automatically added.
+ImportFiles = {
+	"rotp_c.lua", -- custom items
+	"item_kro.lua", -- untranslated kRO items
+	"item_jro.lua", -- untranslated jRO items
+	"item_iro.lua", -- untranslated iRO items
+	"item_idro.lua", -- untranslated idRO items
+	"item_bro.lua", -- untranslated bRO items
+	"item_twro.lua", -- untranslated twRO items
+	"item_thro.lua" -- untranslated thRO items
+}
+-- Just define the table postfix, 'tbl_' will be automatically added
+ImportTables = {
+	"custom",
+	"kro",
+	"jro",
+	"iro",
+	"idro",
+	"bro",
+	"twro",
+	"thro"
+}
 ```
-![](../images/itemInfo_dofile.png)  
-But to actually merge them into the main `tbl` via the `itemInfoMerge` function, you still need add a few lines which is explained at the end.  
+![](../images/itemInfo_dofile.png)
 
 **Note**  
 These files contain missing and untranslated items from each server and are able to download from my discord in the [contribution](https://discord.com/channels/632937952997277696/721722941464903741/1159571115790827641) channel.
@@ -69,11 +90,7 @@ ServerColour = '^FF0000'
 DisplayItemID = 2
 
 -- Display a database link at bottom of description (true/false)
--- The item id will be automically parsed at the end of 'DbUrl'
--- example: 'https://www.divine-pride.net/database/item/512'
 DisplayDatabase = true
-DbURL = 'https://www.divine-pride.net/database/item/'
-DbDisplay = 'Divine-Pride.net'
 
 ---------------- Additional Configs for custom items ----------------
 -- Display server name
@@ -85,7 +102,7 @@ CustomTagStart = '['
 CustomTagEnd = ']'
 
 -- Server Name for your custom items
-CServerName = 'ExampleRO'
+CServerName = 'ROTP'
 
 -- Define the colour in which the custom Server Name should be shown (custom items)
 -- Format: '^<RRGGBB>'
@@ -94,11 +111,23 @@ CServerName = 'ExampleRO'
 CServerColour = '^00FF00'
 
 -- Database link for custom items, like fluxcp (true/false)
--- The item id will be automically parsed at the end of 'CustomDbUrl'
--- example: 'http://127.0.0.1/?module=item&action=view&id=512'
 DisplayCustomDB = false
-CustomDbUrl = 'http://127.0.0.1/?module=item&action=view&id='
-CustomDbDisplay = 'Database'
+
+----- Table for Database Links -------------------
+ItemDatabase = {
+	["Divine-Pride"] = {
+		Name = "Divine-Pride.net",
+		URL = "https://www.divine-pride.net/database/item/"
+	},
+	["iRO"] = {
+		Name = "iRO Wiki",
+		URL = "https://db.irowiki.org/db/item-info/"
+	},
+	["Custom"] = {
+		Name = "Database",
+		URL = "http://127.0.0.1/?module=item&action=view&id="
+	}
+}
 ```
 
 * `DisplayServer` reads the custom `Server` argument and displays it based on the value you put it on, like this:  
@@ -111,66 +140,41 @@ Example:
 ![](../images/itemInfo_Color.png)  
 * `DisplayItemID` displays the Item ID based on the value you put, like this:  
 ![](../images/itemInfo_ID.png)  
+* `CServerName` holds the name of your Server and works with `DisplayCustomServer`  
 * `DisplayDatabase (true/false)` adds an URL (opens in your webbrowser) to a database.
-![](../images/itemInfo_Link.png)  
-* `DbURL` defines the base url to the database like divine-pride
-* `DbDisplay` defines how the link will be displayed  
-![](../images/itemInfo_Link2.png)  
-* `CServerName` holds the name of your Server and works with `DisplayCustomServer`
-##### itemInfoMerge function
+  ![](../images/itemInfo_Link.png)  
+   The actual links are saved in the `ItemDatabase` table.  
+   `["Divine-Pride"]` being default, but you can also use whatever you want.  
+   Like this project supports items from other servers,  
+   like iRO, we can refer to the iRO Wiki only for iRO items with `["iRO"]`  
+   `Name` defines how the link will be displayed  
+   `URL ` defines the base url to the database like divine-pride
+  ![](../images/itemInfo_Link2.png)  
+
+##### The `DO NOT TOUCH` lines
 ```
-function itemInfoMerge(src, state)
-	if src == nil then
-		return
-	end
-	for ItemID,DESC in pairs(src) do
-		if state == false then
-			if not tbl[ItemID] then
-				tbl[ItemID] = {}
-				tbl[ItemID] = DESC
-			end
-		else
-			tbl[ItemID] = DESC
-		end
-		if src == tbl_custom then
-			tbl[ItemID].Custom = true
-		end
-	end
-	return
+---------------- DON'T TOUCH THE LINES BELOW unless you know what you are doing ----------------
+require('SystemEN/LuaFiles514/rotp_f')
+
+-- Loop through each file in the "ImportFiles" table and load them
+for _, v in ipairs(ImportFiles) do
+	dofile('SystemEN/'..v)
 end
 
--- itemInfoMerge(src, state)
--- @src = table for merge into tbl
--- @state = overwrite existing entries (true) or not (false)
+-- Loop through each table in the "ImportTables" table
+-- and merge them into the main table "tbl" 
+for _, v in ipairs(ImportTables) do
+	F_itemInfoMerge(_G['tbl_'..v], false)
+end
 
---itemInfoMerge(tbl_override, true) -- official overrides
---itemInfoMerge(tbl_custom, false) -- custom items
---itemInfoMerge(tbl, false) -- original kRO iteminfo
+F_itemInfoMerge(tbl_override, true) -- official overrides
+---------------------------------------------------
 ```
-**DON'T TOUCH** the function `itemInfoMerge` unless you know what you are doing.  
-I don't take responsiblity, if you change it without my knowledge.  
+Technically, please **DON'T TOUCH** them.  
+The only thing you can touch or adjust is the last line of it, `F_itemInfoMerge(tbl_override, true)`.  
+This only defines if entries in the `tbl_override` should override or not.  
+Of course , you can add more files the same way.  
 
-Like stated above, you also need to add a new function call with the new table, but be sure that it holds a different name than any present ones.  
-See the commented one as example, which would merge the original kRO iteminfo into the global `tbl`.
-
-My lines mentioned above:  
-```
--- itemInfoMerge(src, state)
--- @src = table for merge into tbl
--- @state = overwrite existing entries (true) or not (false)
-
-itemInfoMerge(tbl_override, true) -- official overrides
-itemInfoMerge(tbl_custom, false) -- custom items
---itemInfoMerge(tbl, false) -- original kro iteminfo
-
-itemInfoMerge(tbl_kro, false) -- kro
-itemInfoMerge(tbl_jro, false) -- jro
-itemInfoMerge(tbl_iro, false) -- iro
-itemInfoMerge(tbl_idro, false) -- idro
-itemInfoMerge(tbl_bro, false) -- bro
-itemInfoMerge(tbl_ghhro, false) -- ghhro
-itemInfoMerge(tbl_twro, false) -- twro
-```
 #### SystemEN\itemInfo_C.lua  
 To keep changing configs easier, I split the tables for custom items and overrides into it's own file: `itemInfo_C.lua`  
 You can rename it as you like as long as you change the name in the first part.
@@ -213,3 +217,9 @@ The only difference is that it now contains every argument (costume and EffectID
 #### SystemEN\LuaFiles514\itemInfo_f.lua  
 This contains the function lines for the itemInfo and will now be the key to overwrite  
 depending on the client you are using.
+
+#### SystemEN\LuaFiles514\rotp_f.lua  
+This is a file, which was added recently ([11th January 2025](https://github.com/llchrisll/ROenglishRE/commit/23073800ac14156cfc6393f5e7892045302e79d6)) to the project.  
+It contains the important and globalized `F_itemInfoMerge` function,
+as well as another functions required for the [Custom Lua Support](https://github.com/llchrisll/ROenglishRE/tree/master/Addons/Custom%20Lua%20Support).  
+In all cases, it's a **DO NOT TOUCH** file, you have been warned.
