@@ -15,7 +15,7 @@ nav:
     - Addons: addons/index.md
     - Customization Guides:
       - Basic Setup: guides/basic_custom.md
-      - Custom Files Generator: guides/custom_generator.md
+      - Cards: guides/cards.md
       - Headgears: guides/headgears.md
       - Weapons: guides/weapons.md
       - Garments: guides/garments.md

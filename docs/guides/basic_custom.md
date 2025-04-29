@@ -52,3 +52,13 @@ The only difference between the first six arguments is that it depends on if the
 - slotCount = Defines the amount of visual card slots
 - ClassNum = Defines the View ID for Headgears/Weapons/Costume Garments and Shields
 - costume = true/false, defines if the item is a costume (showing in a different tab in the storage)
+___
+## Custom Files Generator  
+[Chaos92](https://rathena.org/board/profile/6755-chaos92/), made a simple website to generate the file (lua, yml, etc) with entries for your custom items/npcs/etc based on the item you want to create.  
+Currently it supports a few simple generators.  
+![](../images/Chaos92_Generator.png)  
+
+Link to the guide can be found [here](https://rathena.org/board/topic/140207-multiple-custom-files-generator/),
+here the actual [generator](https://x-files.amirazman.my/customfilegenerator/).
+
+If you have issues, suggestions or anything else, feel free to contact him about it :).
