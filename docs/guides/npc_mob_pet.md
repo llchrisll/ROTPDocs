@@ -1,3 +1,7 @@
+
+Note: This will only explain the client side.
+___
+This is just a simple explanation, what each lua file is for.
 ##### Lua Files
  
 - `data\luafiles514\lua files\datainfo\npcidentity.lub`  

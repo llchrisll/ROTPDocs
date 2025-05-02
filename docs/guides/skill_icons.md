@@ -1,3 +1,10 @@
+
+Note: This will only explain the client side, please visit the original topic for more information about the server-side of it, if it's explained.  
+
+Disclaimer  
+I don't take any credit for the copied guide.
+___
+
 [Original by iraciz](https://rathena.org/board/topic/97954-guide-adding-custom-icons-to-skills/#comment-268363)
 
 First of all you need the data files, those are:

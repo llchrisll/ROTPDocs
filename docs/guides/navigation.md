@@ -1,3 +1,9 @@
+
+Note: This will only explain the client side, please visit the original topic for more information about the server-side of it, if it's explained.  
+
+Disclaimer  
+I don't take any credit for the copied guide.
+___
 [Original by Shinsei](https://rathena.org/board/topic/122544-guide-fresh-all-in-one-guide-to-implementing-maps-with-worldmap/#comment-372759)
 
 1. `datamappostable.txt`  

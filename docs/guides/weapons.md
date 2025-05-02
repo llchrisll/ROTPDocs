@@ -1,6 +1,9 @@
-Adding a custom Weapon can be done with it's own animation files or without.  
 
-Custom Animation Files
+Note: This will only explain the client side.
+___
+
+Adding a custom Weapon can be done with it's own animation files or without.  
+But you only have deal with the `weapontable.lub` if you have those.  
   
    1. Open the `data\luafiles514\lua files\datainfo\weapontable.lub`  
      (See explanation below)  
@@ -21,6 +24,8 @@ Custom Animation Files
         While you can duplicate them and just rename it for a different class and gender, but the animations won't match the class' movement at all.  
         The file name depends on your `WeaponNameTable` entry above.  
         See [Folder List](https://github.com/llchrisll/ROResourceCollection/blob/master/spritelist.md) for info.
+   7. itemInfo.lua  
+      Then you only have to assign the `ClassNum` to your custom weapon, which is the value of `WEAPONTYPE_CustomWeapon` you declared in `Weapon_IDs` table, like 103 as example.  
 
 ##### Explanation
 - Weapon_IDs = Table for each weapon type  

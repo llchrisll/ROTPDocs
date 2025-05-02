@@ -1,3 +1,9 @@
+
+Note: This will only explain the client side, please visit the original topic for more information about the server-side of it, if it's explained.  
+
+Disclaimer  
+I don't take any credit for the copied guide.
+___
 [Original by khyle650](https://rathena.org/board/topic/132752-guide-add-new-hateffect-aura-style/#comment-412723)
 
 Note I will use `c_hateffect` and `HAT_EF_c_hateffect` as example
@@ -20,7 +26,7 @@ Note I will use `c_hateffect` and `HAT_EF_c_hateffect` as example
         isAdjustSizeWhenShrinkState = true  
     }, 
 ```
-##### Explanation
+### Explanation
 
 - resourceFileName path to the datatextureeffect folder (effect nameeffect_name.str)  
 - IsIgnoreRiding true makes the hateffect not to adjust to your mount  

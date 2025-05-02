@@ -1,10 +1,15 @@
+
+Note: This will only explain the client side, please visit the original topic for more information about the server-side of it, if it's explained.
+
+Disclaimer  
+I don't take any credit for the copied guide.
+___
 [Original by khyle650](https://rathena.org/board/topic/132764-the-new-enchant-system-cannot-be-openedused-correctly/#comment-412806)  
 You need to add an entry in `data\luafiles514\lua files\ItemDBNameTbl.lub` of your item  
 and the enchant details in `data\luafiles514\lua files\Enchant\EnchantList.lub`.
 
 ### ItemDBNameTbl.lub Example
 ```
-	F_Ein_Weapon_Hammer = 102124,
 	Diabolus_Armor = 2375,
 	Diabolus_Boots = 2433,
 	Diabolus_Helmet = 5808,

@@ -1,11 +1,12 @@
 # Customization
-In the drop-down list on the left you can find several guides, tho I only provide the client-side steps required to make it work,  
-please visit the original topic, if there is one, for more information about the server-side of it.
+In the drop-down list on the left you can find several guides.  
 
 Disclaimer  
 I don't take any credit for any of the copied guides.
 ___
 ## Basic Setup
+This will only explain the client side, please visit the original topic, if there is one, for more information about the server-side of it.  
+
 Before editing any kind of lua file in this project, I would recommend to check the [Text Editor Settings](https://llchrisll.github.io/ROTPDocs/contribution/#text-editor-settings).  
 As I use Notepad++, I can only provide a "guide" for that.
 
