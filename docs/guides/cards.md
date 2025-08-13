@@ -2,7 +2,7 @@
 Note: This will only explain the client side.
 ___
 Adding your own cards is no different than an regular ETC item.  
-Like explained in the [Basic Setup](../basic_custom/#basic-setup), you need the basic description in your itemInfo.lub.  
+Like explained in the [Basic Setup](basic_custom.md#basic-setup), you need the basic description in your itemInfo.lub.  
 
 They only have a global sprites/texture files by official means,  
 if you have custom card sprites, of course you are free to use those instead.  

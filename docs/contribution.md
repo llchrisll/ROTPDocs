@@ -23,6 +23,6 @@ Other things, like choice of font or style, are up to you.
 
 ## Translation Layout
 In case you still want to participate and got your Notepad++ or similar ready to go.  
-I would like to ask you to pretty much follow the format by downloading the [translation_layout.txt](../downloads/translation_layout.txt){:download="translation_layout.txt"}.
+I would like to ask you to pretty much follow the format by downloading the [translation_layout.txt](downloads/translation_layout.txt){:download="translation_layout.txt"}.
 
 If you have suggestions regarding the colorization, you can do that.

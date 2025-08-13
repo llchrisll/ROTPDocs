@@ -12,7 +12,10 @@ nav:
     - Additional Guides: 
       - Multi-ItemInfo Support: guides/multiitem.md
       - Web Service: guides/webservice.md
-    - Addons: addons/index.md
+    - Addons:
+      - jRO Enchants Display: addons/jro_enchants.md
+      - Custom Lua Support: addons/cls.md
+      - Legacy Files: addons/legacy.md
     - Customization Guides:
       - Basic Setup: guides/basic_custom.md
       - Cards: guides/cards.md
@@ -29,6 +32,9 @@ nav:
     - Contribution: contribution.md
     - Sprite Folder: spritelist.md
     - FAQ: FAQ.md
+    - Probabilities:
+      - Refine Probabilities: refine_prob_kro.md
+      - Grade Probabilities: grade_prob_kro.md
     - Links:
       - Project Discord: https://discord.gg/sagbPhH
       - rAthena: http://rathena.org/board/
@@ -118,6 +124,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - tables
 
 plugins:
   - search:

@@ -1,7 +1,7 @@
 This list is based on the list from [RateMyServer.net](https://ratemyserver.net/index.php?page=riot_bible_main),  
 but only provides the base folders and class names.  
 
-You can download it [here](../downloads/spritelist.txt){:download="spritelist.txt"} as well.
+You can download it [here](downloads/spritelist.txt){:download="spritelist.txt"} as well.
 
 ---
 ## Folders
