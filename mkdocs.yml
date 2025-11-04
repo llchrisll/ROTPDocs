@@ -12,6 +12,7 @@ nav:
     - Additional Guides: 
       - Multi-ItemInfo Support: guides/multiitem.md
       - Web Service: guides/webservice.md
+      - Equipment Properties: guides/equip_prop.md
     - Addons:
       - jRO Enchants Display: addons/jro_enchants.md
       - Custom Lua Support: addons/cls.md
