@@ -137,23 +137,23 @@ _**Files:**_ /Class_Gender.act/.spr
 * 헌터 = Hunter
 * 화이트스미스 = Whitesmith
 -----------------------------------------
-Note: -Class- needs to be replaced with the respective name from above
-* -Class-_riding_ = Halter Sprites for 4th Classes
+Note: <Class> needs to be replaced with the respective name from above
+* <Class>_riding_ = Halter Sprites for 4th Classes
 * frog_kagerou = Frog Mount for Kagerou
 * frog_oboro = Frog Mount for Oboro
 * peco_rebellion = Bike Mount for Rebellion (why Peco?)
 
-* -Class-포링 = Poring Halter Sprites (Novice/Super Novice+Taekwon)
-* -Class-알파카 = Alpaca Halter Sprites (Acolyte Classes)
-* -Class-멧돼지 = Savage Halter Sprites (Merchant Classes)
-* 두꺼비-Class- = Frog Halter Sprites (Ninja/Soul Linker)
-* 사자-Class- = Lion Halter Sprites (Knight Classes)
-* 여우-Class-= Fox Halter Sprites (Magician Classes)
-* 켈베로스-Class- = Hyuena Halter Sprites (Thief Classes)
-* 타조-Class- = Ostrich Halter Sprites (Archer Classes)
-* 해태-Class- = Haetae Halter Sprites (Star Emperor/Soul Reaper)
+* <Class>포링 = Poring Halter Sprites (Novice/Super Novice+Taekwon)
+* <Class>알파카 = Alpaca Halter Sprites (Acolyte Classes)
+* <Class>멧돼지 = Savage Halter Sprites (Merchant Classes)
+* 두꺼비<Class> = Frog Halter Sprites (Ninja/Soul Linker)
+* 사자<Class> = Lion Halter Sprites (Knight Classes)
+* 여우<Class>= Fox Halter Sprites (Magician Classes)
+* 켈베로스<Class> = Hyuena Halter Sprites (Thief Classes)
+* 타조<Class> = Ostrich Halter Sprites (Archer Classes)
+* 해태<Class> = Haetae Halter Sprites (Star Emperor/Soul Reaper)
 -----------------------------------------
-* -Class-_chicken_ = Mount Sprites for Dragon Knight and Imperial Guard
+* <Class>_chicken_ = Mount Sprites for Dragon Knight and Imperial Guard
 * meister_madogear1 = Old Madogear for Meister
 * meister_madogear2 = New Madogear for Meister
 * wolf_windhawk = Wind Hawk (Wolf)
