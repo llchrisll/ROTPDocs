@@ -49,11 +49,12 @@ SkillGroup = {
 ```
 ### Types and Stat table
 There are 5 `Type` entries:
- * `ammo`
- * `armor`
- * `Mweapon`
- * `Rweapon`
- * `card`
+
+ * `ammo` = Ammunition
+ * `armor` = Armor
+ * `Mweapon` = Melee Weapons
+ * `Rweapon` = Ranged Weapons
+ * `card` = Cards
 
 The `Stat` table contains only numeric values and using less values than noted, will end up in an error.  
 So fill them with a 0.
@@ -70,7 +71,7 @@ Must contain 17 values.
 
 	Type = "armor",
 	Stat = {
-		DEF,
+		<Armor Defense>,
 		STR,
 		INT,
 		VIT,
@@ -95,7 +96,7 @@ Must contain 17 values.
 	Stat = {
 		<Element>,
 		<Weapon Type>,
-		ATK,
+		<Weapon Attack>,
 		MATK,
 		STR,
 		INT,
@@ -117,7 +118,7 @@ Must contain 15 values.
 	Type = "Rweapon",
 	Stat = {
 		<Weapon Type>,
-		ATK,
+		<Weapon Attack>,
 		STR,
 		INT,
 		VIT,
