@@ -1,0 +1,2412 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ROTP and Client-side Guides">
+      
+      
+        <meta name="author" content="Houndeye aka llchrisll">
+      
+      
+        <link rel="canonical" href="https://llchrisll.github.io/ROTPDocs/guides/equip_prop/">
+      
+      
+        <link rel="prev" href="../webservice/">
+      
+      
+        <link rel="next" href="../../addons/jro_enchants/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Equipment Properties - RO Translation Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-layout" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RO Translation Project Documentation" class="md-header__button md-logo" aria-label="RO Translation Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RO Translation Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Equipment Properties
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/llchrisll/ROenglishRE/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llchrisll/ROenglishRE/
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RO Translation Project Documentation" class="md-nav__button md-logo" aria-label="RO Translation Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RO Translation Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/llchrisll/ROenglishRE/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llchrisll/ROenglishRE/
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Additional Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Additional Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiitem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-ItemInfo Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webservice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Equipment Properties
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Equipment Properties
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Layout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-and-stat-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and Stat table
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and Stat table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ammo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equipment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melee-weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Melee Weapons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranged-weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ranged Weapons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onstartequip-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      OnStartEquip = function()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OnStartEquip = function()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple calls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-function-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced function calls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced function calls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Lua
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Addons
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../addons/jro_enchants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    jRO Enchants Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../addons/cls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Lua Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../addons/legacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Legacy Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Customization Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Customization Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic_custom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../headgears/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Headgears
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weapons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weapons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../garments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Garments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hateffects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hat Effects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../npc_mob_pet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mob/NPC/Pet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../navigation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navigation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill_icons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Skill Icons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random_options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random Options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enchant_system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enchant System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disable_doram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disable Doram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spritelist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprite Folder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probabilities
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Probabilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refine_prob_kro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refine Probabilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grade_prob_kro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grade Probabilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Links
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Links
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discord.gg/sagbPhH" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Discord
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://rathena.org/board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rAthena
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://board.herc.ws" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hercules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Layout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-and-stat-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types and Stat table
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types and Stat table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ammo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equipment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melee-weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Melee Weapons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranged-weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ranged Weapons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onstartequip-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      OnStartEquip = function()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OnStartEquip = function()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple calls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-function-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced function calls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced function calls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Lua
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  
+  
+
+
+  <h1>Equipment Properties</h1>
+
+<p>This page contains information about the EquipmentProperties.lub I collected and tested myself to some degree.<br />
+For advanced usage (like refine level) you need some basic lua knowledge as well, similar to NPC scripting in any emulator.</p>
+<p><strong>Note: There might be mistakes and misunderstandings in there, if you have more information about it, let me know.</strong></p>
+<hr />
+<h2 id="file-layout">File Layout<a class="headerlink" href="#file-layout" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[&lt;ItemID&gt;] = {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>	Type = &quot;&quot;,
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>	Stat = {
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      20,
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>      0,
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      0,
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>      0,
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      0,
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>      0,
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>      0,
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>      0,
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>      0,
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>      0,
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>      1,
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>      0,
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>      0,
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>      0,
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>      0,
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>      0,
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>      0
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>	},
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>	OnStartEquip = function()
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>		&lt;functions from below&gt;
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>	end,
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>	OnStartPretendEquip = true, -- I don&#39;t have a clue what this is for
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    Combiitem = { &lt;ComboID&gt;,... } -- Contains unique ID&#39;s representing an Combo, there is a separate table later one to declare the items and item effect. IDs start with 2000000000
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>},
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>Combiitem = {
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>	[&lt;ComboID&gt;] = {
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>		Item = { &lt;ItemID&gt;,&lt;ItemID&gt;,... }, -- contains the items which trigger the combo
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>		OnStartEquip = function()
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>			&lt;functions&gt;
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>		end
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>	},
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>}
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>SkillGroup = {
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>  [&lt;SkillGroup&gt;] = {&lt;SkillID&gt;},
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>}
+</span></code></pre></div>
+<h3 id="types-and-stat-table">Types and Stat table<a class="headerlink" href="#types-and-stat-table" title="Permanent link">&para;</a></h3>
+<p>There are 5 <code>Type</code> entries:</p>
+<ul>
+<li><code>ammo</code> = Ammunition</li>
+<li><code>armor</code> = Armor</li>
+<li><code>Mweapon</code> = Melee Weapons</li>
+<li><code>Rweapon</code> = Ranged Weapons</li>
+<li><code>card</code> = Cards</li>
+</ul>
+<p>The <code>Stat</code> table contains only numeric values and using less values than noted, will end up in an error.<br />
+So fill them with a 0.</p>
+<h4 id="ammo">Ammo<a class="headerlink" href="#ammo" title="Permanent link">&para;</a></h4>
+<p>As far as I saw, it won't get displayed in the UI.<br />
+Must contain 2 values.</p>
+<div class="language-text highlight"><pre><span></span><code>Type = &quot;ammo&quot;,
+Stat = { 
+    Element, Attack Damage
+}
+</code></pre></div>
+<h4 id="equipment">Equipment<a class="headerlink" href="#equipment" title="Permanent link">&para;</a></h4>
+<p>Must contain 17 values.</p>
+<div class="language-text highlight"><pre><span></span><code>Type = &quot;armor&quot;,
+Stat = {
+    &lt;Armor Defense&gt;,
+    STR,
+    INT,
+    VIT,
+    DEX,
+    AGI,
+    LUK,
+    MaxHP,
+    MaxSP,
+    &lt;Armor Level&gt;,
+    MDEF,
+    POW,
+    SPL,
+    STA,
+    WIS,
+    CON,
+    CTR
+}
+</code></pre></div>
+<h4 id="melee-weapons">Melee Weapons<a class="headerlink" href="#melee-weapons" title="Permanent link">&para;</a></h4>
+<p>Must contain 17 values.</p>
+<div class="language-text highlight"><pre><span></span><code>Type = &quot;Mweapon&quot;,
+Stat = {
+    &lt;Element&gt;,
+    &lt;Weapon Type&gt;,
+    &lt;Weapon Attack&gt;,
+    MATK,
+    STR,
+    INT,
+    VIT,
+    DEX,
+    AGI,
+    LUK,
+    &lt;Weapon Level&gt;,
+    POW,
+    SPL,
+    STA,
+    WIS,
+    CON,
+    CTR
+}
+</code></pre></div>
+<h4 id="ranged-weapons">Ranged Weapons<a class="headerlink" href="#ranged-weapons" title="Permanent link">&para;</a></h4>
+<p>Must contain 15 values.</p>
+<div class="language-text highlight"><pre><span></span><code>Type = &quot;Rweapon&quot;,
+Stat = {
+    &lt;Weapon Type&gt;,
+    &lt;Weapon Attack&gt;,
+    STR,
+    INT,
+    VIT,
+    DEX,
+    AGI,
+    LUK,
+    &lt;Weapon Level&gt;,
+    POW,
+    SPL,
+    STA,
+    WIS,
+    CON,
+    CTR
+}
+</code></pre></div>
+<h4 id="cards">Cards<a class="headerlink" href="#cards" title="Permanent link">&para;</a></h4>
+<p>Does not require a <code>Stat</code> table, only the <code>OnStartEquip</code> function</p>
+<div class="language-text highlight"><pre><span></span><code>Type = &quot;card&quot;,
+OnStartEquip = function()
+</code></pre></div>
+<h3 id="onstartequip-function">OnStartEquip = function()<a class="headerlink" href="#onstartequip-function" title="Permanent link">&para;</a></h3>
+<p>This function handles all the effects outside of the <code>Stat</code> table, like refine effects and other parameters.<br />
+After this you will find some notes about <code>&lt;Element&gt;</code>,<code>&lt;Race</code> and so on.<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>OnStartEquip = function()
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>	&lt;functions&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>end
+</span></code></pre></div></p>
+<h4 id="simple-calls">Simple calls<a class="headerlink" href="#simple-calls" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AddExtParam(0, <code>&lt;Parameter&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases <code>&lt;Parameter&gt;</code> by <code>&lt;Value&gt;</code></br>(% or flat amount based on <code>&lt;Parameter&gt;</code>)</td>
+</tr>
+<tr>
+<td>SubExtParam(0, <code>&lt;Parameter&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases <code>&lt;Parameter&gt;</code> by <code>&lt;Value&gt;</code></br>(% or flat amount based on <code>&lt;Parameter&gt;</code>)</td>
+</tr>
+<tr>
+<td>AddAttrTolerace(<code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases damage taken from <code>&lt;Element&gt;</code> attacks by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubAttrTolerace(<code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases resistance against <code>&lt;Element&gt;</code> attacks by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>addattrtolerace(<code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>, 1)</td>
+<td>Decreases damage taken from melee attacks of <code>&lt;Element&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>subattrtolerace(<code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>, 1)</td>
+<td>Increases damage taken from melee attacks of <code>&lt;Element&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddRaceTolerace(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases damage against <code>&lt;Race&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubRaceTolerace(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases damage taken from <code>&lt;Race&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddDamage_SKID(1, <code>&lt;Skill ID&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases damage of <code>&lt;Skill&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubDamage_SKID</td>
+<td>not setup</td>
+</tr>
+<tr>
+<td>AddDamage_CRI(1, <code>&lt;Value&gt;</code>)</td>
+<td>Increases Critical Damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubDamage_CRI(1, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases Critical Damage by <code>&lt;Value&gt;</code>% (not working)</td>
+</tr>
+<tr>
+<td>AddCRIPercent_Race(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases Critical against <code>&lt;Race&gt;</code> enemies by <code>&lt;Value&gt;</code>/10%</td>
+</tr>
+<tr>
+<td>SubCRIPercent_Race(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases Critical against <code>&lt;Race&gt;</code> enemies by <code>&lt;Value&gt;</code>/10%</td>
+</tr>
+<tr>
+<td>AddDamage_Size(1, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases physical damage against <code>&lt;Size&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMDamage_Size(1, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases magical damage against <code>&lt;Size&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddDamage_Size(0, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases physical damage taken from <code>&lt;Size&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMDamage_Size(0, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code></td>
+<td>Increases magical damage taken from <code>&lt;Size&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubDamage_Size(0, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code></td>
+<td>Decreases physical damage taken from <code>&lt;Size&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubMDamage_Size(0, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code></td>
+<td>Decreases magical damage taken from <code>&lt;Size&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddDamage_Property(1, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code></td>
+<td>Increases physical damage against <code>&lt;Element&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMDamage_Property(1, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code></td>
+<td>Increases magical damage against <code>&lt;Element&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddDamage_Property(0, <code>&lt;Size&gt;</code>,<code>&lt;Value&gt;</code>)</td>
+<td>Increases physical damage taken from <code>&lt;Element&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMDamage_Property(0, <code>&lt;Size&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases magical damage taken from <code>&lt;Element&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubDamage_Property(0, <code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases physical damage taken from <code>&lt;Element&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubMDamage_Property(0, <code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases magical damage taken from <code>&lt;Element&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubDamage_Property(1, <code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases physical damage against <code>&lt;Element&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubMDamage_Property(1, <code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases magical damage against <code>&lt;Element&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMdamage_Class(<code>&lt;Class&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases physical and magical damage against <code>&lt;Class&gt;</code> monsters by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubMdamage_Class(<code>&lt;Class&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases physical and magical damage against <code>&lt;Class&gt;</code> monsters by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMdamage_Race(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases magical damage against <code>&lt;Race&gt;</code> monsters by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubMdamage_Race(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases magical damage against <code>&lt;Race&gt;</code> monsters by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddSkillMDamage(<code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases magical damage with <code>&lt;Element&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubSkillMDamage(<code>&lt;Element&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases magical damage with <code>&lt;Element&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMeleeAttackDamage(1, <code>&lt;Value&gt;</code>)</td>
+<td>Increases melee attack damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMeleeAttackDamage(0, <code>&lt;Value&gt;</code>)</td>
+<td>Increases damage taken from melee attacks by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubMeleeAttackDamage(1, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases melee attack damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddRangeAttackDamage(1, <code>&lt;Value&gt;</code>)</td>
+<td>Increases ranged attack damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddRangeAttackDamage(0, <code>&lt;Value&gt;</code>)</td>
+<td>Increases damage taken from ranged attacks by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubRangeAttackDamage(1, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases ranged attack damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddBowAttackDamage(1, <code>&lt;Value&gt;</code>)</td>
+<td>Increases damage with bow class weapons by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubBowAttackDamage(1, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases damage with bow class weapons by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddSpellDelay(<code>&lt;Value&gt;</code>)</td>
+<td>Increases after skill delay by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubSpellDelay(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases after skill delay by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddSkillDelay(<code>&lt;Skill ID&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases skill cooldown of Skill by <code>&lt;Value&gt;</code> milliseconds</td>
+</tr>
+<tr>
+<td>SubSkillDelay(<code>&lt;Skill ID&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases skill cooldown of Skill by <code>&lt;Value&gt;</code> milliseconds</td>
+</tr>
+<tr>
+<td>AddHealValue(<code>&lt;Value&gt;</code>)</td>
+<td>Increases healing effectivness by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubHealValue(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases healing effectivness by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddHealModifyPercent(<code>&lt;Value&gt;</code>)</td>
+<td>Increases recovery amount of restorative items by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubHealModifyPercent(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases recovery amount of restorative items by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddSpellCastTime(<code>&lt;Value&gt;</code>)</td>
+<td>Increases Variable Casting Time by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubSpellCastTime(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases Variable Casting Time by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>ClassAddDamage(<code>&lt;Class&gt;</code>, 1, <code>&lt;Value&gt;</code>)</td>
+<td>Increases physical damage against enemies of <code>&lt;Class&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>ClassAddDamage(<code>&lt;Class&gt;</code>, 0, <code>&lt;Value&gt;</code>)</td>
+<td>Increases physical damage taken from <code>&lt;Class&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>ClassSubDamage(<code>&lt;Class&gt;</code>, 0, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases damage taken from <code>&lt;Class&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>ClassSubDamage(<code>&lt;Class&gt;</code>, 1, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases physical damage against <code>&lt;Class&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>RaceAddDamage(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases physical damage against enemies of <code>&lt;Race&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>RaceSubDamage(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases physical damage against enemies of <code>&lt;Race&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>RaceAddDamageSelf(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases physical damage taken from <code>&lt;Race&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>RaceSubDamageSelf(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases physical damage taken from <code>&lt;Race&gt;</code> enemies by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SetIgnoreDefRace_Percent(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>ignores <code>&lt;Value&gt;</code>% def of <code>&lt;Race&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>SetIgnoreMdefRace_Percent(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>ignores <code>&lt;Value&gt;</code>% mdef of <code>&lt;Race&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>SetIgnoreDefClass_Percent(<code>&lt;Class&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>ignores <code>&lt;Value&gt;</code>% def of <code>&lt;Class&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>SetIgnoreMdefClass(<code>&lt;Class&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>ignores % mdef of <code>&lt;Class&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>SetIgnoreDEFRace(<code>&lt;Race&gt;</code>)</td>
+<td>ignores 100% def of <code>&lt;Race&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>SetIgnoreMdefRace(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>ignores <code>&lt;Value&gt;</code>% mdef of <code>&lt;Race&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>AddIgnore_RES_RacePercent(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>ignores <code>&lt;Value&gt;</code>% RES of <code>&lt;Race&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>SubIgnore_RES_RacePercent(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases the <code>&lt;Value&gt;</code>% of ignored RES of <code>&lt;Race&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>AddIgnore_MRES_RacePercent(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>ignores <code>&lt;Value&gt;</code>% MRES of <code>&lt;Race&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>SubIgnore_MRES_RacePercent(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases the <code>&lt;Value&gt;</code>% of ignored MRES of <code>&lt;Race&gt;</code> enemies</td>
+</tr>
+<tr>
+<td>AddSpecificSpellCastTime(<code>&lt;Skill ID&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases Variable Casting Time of Skill by <code>&lt;Value&gt;</code>% (does not overlapp with similar effects)</td>
+</tr>
+<tr>
+<td>SubSpecificSpellCastTime(<code>&lt;Skill ID&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases Variable Casting Time of Skill by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddSFCTEquipPermill</td>
+<td>not setup</td>
+</tr>
+<tr>
+<td>SubSFCTEquipPermill(<code>&lt;Item ID&gt;</code>, <code>&lt;Value&gt;</code>, <code>&lt;Skill Group&gt;</code>)</td>
+<td>Decreases Fixed Casting Time by <code>&lt;Value&gt;</code>%, 3<sup>rd</sup> is optional and can be 0 (not acculmative with effects of other items)</td>
+</tr>
+<tr>
+<td>SubSFCTEquipAmount(<code>&lt;Item ID&gt;</code>, <code>&lt;Value&gt;</code>, <code>&lt;Skill Group&gt;</code>)</td>
+<td>Decreases Fixed Casting Time by <code>&lt;Value&gt;</code> milliseconds, 3<sup>rd</sup> is optional and can be 0 (not acculmative with effects of other items)</td>
+</tr>
+<tr>
+<td>EnableSkill(<code>&lt;Skill ID&gt;</code>, <code>&lt;Skill Level&gt;</code>)</td>
+<td>Gives <code>&lt;Skill ID&gt;</code> with Level <code>&lt;Skill Level&gt;</code></td>
+</tr>
+<tr>
+<td>DisableSkill</td>
+<td>not setup</td>
+</tr>
+<tr>
+<td>AddEXPPercent_KillRace(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases experience gained for Race monsters by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubEXPPercent_KillRace(<code>&lt;Race&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases experience gained for Race monsters by <code>&lt;Value&gt;</code>% (will not go negative)</td>
+</tr>
+<tr>
+<td>AddHPdrain(<code>&lt;Chance&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases the chance to absorb HP of <code>&lt;Value&gt;</code>% inflicted damage by <code>&lt;Chance&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubHPdrain(<code>&lt;Chance&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases the chance to absorb HP of <code>&lt;Value&gt;</code>% inflicted damage by <code>&lt;Chance&gt;</code>% (chance will not go negative, 2<sup>nd</sup> value is optional but will be added to existing values)</td>
+</tr>
+<tr>
+<td>AddSPdrain(<code>&lt;Chance&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases the chance to absorb SP of <code>&lt;Value&gt;</code>% inflicted damage by <code>&lt;Chance&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubSPdrain(<code>&lt;Chance&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases the chance to absorb SP of <code>&lt;Value&gt;</code>% inflicted damage by <code>&lt;Chance&gt;</code>% (chance will not go negative, 2<sup>nd</sup> value is optional but will be added to existing values))</td>
+</tr>
+<tr>
+<td>AddGuideAttack(<code>&lt;Value&gt;</code>)</td>
+<td>Increases Perfect Hit chance by <code>&lt;Value&gt;</code></td>
+</tr>
+<tr>
+<td>SubGuideAttack(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases Perfect Hit chance by <code>&lt;Value&gt;</code> (will not go negative)</td>
+</tr>
+<tr>
+<td>AddSPconsumption(<code>&lt;Value&gt;</code>)</td>
+<td>Increases SP Consumption by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubSPconsumption(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases SP Consumption by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>addspconsumption(<code>&lt;Value&gt;</code>, <code>&lt;Skill ID&gt;</code>)</td>
+<td>Increases SP Consumption of <code>&lt;Skill ID&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>subspconsumption(<code>&lt;Value&gt;</code>, <code>&lt;Skill ID&gt;</code>)</td>
+<td>Decreases SP Consumption of <code>&lt;Skill ID&gt;</code> by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddSkillSP(<code>&lt;Skill ID&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Increases SP Consumption of <code>&lt;Skill ID&gt;</code> by <code>&lt;Value&gt;</code></td>
+</tr>
+<tr>
+<td>SubSkillSP(<code>&lt;Skill ID&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td>Decreases SP Consumption of <code>&lt;Skill ID&gt;</code> by <code>&lt;Value&gt;</code></td>
+</tr>
+<tr>
+<td>AddDamage_HIT(1,<code>&lt;Value&gt;</code>)</td>
+<td>Increases Hit Physical Damage (Normal Physical Damage) by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubDamage_HIT(1,<code>&lt;Value&gt;</code>)</td>
+<td>Decreases received Hit Physical Damage (Normal Physical Damage) by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddReflectMagic(<code>&lt;Value&gt;</code>)</td>
+<td>Increases the chance to reflect magic damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubReflectMagic(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases the chance to reflect magic damage by <code>&lt;Value&gt;</code>% (will not go negative)</td>
+</tr>
+<tr>
+<td>AddReflectTolerace(<code>&lt;Value&gt;</code>)</td>
+<td>Increases damage taken from reflected damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubReflectTolerace(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases damage taken from reflected damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>AddMeleeAttackReflect(<code>&lt;Value&gt;</code>)</td>
+<td>Increases the chance to reflect physical damage by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubMeleeAttackReflect(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases the chance to reflect physical damage by <code>&lt;Value&gt;</code>% (will not go negative)</td>
+</tr>
+<tr>
+<td>AddReceiveItem_Equip(<code>&lt;Value&gt;</code>)</td>
+<td>Increases item drop rate by <code>&lt;Value&gt;</code>%</td>
+</tr>
+<tr>
+<td>SubReceiveItem_Equip(<code>&lt;Value&gt;</code>)</td>
+<td>Decreases item drop rate by <code>&lt;Value&gt;</code>% (will not go negative)</td>
+</tr>
+<tr>
+<td>AddNeverknockback(1)</td>
+<td>Prevents Knockback effect (1 = true)</td>
+</tr>
+<tr>
+<td>SubNeverknockback(1)</td>
+<td>not setup</td>
+</tr>
+<tr>
+<td>NoDispell(1)</td>
+<td>Skill casting can't be interrupted (1 = true)</td>
+</tr>
+<tr>
+<td>PerfectDamage(1)</td>
+<td>Nullifies weapon size penalty (1 = true)</td>
+</tr>
+<tr>
+<td>SplashAttack(1)</td>
+<td>Enables splash damage (1 = true)</td>
+</tr>
+<tr>
+<td>Clairvoyance(1)</td>
+<td>Enables to see hidden enemeis (1 = true)</td>
+</tr>
+<tr>
+<td>Magicimmune(1)</td>
+<td>Nullifies Magical Damage/Effects (1 = true)</td>
+</tr>
+<tr>
+<td>NoJamstone(1)</td>
+<td>Removes gemstone requirements</td>
+</tr>
+<tr>
+<td>NoMadogearfuel(1)</td>
+<td>Removes Magic Gear Fuel consumption</td>
+</tr>
+<tr>
+<td>Reincarnation(1)</td>
+<td>Recovers 100% hp/sp on resurrection</td>
+</tr>
+<tr>
+<td>SetInvestigate()</td>
+<td>Enchants weapon with "Investigate" skill effect (Thanatos Card/Ice Pick)!</td>
+</tr>
+<tr>
+<td>IndestructibleArmor</td>
+<td>not setup</td>
+</tr>
+<tr>
+<td>IndestructibleWeapon</td>
+<td>not setup</td>
+</tr>
+<tr>
+<td>Condition(14, 9999, 100)</td>
+<td>Increased Movement Speed</td>
+</tr>
+<tr>
+<td>Condition(13, 9999, 100)</td>
+<td>Endure Effect</td>
+</tr>
+</tbody>
+</table>
+<h4 id="advanced-function-calls">Advanced function calls<a class="headerlink" href="#advanced-function-calls" title="Permanent link">&para;</a></h4>
+<p>These functions are useable in combination with others, like Refine Level based effects.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetEquipArmorLv(<code>&lt;Equip Slot&gt;</code>)</td>
+<td>Retreives Armor Level (mostly used with GetLocation())</td>
+</tr>
+<tr>
+<td>GetEquipWeaponLv(<code>&lt;Equip Slot&gt;</code>)</td>
+<td>Retreives Weapon Level; <code>&lt;Equip Slot&gt;</code> is normally 4</td>
+</tr>
+<tr>
+<td>GetItemIDLocation(<code>&lt;Equip Slot&gt;</code>)</td>
+<td>Retreives item id on <code>&lt;Equip Slot&gt;</code></td>
+</tr>
+<tr>
+<td>GetWeaponClass(<code>&lt;Equip Slot&gt;</code>)</td>
+<td>Retreives Weapon Type; <code>&lt;Equip Slot&gt;</code> is normally 4</td>
+</tr>
+<tr>
+<td>GetPetRelationship()</td>
+<td>pet loyal level (0/2~4)</td>
+</tr>
+<tr>
+<td>IsPremiumPcCafe()</td>
+<td>VIP status (seen 2/10/65 as values so far)</td>
+</tr>
+<tr>
+<td>SetEquipTempValue(<code>&lt;Slot&gt;</code>, <code>&lt;Value&gt;</code>)</td>
+<td><code>&lt;Slot&gt;</code> is a placeholder term, I saw up to 5 so far; it's used to temporary save values to the equipment</td>
+</tr>
+<tr>
+<td>GetRefineLevel(<code>&lt;Equip Slot&gt;</code>)</td>
+<td>Retreives Refine Level of <code>&lt;Equip Slot&gt;</code></td>
+</tr>
+<tr>
+<td>GetEquipGradeLevel(<code>&lt;Equip Slot&gt;</code>)</td>
+<td>Retreives Grade Level of <code>&lt;Equip Slot&gt;</code></td>
+</tr>
+<tr>
+<td>GetLocation()</td>
+<td>Retreives <code>&lt;Equip Slot&gt;</code> of the item is in</td>
+</tr>
+<tr>
+<td>GetSkillLevel(<code>&lt;Skill ID&gt;</code>)</td>
+<td>Retreives Skill Level</td>
+</tr>
+<tr>
+<td>GetPureJob()</td>
+<td>Base Job</td>
+</tr>
+<tr>
+<td>GetMapName</td>
+<td>not tested yet</td>
+</tr>
+<tr>
+<td>CheckJobGroup2</td>
+<td>not tested yet</td>
+</tr>
+<tr>
+<td>GetCategoryJob</td>
+<td>not tested yet</td>
+</tr>
+<tr>
+<td>get(<code>&lt;Value&gt;</code>)</td>
+<td>Values:</br>7 = SP</br>8 = MaxSP</br>11 = Base Level</br>19 = Job ID</br>32 = STR</br>33 = AGI</br>34 = VIT</br>35 = INT</br>36 = DEX</br>37 = LUK</br>55 = Job Level</br>255 = POW</br>256 = STA</br>257 = WIS</br>258 = SPL</br>259 = CON</br>260 = CRT</td>
+</tr>
+</tbody>
+</table>
+<h5 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Values (If it's too much, I just refer to a source.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;Weapon Type&gt;</code></td>
+<td>refers to weapontable.lub ID, can't be 0</td>
+</tr>
+<tr>
+<td><code>&lt;Parameter&gt;</code></td>
+<td>refers to enumvar.lub's second value of each entry,</br>like <code>VAR_MAXHPAMOUNT = { 1, 109 },</code> &gt; <code>109</code></td>
+</tr>
+<tr>
+<td><code>&lt;Element&gt;</code></td>
+<td>0 = Nothing</br>1 = Water</br>2 = Ground</br>3 = Fire</br>4 = Wind</br>5 = Poison</br>6 = Saint</br>7 = Darkness</br>8 = Telekinesis</br>9 = Undead</br>10 = All</td>
+</tr>
+<tr>
+<td><code>&lt;Race&gt;</code></td>
+<td>0 = Nothing</br>1 = Undead</br>2 = Animal</br>3 = Plant</br>4 = Insect</br>5 = Fish</br>6 = Demon</br>7 = Human</br>8 = Angel</br>9 = Dragon</br>10 = HumanPlayer</br>11 = DoramPlayer</br>9999 = All</td>
+</tr>
+<tr>
+<td><code>&lt;Class&gt;</code></td>
+<td>0 = Normal</br>1 = Boss</br>2 = Guardian</td>
+</tr>
+<tr>
+<td><code>&lt;Size&gt;</code></td>
+<td>0 = Small</br>1 = Medium</br>2 = Large</td>
+</tr>
+<tr>
+<td><code>&lt;Skill Group&gt;</code></td>
+<td>refers to EquipmentProperties.lub "SkillGroup" table,</br> <code>[X]</code> is the skill group itself, can be 0 for all</td>
+</tr>
+<tr>
+<td><code>&lt;Equip Slot&gt;</code></td>
+<td>1 = Lower Headgear</br>2 = Armor</br>3 = Shield</br>4 = Weapon</br>5 = Garment</br>6 = Shoes</br>7 = Right Accessory</br>8 = Left Accessory</br>10 = Upper Headgear</br>11 = Middle Headgear</br>30 = Shadow Armor</br>31 = Shadow Weapon</br>32 = Shadow Shield</br>33 = Shadow Shoes</br>34 = Shadow Right Accessory</br>35 = Shadow Left Accessory</td>
+</tr>
+</tbody>
+</table>
+<h2 id="basic-lua">Basic Lua<a class="headerlink" href="#basic-lua" title="Permanent link">&para;</a></h2>
+<p>To make use of the more advanced function calls, you need to understand lua to some degree.<br />
+<a href="https://www.lua.org/manual/5.3/manual.html">Lua 5.3 Reference Manual</a></p>
+<p>Example from ID <code>2169</code> - Kalasag:</p>
+<div class="language-text highlight"><pre><span></span><code>itemInfo Entry:
+    &quot;^0000FFFor each 3 Refine Levels^000000:&quot;,  
+    &quot;Decreases damage taken from ^FF0000Boss^000000 class by 1%.&quot;,
+</code></pre></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>OnStartEquip = function()
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    local temp, temp2 = 0, 0
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    temp = GetRefineLevel(3)
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    temp2 = math.floor(temp / 3)
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    ClassSubDamage(1, 0, temp2)
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>end
+</span></code></pre></div>
+Explanation:</p>
+<ul>
+<li><code>local</code> is used to declare a variable, <code>temp</code> and <code>temp2</code> in this case, as "local",<br />
+which means the variable is only accessable in the <code>OnStartEquip</code> function, so it's not accidently used/overwritten by other calls.<br />
+So <code>temp = 0</code> and <code>local temp = 0</code> are two different instances.</li>
+<li><code>GetRefineLevel(3)</code> retreives the Refine Level of the Shield, like noted above</li>
+<li><code>math.floor</code> returns the largest integral value smaller than or equal to x<br />
+ (to round down/up, no decimals allowed (based on my understanding))</li>
+<li>ClassSubDamage(1, 0, <code>temp2</code>): 1 = Class (Boss), and <code>temp2</code> being the calucated value</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../webservice/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Web Service">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Web Service
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../addons/jro_enchants/" class="md-footer__link md-footer__link--next" aria-label="Next: jRO Enchants Display">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                jRO Enchants Display
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/llchrisll/ROenglishRE/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/sagbPhH" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../javascripts/smoothScrolling.js"></script>
+      
+    
+  </body>
+</html>
