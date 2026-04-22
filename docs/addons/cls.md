@@ -31,12 +31,12 @@ Update: As of [31st August 2024](https://github.com/llchrisll/ROenglishRE/commit
 To make use of that, start the `Tools/AdditionsGenerator.bat`.
 
 ### WARP
-![](../images/warp_patch.png)  
+![](../images/cls/warp_patch.png)  
 The patch will open an input window, where that config file is located and you can open it in your text editor as well.<br/>
-![](../images/warp_lua.png)<br/><br/>
+![](../images/cls/warp_lua.png)<br/><br/>
 In this file you can decide which the paths should be applied and which not:<br/>
 If you want to disable certain entries, put an `#` in front of them.<br/>
-![](../images/warp_config.png)
+![](../images/cls/warp_config.png)
 
 Update: Duo to the recent changes [18th January 2025](https://github.com/llchrisll/ROenglishRE/commit/37bab01813ce141f2de4123c9e59d2535ebe82ad) the original file will look different than shown above,  
 until WARP updates from my PR.
@@ -129,7 +129,7 @@ Below you can find a list, which files are connected with each other to prevent 
 ### NEMO
 4144 still has to code a different logic to make the World Map Support work, but everything else works so far:<br/>
 Just apply the patches you want and it should work!<br/>
-![](../images/nemo_patches.png)
+![](../images/cls/nemo_patches.png)
 
 Update: Duo to the recent changes [18th January 2025](https://github.com/llchrisll/ROenglishRE/commit/37bab01813ce141f2de4123c9e59d2535ebe82ad) the current patch file needs some adjustments,  
 until NEMO updates from my PR.

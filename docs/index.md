@@ -16,4 +16,4 @@ You can also find guides unrelated to the project, like adding Custom Items and 
   <iframe width="1864" height="770" src="https://www.youtube.com/embed/pDXU558m4B0" title="Translation Project - Addons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </details>
 
-![](images/ROTPbySapito_mask.png)
+![](images/Ro_Translation_Mask.avif)

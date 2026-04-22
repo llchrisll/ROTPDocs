@@ -8,24 +8,21 @@ as well as the possbility to override offical items, like in Neo's original vers
 Below I will try to explain the configs which are possible, let's start with core of it:
 ##### Importing files
 ```
--- Load the splited function file
+-- Load the splitted function file
 require("SystemEN/LuaFiles514/itemInfo_f")
 
 -- Load the translation file
 dofile("SystemEN/LuaFiles514/itemInfo.lua")
 
--- Load the file for custom items and overrides
--- dofile("SystemEN/itemInfo_C.lua")
-
--- Load additional files, like custom items, overrides and others
--- New tables needs unique names, to import them you need to copy a "itemInfoMerge"
--- line at the end and adjust it accordingly.
+------------------------------- Load additional files -------------------------------
+----------------------- like custom items, overrides and others ---------------------
 
 -- Place all files in the "SystemEN" folder, the rest will be automatically added.
 ImportFiles = {
 	"itemInfo_C.lua", -- custom items
 }
 -- Just define the table postfix, 'tbl_' will be automatically added
+-- Make sure the additional files' table names are unique, like tbl_kro, tbl_jro, etc.
 -- Note: The "tbl_override" is handled separately at the end.
 ImportTables = {
 	"custom",
@@ -61,7 +58,7 @@ ImportTables = {
 	"thro"
 }
 ```
-![](../images/itemInfo_dofile.png)
+![](../images/iteminfo/dofile.png)
 
 **Note**  
 These files contain missing and untranslated items from each server and are able to download from my discord in the [contribution](https://discord.com/channels/632937952997277696/721722941464903741/1159571115790827641) channel.
@@ -131,25 +128,25 @@ ItemDatabase = {
 ```
 
 * `DisplayServer` reads the custom `Server` argument and displays it based on the value you put it on, like this:  
-![](../images/itemInfo_Server.png)  
+![](../images/iteminfo/Server.png)  
 * `TagStart` and `TagEnd` defines how the server name is seperated from the Item Name and can be anything (tested with [] and () )  
-![](../images/itemInfo_Server2.png) ![](../images/itemInfo_Server3.png)  
+![](../images/iteminfo/Server2.png) ![](../images/iteminfo/Server3.png)  
 * `ServerColour` defines in which color your name will be highlighted.  
 Example:  
 `ServerColour = '^FF0000'`  
-![](../images/itemInfo_Color.png)  
+![](../images/iteminfo/Color.png)  
 * `DisplayItemID` displays the Item ID based on the value you put, like this:  
-![](../images/itemInfo_ID.png)  
+![](../images/iteminfo/ID.png)  
 * `CServerName` holds the name of your Server and works with `DisplayCustomServer`  
 * `DisplayDatabase (true/false)` adds an URL (opens in your webbrowser) to a database.
-  ![](../images/itemInfo_Link.png)  
+  ![](../images/iteminfo/Link.png)  
    The actual links are saved in the `ItemDatabase` table.  
    `["Divine-Pride"]` being default, but you can also use whatever you want.  
    Like this project supports items from other servers,  
    like iRO, we can refer to the iRO Wiki only for iRO items with `["iRO"]`  
    `Name` defines how the link will be displayed  
-   `URL ` defines the base url to the database like divine-pride
-  ![](../images/itemInfo_Link2.png)  
+   `URL ` defines the base url to the database like divine-pride  
+  ![](../images/iteminfo/Link2.png)  
 
 ##### The `DO NOT TOUCH` lines
 ```
@@ -177,7 +174,7 @@ Of course , you can add more files the same way.
 
 #### SystemEN\itemInfo_C.lua  
 To keep changing configs easier, I split the tables for custom items and overrides into it's own file: `itemInfo_C.lua`  
-You can rename it as you like as long as you change the name in the first part.
+You can rename it as you like as long as you change the name in the config file as well.
 ```
 --[[ Template
 	[ID] = {
