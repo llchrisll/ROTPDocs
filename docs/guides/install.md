@@ -1,5 +1,5 @@
 If you have trouble using this translation project, here is a tutorial how to do so.
-
+___
 ## Downloading
 I recommend you to use TortoiseGit to download this project.
 
@@ -8,6 +8,39 @@ I recommend you to use TortoiseGit to download this project.
 
 Optional is that you download the repository, in a Zip format, but then you have to download the whole project again when I make updates, not just the updated files.
 
+## 2025 Full Clients and Ragexes
+___
+Disclaimer: This was written on 25th April 2026 and might/will change in the near future.
+___
+With the recent changes to the project and kRO clients (since 2025-07 and 2025-12-04),  
+I will recommend one of these two full kRO clients, which were kindly provided by skylove:
+
+ 1. [2025-07-16](https://drive.google.com/file/d/1EAlnpYywf6ktli3v9DliDXMvrcFcClfq/view?usp=drive_link)
+    You will need to update this client, otherwise you will get a few lua errors duo the project being more up to date.  
+	Or you'll get the files you error at from the `Tools\AdditionsGenerator.bat`.
+ 2. [2026-02-19](https://drive.google.com/file/d/1NfZJb3WuDmeqfPGGcLzDlVJLnGKXWzXy/view):  
+    You don't need my custom `kro_data.grf`, as it already contains files from it.
+    Skylove told me to avoid updating this client as well. So you have been warned.  
+	From what I have seen, the `data.grf` in there is fully accessable by GRF Editor,  
+	but I might be wrong about that.
+ 
+###Important kRO Client changes
+ 
+ 1. Clients/GRFs above 2025-07-16 implemented GRF v3 support, which increases the max size an GRF massively.  
+    But this also requires newer clients. Clients like 2022-04-06 will not work anymore.  
+	I didn't test which clients would still work with GRFs like that.
+ 2. Clients/GRFs above 2025-12-04 received a new GRF encryption, which are also not accessable to older clients.  
+    Even GRF Editor (to this date) can't encrypt them.
+	
+### Special Ragexes + WARP versions
+ * [WARP2025](https://github.com/hiphop9/Warp2025) by skylove:  
+   For any Client newer than 2022-04-06, see more info in the [rAthena Forum](https://rathena.org/board/topic/144862-2025-06-04_ragexe-warp2025/).
+ * [WARP0716](https://github.com/CrazyBebop/WARP0716) by CrazyBepop:  
+   For **ONLY** the 2025-07-16 Ragexe, see more info in the [rAthena Forum](https://rathena.org/board/topic/149119-warp0716-%E2%86%92-forge-%E2%80%94-ragexe-2025-07-16-patches-customjobs-reforged-newest-client/).
+   
+Note: I will keep the original NEMO and WARP in here meanwhile, but I don't use them myself anymore.  
+I will also drop NEMO profiles in the near future.
+   
 ## Translation Folder
 With commit of [10th December 2023](https://github.com/llchrisll/ROenglishRE/commit/649d35f956a1a5cee088557194b99822d132a5ad), the default version of this project is 2015-10-29 again!
 Therefore I added a few simple .bat files to generate the desired Client folder.

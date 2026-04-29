@@ -8,16 +8,17 @@ repo_name: 'llchrisll/ROenglishRE/'
 repo_url: 'https://github.com/llchrisll/ROenglishRE/'
 nav:
     - Home: index.md
-    - Project Installation: guides/install.md
-    - Additional Guides: 
+    - Project Guides:
+      - Installation: guides/install.md
       - Multi-ItemInfo Support: guides/multiitem.md
       - Web Service: guides/webservice.md
+      - Addons:
+        - jRO Enchants Display: addons/jro_enchants.md
+        - Custom Lua Support: addons/cls.md
+        - Legacy Files: addons/legacy.md
+    - Client Features:
       - Equipment Properties: guides/equip_prop.md
       - Rune Tablet System: guides/runetablet.md
-    - Addons:
-      - jRO Enchants Display: addons/jro_enchants.md
-      - Custom Lua Support: addons/cls.md
-      - Legacy Files: addons/legacy.md
     - Customization Guides:
       - Basic Setup: guides/basic_custom.md
       - Cards: guides/cards.md
@@ -31,12 +32,15 @@ nav:
       - Random Options: guides/random_options.md
       - Enchant System: guides/enchant_system.md
       - Disable Doram: guides/disable_doram.md
-    - Contribution: contribution.md
-    - Sprite Folder: spritelist.md
+    - Miscellaneous:
+      - Lua Depenencies: misc/lua_dependencies.md
+      - Implementations: misc/implementations.md
+      - Sprite Folder: misc/spritelist.md
+      - Contribution: misc/contribution.md
+      - Probabilities:
+        - Refine Probabilities: misc/refine_prob_kro.md
+        - Grade Probabilities: misc/grade_prob_kro.md
     - FAQ: FAQ.md
-    - Probabilities:
-      - Refine Probabilities: refine_prob_kro.md
-      - Grade Probabilities: grade_prob_kro.md
     - Links:
       - Project Discord: https://discord.gg/sagbPhH
       - rAthena: http://rathena.org/board/
