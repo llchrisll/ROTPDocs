@@ -15,7 +15,7 @@ ___
 With the recent changes to the project and kRO clients (since 2025-07 and 2025-12-04),  
 I will recommend one of these two full kRO clients, which were kindly provided by skylove:
 
- 1. [2025-07-16](https://drive.google.com/file/d/1EAlnpYywf6ktli3v9DliDXMvrcFcClfq/view?usp=drive_link)
+ 1. [2025-07-16](https://drive.google.com/file/d/1EAlnpYywf6ktli3v9DliDXMvrcFcClfq/view?usp=drive_link):  
     You will need to update this client, otherwise you will get a few lua errors duo the project being more up to date.  
 	Or you'll get the files you error at from the `Tools\AdditionsGenerator.bat`.
  2. [2026-02-19](https://drive.google.com/file/d/1NfZJb3WuDmeqfPGGcLzDlVJLnGKXWzXy/view):  
@@ -31,15 +31,6 @@ I will recommend one of these two full kRO clients, which were kindly provided b
 	I didn't test which clients would still work with GRFs like that.
  2. Clients/GRFs above 2025-12-04 received a new GRF encryption, which are also not accessable to older clients.  
     Even GRF Editor (to this date) can't encrypt them.
-	
-### Special Ragexes + WARP versions
- * [WARP2025](https://github.com/hiphop9/Warp2025) by skylove:  
-   For any Client newer than 2022-04-06, see more info in the [rAthena Forum](https://rathena.org/board/topic/144862-2025-06-04_ragexe-warp2025/).
- * [WARP0716](https://github.com/CrazyBebop/WARP0716) by CrazyBepop:  
-   For **ONLY** the 2025-07-16 Ragexe, see more info in the [rAthena Forum](https://rathena.org/board/topic/149119-warp0716-%E2%86%92-forge-%E2%80%94-ragexe-2025-07-16-patches-customjobs-reforged-newest-client/).
-   
-Note: I will keep the original NEMO and WARP in here meanwhile, but I don't use them myself anymore.  
-I will also drop NEMO profiles in the near future.
    
 ## Translation Folder
 With commit of [10th December 2023](https://github.com/llchrisll/ROenglishRE/commit/649d35f956a1a5cee088557194b99822d132a5ad), the default version of this project is 2015-10-29 again!
@@ -76,12 +67,25 @@ Required Program - GRF Editor
 ### System Folder
 The System folder can't be placed in a GRF, so it goes also in the root folder.
 
-## NEMO Profiles and WARP Sessions
-Requires one of these programs:
+## Client Patchers
+To be able to patch an unpacked kRO Ragexe, you require one of these programs:
 
-* [NEMO (by 4144)](https://gitlab.com/4144/Nemo/)
-* [WARP (by Neo-Mind)](https://github.com/Neo-Mind/WARP)
+ * [NEMO](https://gitlab.com/4144/Nemo/) by 4144:  
+   Works up to 2022-04-06, after that you need to buy a newer Client from 4144 and get a new Nemo version.  
+ * [WARP](https://github.com/Neo-Mind/WARP) by Neo-Mind:  
+   Original successor to NEMO, but hence dropped support by Neo for unknown reasons, maybe real-life.  
+ * [WARP2025](https://github.com/hiphop9/Warp2025) by skylove:  
+   For any Client newer than 2022-04-06, see more info in the [rAthena Forum](https://rathena.org/board/topic/144862-2025-06-04_ragexe-warp2025/).
+ * [WARP0716](https://github.com/CrazyBebop/WARP0716) by CrazyBepop:  
+   For **ONLY** the 2025-07-16 Ragexe, see more info in the [rAthena Forum](https://rathena.org/board/topic/149119-warp0716-%E2%86%92-forge-%E2%80%94-ragexe-2025-07-16-patches-customjobs-reforged-newest-client/).  
+ 
+ * [FORGE](https://forge.legacygamers.net) by CrazyBepop:  
+   This is still in development, but should be good alternative for NEMO and WARP in general once it's ready.
 
+Note: I will keep the original NEMO and WARP in here meanwhile, but I don't use them myself anymore.  
+I will also drop NEMO profiles in the near future.   
+
+### Session & Profiles
 The easiest way to use this project is by taking advantage of the NEMO Profile/WARP Session feature.
 
 * Nemo [Profiles](https://github.com/llchrisll/ROenglishRE/tree/master/Addons/NEMO%20Profiles)
