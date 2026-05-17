@@ -78,7 +78,6 @@ To be able to patch an unpacked kRO Ragexe, you require one of these programs:
    For any Client newer than 2022-04-06, see more info in the [rAthena Forum](https://rathena.org/board/topic/144862-2025-06-04_ragexe-warp2025/).
  * [WARP0716](https://github.com/CrazyBebop/WARP0716) by CrazyBepop:  
    For **ONLY** the 2025-07-16 Ragexe, see more info in the [rAthena Forum](https://rathena.org/board/topic/149119-warp0716-%E2%86%92-forge-%E2%80%94-ragexe-2025-07-16-patches-customjobs-reforged-newest-client/).  
- 
  * [FORGE](https://forge.legacygamers.net) by CrazyBepop:  
    This is still in development, but should be good alternative for NEMO and WARP in general once it's ready.
 
@@ -115,5 +114,5 @@ WARP Example - Client 2018-06-20 until next profile
 4.) "Apply Patches" and test your client.
 
 Note - Quest List:  
-RecommendedQuestInfoList_True_EN contains the latest kRO content which are mostly not implemented yet by rAthena.  
-So you can stick to the RecommendedQuestInfoList_EN if you want as well.
+    `SystemEN\RecommendedQuests.lub` contains the latest kRO content which are mostly not implemented yet by rAthena.  
+    So you can stick to the `SystemEN\RecommendedQuests_basic.lub` if you want as well.

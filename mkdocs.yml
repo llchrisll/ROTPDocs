@@ -17,6 +17,7 @@ nav:
         - Custom Lua Support: addons/cls.md
         - Legacy Files: addons/legacy.md
     - Client Features:
+      - Enchant UI: guides/enchantui.md
       - Equipment Properties: guides/equip_prop.md
       - Rune Tablet System: guides/runetablet.md
     - Customization Guides:
@@ -30,7 +31,6 @@ nav:
       - Navigation: guides/navigation.md
       - Skill Icons: guides/skill_icons.md
       - Random Options: guides/random_options.md
-      - Enchant System: guides/enchant_system.md
       - Disable Doram: guides/disable_doram.md
     - Miscellaneous:
       - Lua Depenencies: misc/lua_dependencies.md
@@ -51,12 +51,26 @@ theme:
     repo: fontawesome/brands/github-alt
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
   name: 'material'
   custom_dir: docs/overrides
   features:
     - announce.dismiss
     - content.code.annotate
     - content.code.copy
+    - content.code.select
     - content.tabs.link
     - content.tooltips
     - navigation.footer
@@ -119,6 +133,7 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.snippets
   - pymdownx.superfences:
       preserve_tabs: true
       custom_fences:

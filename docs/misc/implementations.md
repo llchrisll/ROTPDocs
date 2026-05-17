@@ -11,7 +11,7 @@ ___
     data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/tipbox/
 ___
 #### Skill Tree Update : 2018-06-20  
-New lines in `data/luafiles514/lua files/skillinfoz/skilltreeview.lub`
+    New lines in data/luafiles514/lua files/skillinfoz/skilltreeview.lub
 ___
 #### MapInfo.lub : 2019-06-05
     System/mapinfo_*.lub
@@ -34,17 +34,17 @@ ___
     data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/showdamage/
 ___
 #### Special Popup: 2022-09-28
-    System/spopup.lub`
+    System/spopup.lub
 ___
 #### Change Material UI : 2022-12-07
-    System/ChangeMaterial.lub`
+    System/ChangeMaterial.lub
     data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/changematerial/
 ___
 #### PCJobName.lub : 2023-01-18
     data/luafiles514/lua files/datainfo/pcjobname.lub
 ___
 #### MsgStringTable.csv: 2023-08-02
-    data/msgstringtable.csv`
+    data/msgstringtable.csv
 ___
 #### Equipment Properties : 2023-08-02
     data/luafiles514/lua files/EquipmentProperties/
@@ -65,7 +65,7 @@ ___
     data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/macroreport/macroreport.bson
 ___
 #### Enchant UI Update : 2023-09-20
-    new texture files in `data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/enchantui/
+    new texture files in data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/enchantui/
     modified lua functions
 ___
 #### Probability UI : 2024-03-11
@@ -73,14 +73,14 @@ ___
 ___
 #### Quest UI Update (New sorting feature) : 2024-04-03
     System/QuestClassificationInfo.lub
-    New texture files in `data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/renew_questui/
+    New texture files in data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/renew_questui/
 ___
 #### AdventureGuide : 2024-05-02
     data/luafiles514/lua files/AdventureGuide/
     data/texture/À¯ÀúÀÎÅÍÆäÀÌ½º/AdventureGuide/
 ___
 #### Rune UI Update "Reward" : 2024-10-16 
-    System/Rune/runeset_reward.lub`
+    System/Rune/runeset_reward.lub
     New texture files in data/texture/effect/runesystem/
 ___
 #### Game Settings Update: 2025-01-22
@@ -93,6 +93,6 @@ ___
 ___
 #### Select Package UI Update : 2025-06-18
     New file layout and lua functions:  
-    Replaced `data/luafiles514/lua files/selectpackage/selectpackageitem.lub
-	with `data/luafiles514/lua files/selectpackage/selectpackageitem_cln.lub
+    Replaced data/luafiles514/lua files/selectpackage/selectpackageitem.lub
+	with data/luafiles514/lua files/selectpackage/selectpackageitem_cln.lub
 ___
