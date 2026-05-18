@@ -1,5 +1,5 @@
-
-Note: This will only explain the client side.
+!!! note
+	This will only explain the client side.
 ___
 
 The Enchant UI was introduced with 2021-10-28 and first used with Episode 18 content.  
@@ -8,9 +8,9 @@ which moves the Random and Perfect Enchant into tabs in the first tab.
 
 ## File Dependencies
 !!! info "Dependencies"
-    * ItemDBNameTbl.lub is required for string values and the respective item id  
+    * `ItemDBNameTbl.lub` is required for string values and the respective item id  
     To be safe, please avoid using `'` and similar in these, like `Bear's_Power` (ID 4875) > `Bears_Power`
-    * Enchant/EnchantList.lub contains the actual Enchant details and has restrictions to follow.  
+    * `Enchant/EnchantList.lub` contains the actual Enchant details and has restrictions to follow.  
     If you use my edited [EnchantList_f.lub (2021-10-28)](https://github.com/llchrisll/ROenglishRE/blob/master/Translation/Compatibility/2021-10-28/data/luafiles514/lua%20files/Enchant/EnchantList_f.lub) | [EnchantList_f.lub (2023-09-20)](https://github.com/llchrisll/ROenglishRE/blob/master/Translation/Compatibility/2023-09-20/data/luafiles514/lua%20files/Enchant/EnchantList_f.lub), the errors are translated there.
 
 ## File Format
@@ -34,99 +34,89 @@ which moves the Random and Perfect Enchant into tabs in the first tab.
 !!! info "Table[ID] = CreateEnchantInfo()"
 	This is a funtion call and is required for each entry.
 	
-!!! info "`Table[ID]:`"
-	The `:` attaches key words like `AddTargetItem` to the table and these are considered like global values for this entry.
+	!!! info "`Table[ID]:`"
+		The `:` attaches key words like `AddTargetItem` to the table and these are considered like global values for this entry.
    
-!!! info annotate "SetSlotOrder (1)"
-     Defines the order(2) in which enchantments will be placed, starts at the last slot by default.  
-	 I don't know what happens if you change that...  
-	   
-1. SetSlotOrder(0) | SetSlotOrder(3, 2, 1)
-2. * 0 = Disabled : SetSlotOrder(0) | 1 = 2nd Card Slot | 2 = 3rd Card Slot | 3 = 4th Card Slot
+	!!! info annotate "SetSlotOrder (1)"
+		 Defines the order(2) in which enchantments will be placed, starts at the last slot by default.  
+		 I don't know what happens if you change that...  
+		   
+	1. SetSlotOrder(0) | SetSlotOrder(3, 2, 1)
+	2. * 0 = Disabled : SetSlotOrder(0) | 1 = 2nd Card Slot | 2 = 3rd Card Slot | 3 = 4th Card Slot
 
-!!! info annotate "AddTargetItem (1)"
-     Adds an item to this enchant table.
-1. AddTargetItem("Item_String")
+	!!! info annotate "AddTargetItem (1)"
+		 Adds an item to this enchant table.
+	1. AddTargetItem("Item_String")
 
-!!! info annotate "SetCondition (1)"
-    Defines minimum refine and grade levels, can both be 0 and must both be given.
-1. SetCondition(Refine, Grade)
+	!!! info annotate "SetCondition (1)"
+		Defines minimum refine and grade levels, can both be 0 and must both be given.
+	1. SetCondition(Refine, Grade)
 
-!!! info annotate "ApproveRandomOption(1)"
-    Based on my estimation, this declares if items with Random Options are allowed, untested tho.
-1. ApproveRandomOption(true)
+	!!! info annotate "ApproveRandomOption(1)"
+		Based on my estimation, this declares if items with Random Options are allowed, untested tho.
+	1. ApproveRandomOption(true)
 
-!!! info annotate "SetReset(1)"
-    Defines if enchantments can be reset.
-1. SetReset(true/false, Chance, Zeny, [{"Item_String", Amount}])
+	!!! info annotate "SetReset(1)"
+		Defines if enchantments can be reset.
+	1. SetReset(true/false, Chance, Zeny, [{"Item_String", Amount}])
 
-!!! info annotate "SetCaution(1)"
-     Should be self-explantory, but provides a description, `\n` should be used for new lines.  
-	 Also keep it 2 lines if you don't want a ugly scroll bar.
-1. SetCaution("Info Text")
+	!!! info annotate "SetCaution(1)"
+		 Should be self-explantory, but provides a description, `\n` should be used for new lines.  
+		 Also keep it 2 lines if you don't want a ugly scroll bar.
+	1. SetCaution("Info Text")
 
 !!! info annotate "Table[].Slot[]:(1)"
     Now it attaches the table `Slot[]` to `Table[]` which also adds separate keywords to it.
+	!!! info annotate "SetRequire(2)"
+		TAX amount
+
+	!!! info annotate "SetSuccessRate(3)"
+		Official default is 100000 = 100%.
+
+	!!! info annotate "SetGradeBonus(4)"
+		Defines a bonus per Grade (1~4), Chance is 0 by default since `SetSuccessRate` is always 100% officially.
+
+	!!! info annotate "SetEnchant(5)"
+		Adds an random enchant to a certain Grade (0~4), 0 refers to No Grade.
+		!!! warning 
+			The max calucated chance of all items in the same slot must be exactly `100000`. 	
+		
+	!!! info annotate "AddUpgradeEnchant(6)"
+		Upgrade an enchantment
+
+	!!! info annotate "AddPerfectEnchant(7)"
+		Adds an perfect enchantment (no fail chances), but mostly more resources required.
+	
+	!!! abstract "Changes with 2023-09-20"
+		The changes mostly adds new versions of `AddUpgradeEnchant`,  
+		when upgrades were 100%, but not anymore.  
+		Exception are Perfect Enchants, so basically `AddUpgradeEnchant` > `AddPerfectUpgradeEnchant`.
+		!!! info "`Table[ID]:`"
+			!!! info annotate "AddTargetItem_Duplicate (8)"
+				Allows duplicate entries in the global enchant table, if needed.
+
+		!!! info "`Table[ID].Slot[Slot]`:"
+			!!! info annotate "SetRandomUpgradeRequire (9)"
+				Defines the price to upgrade an "random" enchantment
+				 
+			!!! info annotate "AddRandomUpgradeEnchant (10)"
+				Defines the chance to the upgrade
+
+			!!! info annotate "AddPerfectUpgradeEnchant (11)"
+				Same as AddUpgradeEnchant but for Perfect Enchants only
+				
+	
 1. Table[ID].Slot[Slot]:
-
-!!! info annotate "SetRequire(1)"
-	TAX amount
-1. SetRequire(Zeny)
-
-!!! info annotate "SetSuccessRate(1)"
-	Official default is 100000 = 100%.
-1. SetSuccessRate(100000)
-
-!!! info annotate "SetGradeBonus(1)"
-	Defines a bonus per Grade (1~4), Chance is 0 by default since `SetSuccessRate` is always 100% officially.
-1. SetGradeBonus(Grade, Chance)
-
-!!! info annotate "SetEnchant(1)"
-	Adds an random enchant to a certain Grade (0~4), 0 refers to No Grade.
-	!!! warning 
-		The max calucated chance of all items in the same slot must be exactly `100000`. 	
-	
-1. SetEnchant(Grade, "Item_String", Chance)
-
-!!! info annotate "AddUpgradeEnchant(1)"
-	Upgrade an enchantment
-1. AddUpgradeEnchant("Item_String", "Item_String", Zeny[, { "Item_String", Amount}])
-
-!!! info annotate "AddPerfectEnchant(1)"
-	Adds an perfect enchantment (no fail chances), but mostly more resources required.
-1. AddPerfectEnchant("Item_String", Zeny[, {"Item_String", Amount}])
-___
-### Changes with 2023-09-20
-The changes mostly adds new versions of `AddUpgradeEnchant`,  
-when upgrades were 100%, but not anymore.  
-Exception are Perfect Enchants, so basically `AddUpgradeEnchant` > `AddPerfectUpgradeEnchant`.
-___
-`Table[ID]:`  
-
-!!! info annotate "AddTargetItem_Duplicate (1)"
-	Allows duplicate entries in the global enchant table, if needed.
-	{ .annotate }
-
-1. 	AddTargetItem_Duplicate("Item_String")
-___
-`Table[ID].Slot[Slot]`:
-!!! info annotate "SetRandomUpgradeRequire (1)"
-	Defines the price to upgrade an "random" enchantment
-    { .annotate }
-	   
-1.	SetRandomUpgradeRequire("Item_String", Zeny[, {"Item_String", Amount}])
-	 
-!!! info annotate "AddRandomUpgradeEnchant (1)"
-	Defines the chance to the upgrade
-	{ .annotate }
-     
-1. AddRandomUpgradeEnchant("Item_String", "Item_String", Chance)   
-
-!!! info annotate "AddPerfectUpgradeEnchant (1)"
-	Same as AddUpgradeEnchant but for Perfect Enchants only
-	{ .annotate }
-	
-1. AddPerfectUpgradeEnchant("Item_String", "Item_String", Zeny[, {"Item_String", Amount}])  
+2. SetRequire(Zeny)
+3. SetSuccessRate(100000)
+4. SetGradeBonus(Grade, Chance)
+5. SetEnchant(Grade, "Item_String", Chance)
+6. AddUpgradeEnchant("Item_String", "Item_String", Zeny[, { "Item_String", Amount}])
+7. AddPerfectEnchant("Item_String", Zeny[, {"Item_String", Amount}])
+8. 	AddTargetItem_Duplicate("Item_String")
+9.	SetRandomUpgradeRequire("Item_String", Zeny[, {"Item_String", Amount}])
+10. AddRandomUpgradeEnchant("Item_String", "Item_String", Chance)   
+11. AddPerfectUpgradeEnchant("Item_String", "Item_String", Zeny[, {"Item_String", Amount}])  
 
 ## Example - Diabolus Set
 !!! info "Credits"
