@@ -1,32 +1,42 @@
-
-Note: This will only explain the client side, please visit the original topic for more information about the server-side of it, if it's explained.  
-
-Disclaimer  
-I don't take any credit for the copied guide.
+!!! note
+	This will only explain the client side, please visit the original topic for more information about the server-side of it, if it's explained.  
+!!! abstract "Disclaimer"
+	I don't take any credit for the copied guide.
 ___
 [Original by Easycore](https://rathena.org/board/topic/110692-guide-adding-custom-random-options/)  
-**Introduction**
+!!! info "Introduction"
+	In this guide I will introduce you how to implement custom Random Options.  
+	I will use as an example the bonus "bAddEff".
+	
+	![](../../images/easycore_ropt.png)
 
-In this guide I will introduce you how to implement custom Random Options.  
-I will use as an example the bonus "bAddEff".
+!!! info "Guide"
+	To display our custom options must be added to `data\luafiles514\lua files\datainfo\enumvar.lub` and `data\luafiles514\lua files\datainfo\addrandomoptionnametable.lub`
+	
+	!!! info "`enumvar.lub`"
+		Find:
+		```lua
+			VAR_CRITICAL_RATE = { 254, 10 },
+		```
+		And add:  
+		```lua
+			WEAPON_FREEZE = {255, 0 },
+		```
+		!!! info 
+			The first number must be same that added in `db\re\item_randomopt_db.yml`
 
-![](../images/easycore_ropt.png)
+	!!! info "`addrandomoptionnametable.lub`"
+		Find:
+		```lua
+			[EnumVAR.MDAMAGE_SIZE_LARGE_USER[1]] = "Magical resistance Large size monster +%d%%",
+		```
+		And add:
+		```lua
+			[EnumVAR.WEAPON_FREEZE[1]] = "Freeze an enemy when attacking +%d%%",
+		```
+		!!! info
+			%d% is equal to ROA_VALUE.* 
 
-For display our custom options must be added to `data\luafiles514\lua files\datainfo\enumvar.lub` and `data\luafiles514\lua files\datainfo\addrandomoptionnametable.lub
-
-#### enumvar.lub
-Find:  
-`VAR_CRITICAL_RATE = { 254, 10 },`  
-And add:  
-`WEAPON_FREEZE = {255, 0 },`  
-*The first number must be same that added in `db\re\item_randomopt_db.yml*
-
-#### addrandomoptionnametable.lub
-Find:  
-`[EnumVAR.MDAMAGE_SIZE_LARGE_USER[1]] = "Magical resistance Large size monster +%d%%",`  
-And add:  
-`[EnumVAR.WEAPON_FREEZE[1]] = "Freeze an enemy when attacking +%d%%",`  
-*%d% is equal to ROA_VALUE.* 
 
 After completing all of the above your Random Option is ready to use.  
 Remember that there is documentation of how to add random options to items and a sample npc.

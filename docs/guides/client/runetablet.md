@@ -13,16 +13,16 @@ Subfolders are:
 
 === "`runeset`"
 	Holds the center images for the Rune Tablets  
-	![](../images/runesystem/set_texture.png) 
+	![](../../images/runesystem/set_texture.png) 
 === "`rune`"
 	Holds the center images for the Runes  
-	![](../images/runesystem/rune_texture.png) 
+	![](../../images/runesystem/rune_texture.png) 
 === "`rune_icon`"
 	Holds the small images for the Runes  
-	![](../images/runesystem/rune_icon.png) 
+	![](../../images/runesystem/rune_icon.png) 
 === "`tag`"
 	Holds the images for the Tags  
-	![](../images/runesystem/tags.png) 
+	![](../../images/runesystem/tags.png) 
 
 ## System/Rune | SystemEN/Rune 
 This is the main folder all related files are located.  
@@ -92,7 +92,7 @@ This file format is simple, based on the available "visual" slots, you can have 
 					{25668, 40}
 				},
 			```
-			![](../images/runesystem/rune_items.png)  
+			![](../../images/runesystem/rune_items.png)  
 
 		=== "RuneSet_UpGradeList"
 			```lua
@@ -104,7 +104,7 @@ This file format is simple, based on the available "visual" slots, you can have 
 					{1001283, 1}
 				},
 			```
-			![](../images/runesystem/set_items.png)  
+			![](../../images/runesystem/set_items.png)  
 ### rune_info.lub | info.lub
 !!! info "`Runetbl_info` table"
 	This file holds the item list requirements to activate Runes.
@@ -128,7 +128,7 @@ This file format is simple, based on the available "visual" slots, you can have 
 			[RUNETAGIDTBL.EPISODE17] = {
 				[RUNEIDTBL.Rp_Ep17_Melee] = {Rune_DisplayName = "Doubtful Components(Melee)"},
 		```
-		![](../images/runesystem/rune_name.png)
+		![](../../images/runesystem/rune_name.png)
 
 ### runeset_info.lub | set_info.lub
 !!! info "`GradeTable`"
@@ -139,8 +139,8 @@ This file format is simple, based on the available "visual" slots, you can have 
 	All values are called via `RuneSet_UpGrade_Percentage_table` and `RuneSet_UpGrade_Percentage_table_Fail` respectively,  
 	value being the index of the table.  
 	Format: `[<Index>] = {<Chance_1>,...,<Chance_15>}` (1)
-	![](../images/runesystem/set_upgrade.png)
-	<video controls><source src="../../images/runesystem/set_upgrade_clip.mp4" type="video/mp4"></video>
+	![](../../images/runesystem/set_upgrade.png)
+	<video controls><source src="../../../images/runesystem/set_upgrade_clip.mp4" type="video/mp4"></video>
 	
 	```lua
 	GradeTable = {
@@ -177,10 +177,10 @@ This file format is simple, based on the available "visual" slots, you can have 
 				},
 		```
 === "Locked Rune Tablet"
-	![](../images/runesystem/set_overview.png)
+	![](../../images/runesystem/set_overview.png)
 
 === "Unlocked Rune Tablet"
-	![](../images/runesystem/set_active.png)
+	![](../../images/runesystem/set_active.png)
 
 ### runeset_desc.lub | set_desc.lub
 !!! info "`Runesystemtbl_tag` table"
@@ -199,7 +199,7 @@ This file format is simple, based on the available "visual" slots, you can have 
 			[RUNETAGIDTBL.EPISODE17] = "EP17",
 		}
 		```
-		![](../images/runesystem/set_tooltip.png)
+		![](../../images/runesystem/set_tooltip.png)
 		```lua
 			[RUNETAGIDTBL.EPISODE17] = {
 				[RUNESETIDTBL.Rt_Ep17_Doubt] = {
@@ -210,7 +210,7 @@ This file format is simple, based on the available "visual" slots, you can have 
 					}
 				},
 		```
-		![](../images/runesystem/set_effect.png)
+		![](../../images/runesystem/set_effect.png)
 
 ### runeset_reward.lub | set_reward.lub
 The Rune Reward UI was implemented with 2024-10-16, adds new texture files as well as this file.  
@@ -222,8 +222,8 @@ Up to 7 rewards can be received based on existing entries, I didn't test what ha
 	=== "Format"
 	`{ <Reward_1>, <Reward_2>, <Reward_3>, <Reward_4>, <Reward_5>, <Reward_6>, <Completion_Reward> }`
 	=== "Images"
-	![](../images/runesystem/set_reward1.png)
-	![](../images/runesystem/set_reward2.png)
+	![](../../images/runesystem/set_reward1.png)
+	![](../../images/runesystem/set_reward2.png)
 
 ??? example
 	```lua
@@ -237,7 +237,7 @@ For this I will take a Step Card (ID: 4698) as example.
 
 !!! info "`itemDecomItemNum_tbl` table"
 	Disassemble Amount to select from, you can have 2 values.
-	![](../images/runesystem/decom_1.png)
+	![](../../images/runesystem/decom_1.png)
 
 !!! info "`itemDecomType_tbl` table"
 	Defines the list of disassembled materials per `<Type>`
@@ -266,8 +266,8 @@ For this I will take a Step Card (ID: 4698) as example.
 		Will be selected if you dismantle "30"
 	   
 	!!! info "Images"
-		![](../images/runesystem/decom_2.png)  
-		![](../images/runesystem/decom_3.png)
+		![](../../images/runesystem/decom_2.png)  
+		![](../../images/runesystem/decom_3.png)
 	
 	??? example
 		```lua

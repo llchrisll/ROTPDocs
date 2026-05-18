@@ -17,21 +17,21 @@ nav:
         - Custom Lua Support: addons/cls.md
         - Legacy Files: addons/legacy.md
     - Client Features:
-      - Enchant UI: guides/enchantui.md
-      - Equipment Properties: guides/equip_prop.md
-      - Rune Tablet System: guides/runetablet.md
+      - Enchant UI: guides/client/enchantui.md
+      - Equipment Properties: guides/client/equip_prop.md
+      - Rune Tablet System: guides/client/runetablet.md
     - Customization Guides:
-      - Basic Setup: guides/basic_custom.md
-      - Cards: guides/cards.md
-      - Headgears: guides/headgears.md
-      - Weapons: guides/weapons.md
-      - Garments: guides/garments.md
-      - Hat Effects: guides/hateffects.md
-      - Mob/NPC/Pet: guides/npc_mob_pet.md
-      - Navigation: guides/navigation.md
-      - Skill Icons: guides/skill_icons.md
-      - Random Options: guides/random_options.md
-      - Disable Doram: guides/disable_doram.md
+      - Basic Setup: guides/customs/basic_custom.md
+      - Cards: guides/customs/cards.md
+      - Headgears: guides/customs/headgears.md
+      - Weapons: guides/customs/weapons.md
+      - Garments: guides/customs/garments.md
+      - Hat Effects: guides/customs/hateffects.md
+      - Mob/NPC/Pet: guides/customs/npc_mob_pet.md
+      - Navigation: guides/customs/navigation.md
+      - Skill Icons: guides/customs/skill_icons.md
+      - Random Options: guides/customs/random_options.md
+      - Disable Doram: guides/customs/disable_doram.md
     - Miscellaneous:
       - Lua Depenencies: misc/lua_dependencies.md
       - Implementations: misc/implementations.md
