@@ -76,6 +76,7 @@ theme:
     - navigation.footer
     - navigation.indexes
     - navigation.instant
+    - navigation.instant.progress
     - navigation.top
     - navigation.tracking
     - search.highlight
