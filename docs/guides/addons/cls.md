@@ -33,12 +33,12 @@ ___
 
 ### WARP
 In WARP select the following patch:  
-![](../images/cls/warp_patch.png)  
+![](../../images/cls/warp_patch.png)  
 The patch will open an input window, where that config file is located and you can open it in your text editor as well.<br/>
-![](../images/cls/warp_lua.png)<br/><br/>
+![](../../images/cls/warp_lua.png)<br/><br/>
 In this file you can decide which the paths should be applied and which not:<br/>
 If you want to disable certain entries, put an `#` in front of them.<br/>
-![](../images/cls/warp_config.png)
+![](../../images/cls/warp_config.png)
 
 !!! success "Update - [18th January 2025][update_180125]"
 	Duo to these changes the original file will look different than shown above,  
@@ -138,7 +138,7 @@ Below you can find a list, which files are connected with each other to prevent 
 	4144 still has to code a different logic to make the World Map Support work, but everything else works so far:<br/>
 	Just apply the patches you want and it should work!<br/>
 
-![](../images/cls/nemo_patches.png)
+![](../../images/cls/nemo_patches.png)
 
 !!! success "Update - [18th January 2025][update_180125]"
 	Duo to the recent changes, the current patch file needs some adjustments, until NEMO updates from my PR.

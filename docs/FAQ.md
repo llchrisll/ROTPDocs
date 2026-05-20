@@ -81,6 +81,6 @@ ___
 !!! question "I found many grammatical errors in your translation."
 	Glad to hear, feel free to submit Pull request or just report it on the [Discord][discord] server.
 
-[guide]: ../guides/install/
+[guide]: guides/install.md
 [discord]: https://discord.gg/sagbPhH
 [rathena]: https://rathena.org/board/forum/19-client-side-support/
