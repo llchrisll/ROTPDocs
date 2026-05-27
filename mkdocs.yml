@@ -13,9 +13,9 @@ nav:
       - Multi-ItemInfo Support: guides/multiitem.md
       - Web Service: guides/webservice.md
       - Addons:
-        - jRO Enchants Display: addons/jro_enchants.md
-        - Custom Lua Support: addons/cls.md
-        - Legacy Files: addons/legacy.md
+        - jRO Enchants Display: guides/addons/jro_enchants.md
+        - Custom Lua Support: guides/addons/cls.md
+        - Legacy Files: guides/addons/legacy.md
     - Client Features:
       - Enchant UI: guides/client/enchantui.md
       - Equipment Properties: guides/client/equip_prop.md
@@ -47,6 +47,8 @@ nav:
       - Hercules: https://board.herc.ws
     
 theme:
+  favicon: favicon.ico
+  logo: images/Ro_Translation_Mask.avif
   icon:
     repo: fontawesome/brands/github-alt
     previous: fontawesome/solid/angle-left
