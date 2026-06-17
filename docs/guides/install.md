@@ -17,7 +17,8 @@ I will recommend one of these two full kRO clients, which were kindly provided b
 
  1. [2025-07-16](https://drive.google.com/file/d/1EAlnpYywf6ktli3v9DliDXMvrcFcClfq/view?usp=drive_link):  
     You will need to update this client, otherwise you will get a few lua errors duo the project being more up to date.  
-	Or you'll get the files you error at from the `Tools\AdditionsGenerator.bat`.
+	Or you'll get the files you error at from the `Tools\AdditionsGenerator.bat`.  
+	Feel free to also download the `kro_data.grf` to get newer resource files.  
  2. [2026-02-19](https://drive.google.com/file/d/1NfZJb3WuDmeqfPGGcLzDlVJLnGKXWzXy/view):  
     You don't need my custom `kro_data.grf`, as it already contains files from it.
     Skylove told me to avoid updating this client as well. So you have been warned.  
@@ -69,25 +70,24 @@ The System folder can't be placed in a GRF, so it goes also in the root folder.
 
 ## Client Patchers
 To be able to patch an unpacked kRO Ragexe, you require one of these programs:
+!!! note 
+	I still need to test WARP2025 and WARP2026, if they are able to patch older clients.
 
- * [NEMO](https://gitlab.com/4144/Nemo/) by 4144:  
-   Works up to 2022-04-06, after that you need to buy a newer Client from 4144 and get a new Nemo version.  
  * [WARP](https://github.com/Neo-Mind/WARP) by Neo-Mind:  
    Original successor to NEMO, but hence dropped support by Neo for unknown reasons, maybe real-life.  
  * [WARP2025](https://github.com/hiphop9/Warp2025) by skylove:  
    For any Client newer than 2022-04-06, see more info in the [rAthena Forum](https://rathena.org/board/topic/144862-2025-06-04_ragexe-warp2025/).
  * [WARP0716](https://github.com/CrazyBebop/WARP0716) by CrazyBepop:  
    For **ONLY** the 2025-07-16 Ragexe, see more info in the [rAthena Forum](https://rathena.org/board/topic/149119-warp0716-%E2%86%92-forge-%E2%80%94-ragexe-2025-07-16-patches-customjobs-reforged-newest-client/).  
+ * [WARP2026](https://github.com/zVictorHG/WARP2026-Project) by VictorHug0:  
+   You can get an 2026-01-07 Ragexe in the [rAthena Forum](https://rathena.org/board/topic/149414-2026-01-07-ragexe-clientinfo-warp/).  
+   I tested both with the 2026-02-19 kRO Full Client and the project files using `[27]` from the `ClientGenerator.bat` and didn't encounter any errors.
  * [FORGE](https://forge.legacygamers.net) by CrazyBepop:  
    This is still in development, but should be good alternative for NEMO and WARP in general once it's ready.
-
-Note: I will keep the original NEMO and WARP in here meanwhile, but I don't use them myself anymore.  
-I will also drop NEMO profiles in the near future.   
 
 ### Session & Profiles
 The easiest way to use this project is by taking advantage of the NEMO Profile/WARP Session feature.
 
-* Nemo [Profiles](https://github.com/llchrisll/ROenglishRE/tree/master/Addons/NEMO%20Profiles)
 * WARP [Sessions](https://github.com/llchrisll/ROenglishRE/tree/master/Addons/WARP%20Sessions)
 
 | Profile/Session | Usage for |
@@ -96,23 +96,16 @@ The easiest way to use this project is by taking advantage of the NEMO Profile/W
 | 2019-06 | 2019-06 and higher |
 
 Each profile/session has the patches with the required values already pre-defined,  
-like itemInfo.lub -> itemInfo_EN.lub, so you only have to press "OK" to confirm the patches  
+like `System\itemInfo.lub` -> `SystemEN\iteminfo.lua`, so you only have to press "OK" to confirm the patches  
 in Nemo while in WARP it applies automatically.
 
-NEMO Example - Client 2018-06-20 until the next profile
+!!! example "Example - Client 2018-06-20 until next profile"
 
-1.) "Load Profile" and select `2018_Translation.log` > Confirm patches  
-2.) "Select Recommended" after applying any profile.  
-3.) Now you can select your custom changes you want, like "Custom Windows Title" and so on.  
-4.) "Apply Selected" and test your client.
+	1. "Load Session file" and select `2018_Translation.yml` > Confirm patches  
+	2. "Select Recommended" after applying any session.  
+	3. Now you can select your custom changes you want, like "Custom Windows Title" and so on.  
+	4. "Apply Patches" and test your client.
 
-WARP Example - Client 2018-06-20 until next profile
-
-1.) "Load Session file" and select `2018_Translation.yml` > Confirm patches  
-2.) "Select Recommended" after applying any session.  
-3.) Now you can select your custom changes you want, like "Custom Windows Title" and so on.  
-4.) "Apply Patches" and test your client.
-
-Note - Quest List:  
+!!! note "Recommended Quests"
     `SystemEN\RecommendedQuests.lub` contains the latest kRO content which are mostly not implemented yet by rAthena.  
     So you can stick to the `SystemEN\RecommendedQuests_basic.lub` if you want as well.

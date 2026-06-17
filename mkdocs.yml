@@ -33,6 +33,7 @@ nav:
       - Random Options: guides/customs/random_options.md
       - Disable Doram: guides/customs/disable_doram.md
     - Miscellaneous:
+      - Custom Official GRFs: misc/custom_officials.md
       - Lua Depenencies: misc/lua_dependencies.md
       - Implementations: misc/implementations.md
       - Sprite Folder: misc/spritelist.md
