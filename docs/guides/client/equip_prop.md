@@ -1,6 +1,9 @@
 This page contains information about the EquipmentProperties.lub I collected and tested myself to some degree.  
 For advanced usage (like refine level) you need some basic lua knowledge as well, similar to NPC scripting in any emulator.
 
+!!! note "Generator by Nevermore"
+	Nevermore made an amazing tool to save you the hassle of writing it on your own, see more [here](#equipment-properties-generator).
+
 **Note: There might be mistakes and misunderstandings in there, if you have more information about it, let me know.**
 ___
 ## File Layout
@@ -347,4 +350,51 @@ To make use of the more advanced function calls, you need to understand lua to s
 	
 	=== "`ClassSubDamage(1, 0, temp2)`"
 	1 = Class (Boss), and `temp2` being the calucated value
+___
+## Equipment Properties Generator
+Nevermore created an amazing tool to generate the `EquipmentProperties.lub` based on rAthena db files and allows currently the following:
 
+ * Use of session files (like WARP)
+ * Include multiple db files
+ * Add custom bonuses  
+ 
+!!! important 
+	This tool is still WIP, so make sure to make use of GitHub's Issues and report your sightings.  
+	Like there are still item effects not implemented, so please be patient until they are.
+	
+!!! warning "File Locations"
+	I experienced that the tool overrides any existing `EquipmentPropertiesOrder.lub` without warning.  
+	As that was pretty problematic for me, I added a new folder to the .exe's root and pasted there my files.
+		
+!!! note "Pre-Re vs Renewal"
+	=== "Pre-Renewal"
+	I made some test runs and the pre-re version was done pretty quickly,  
+	because of the amount of data to be written.
+	
+	=== "Renewal"
+	This takes a bit of time as there are lots of entries to process, so don't close it while it's `Working...` and wait.
+
+	=== "Recommendation"
+	I would highly recommend you to first make a base version, especially for renewal, before adding your custom items.  
+	As it might run into an `maxinum call stack size` error if you try to write to an emptied file, like I did here:  
+	!!! note
+		Emptied means, deleting every entry in `EquipmentProperties.lub` `Item` and `Combiitem` tables.
+	![](../../images/EquipmentPropGen/overstack.png)
+	
+	After the base file is done, copy it (as backup and maybe other purposes) and select only the databases for custom items, like here:  
+	![](../../images/EquipmentPropGen/customs.png)
+	
+??? note "Images"
+	=== "Start"
+		![](../../images/EquipmentPropGen/start.png)
+	=== "Sessions"
+		![](../../images/EquipmentPropGen/sessions.png)
+	=== "Custom files folder"
+		![](../../images/EquipmentPropGen/files.png)
+	
+??? Example
+	![](../../images/EquipmentPropGen/example.png)
+	
+!!! download
+	[GitHub](https://github.com/Gerzzie/Equipment-Property-Generator)
+___ 
