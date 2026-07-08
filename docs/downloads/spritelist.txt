@@ -69,7 +69,7 @@ Files: /Class_Gender.act/.spr
  * 로그 = Rogue
  * 로드나이트 = Lord Knight
  * 로드페코 = Lord Knight (Peco)
- * 룬나이트 = Rune Knight(?)
+ * 룬나이트 = Rune Knight (Mount sprites)
  * 리벨리온 = Rebellion
  * 마도기어 = Madogear
  * 마도아머 = Madogear 2
@@ -144,8 +144,8 @@ Note: <Class> needs to be replaced with the respective name from above
  * frog_kagerou = Frog Mount for Kagerou
  * frog_oboro = Frog Mount for Oboro
  * peco_rebellion = Bike Mount for Rebellion (why Peco?)
- 
- * <Class>포링 = Poring Halter Sprites (Novice/Super Novice+Taekwon)
+ * 노비스포링 = Poring Halter Sprites (Novice)
+ * <Class>포링 = Poring Halter Sprites (Super Novice+Taekwon)
  * <Class>알파카 = Alpaca Halter Sprites (Acolyte Classes)
  * <Class>멧돼지 = Savage Halter Sprites (Merchant Classes)
  * 두꺼비<Class> = Frog Halter Sprites (Ninja/Soul Linker)

@@ -5,6 +5,25 @@ ___
 !!! note
 	Contains every resource file (sprites/textures), not present in kRO data.grf based on various other servers, just as jRO, iRO etc.  
 	Base Client is 2025-07-16, compares against 2025-12-04 and 2026-02-19 kRO before starting with jRO, etc.
+	
+	!!! example "Folder Structure"
+		* sprite   
+		    * ¸ó½ºÅÍ
+		    * ·Îºê
+		    * ¾ÆÀÌÅÛ
+		    * ¾Ç¼¼»ç¸®
+		    * ¹æÆÐ
+		    * ÀÎ°£Á·
+		    * ÀÌÆÑÆ®
+		    * npc
+		* texture
+		    * À¯ÀúÀÎÅÍÆäÀÌ½º
+			  * cardbmp
+			  * collection
+			  * illust
+			  * item 
+		* effect
+ 
 
 * [MediaFire - GRF](https://www.mediafire.com/file/o0mfywht1rpqhkc/official_data.grf/file)
 * [MediaFire - Zip](https://www.mediafire.com/file/mkdufl2wyrchvjd/official_data.zip/file)

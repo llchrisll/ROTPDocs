@@ -16,6 +16,7 @@ nav:
         - jRO Enchants Display: guides/addons/jro_enchants.md
         - Custom Lua Support: guides/addons/cls.md
         - Legacy Files: guides/addons/legacy.md
+        - StateIcon Patch: guides/addons/stateicon_patch.md
     - Client Features:
       - Enchant UI: guides/client/enchantui.md
       - Equipment Properties: guides/client/equip_prop.md
