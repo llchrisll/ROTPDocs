@@ -5,7 +5,7 @@ ___
 This is not something official but rather a QOL update, especially for those who wants to use the Nemo/WARP patch "Use icons from stateiconimginfo.lub".  
 That patch resulted in ignoring hardcoded icons, therefore losing them all together as those are not mentioned in stateiconimginfo.lub at all.
 
-## Updated lub files
+## [Updated lub files](https://github.com/llchrisll/ROenglishRE/tree/master/Addons/Stateiconimginfo%20Patch)
 To make this work I added a new table in `stateiconimginfo.lub` > `StateIconImgList_HC = {` which lists all hardcoded icons.  
 This table will be imported if the config below is on `true`:
 ```
