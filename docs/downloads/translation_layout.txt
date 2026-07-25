@@ -106,6 +106,10 @@ Skill Description
 	"can inflict half of the total ^CC6600Critical Damage^777777",
 	"based on half of the caster's ^CC6600Critical^777777 chance.^000000",
 	
+	"Damage additionally increases according",
+	"to the caster's ^CC6600Base Level^777777, ^CC6600SPL^777777",
+	"and ^0000FFStage Manner^777777 skill level.",
+	
 	- 4th Classes:
 	"Skill Form: ^3F0099Active(AP)^000000",
 	"AP Recovery: ^0054FF^000000",
@@ -129,15 +133,20 @@ Item Description
 
 	unidentifiedDescriptionName = { "Can be identified by using a ^990099Magnifier^000000." },
 	
-	- Stats Codings:
-	"Base ^CC6600AGI^000000 at least ^FF000070^000000:",
-	"Bonus ^CC6600STR^000000 at least ^FF0000+10^000000:",
+	- Level:
 	"^CC6600Base Level^000000 at least ^FF0000100^000000:",
 	"^CC6600Base Level^000000 is ^FF000099^000000 or less:",
 	"^CC6600Base Level^000000 between ^FF0000100~169^000000:",
 	"^CC6600Base Level^000000 less than ^FF0000175^000000:",
+	"^CC6600Base Level ^0000FF1^000000:",
+	"^CC6600Job Level ^0000FF1^000000:",
+	"For each ^0000FF5 ^CC6600Base Level^000000:",
+	"For each ^0000FF5 ^CC6600Job Level^000000:",
+	
+	- Stats Codings:
+	"Base ^CC6600AGI^000000 at least ^FF000070^000000:",
+	"Bonus ^CC6600STR^000000 at least ^FF0000+10^000000:",
 	"For each ^0000FF20^000000 base ^CC6600STR^000000:",
-	"For each ^0000FF50 ^CC6600Base Level^000000:",
 	"For each ^0000FF20^000000 combined sum of base ^CC6600AGI^000000 and ^CC6600VIT^000000:",
 	"When total combined sum of base ^CC6600VIT^000000 and ^CC6600STR^000000 is ^0000FF250^000000:",
 	
@@ -159,12 +168,12 @@ Item Description
 	"Increases HP Recovery Rate by %.",
 	"Increases SP Recovery Rate by %.",
 	"Attack Range: x cells",
-	"Prevents ^663399<Status^000000 status.",
+	"Prevents ^663399<Status>^000000 status.",
 	"Increases resistance to ^663399<Status>^000000 status by %.",
 	"뢎ncreases Attack Speed (decreases After Attack Delay by %).",
 	"All Basic Stats +",
 	
-	> 4th Classes:
+	- 4th Classes:
 	"POW +",
 	"STA +",
 	"WIS +",
@@ -179,8 +188,24 @@ Item Description
 	"MRES +",
 	"All Trait Stats +",
 	
-	- Damage Descriptions:
-	"Inflict % more damage on ^0033CC<Monster>^000000.",
+	- Misc:
+	"Prevents knock-back effect.",
+	"Nullifies Weapon Size Penalty.",
+	"Nullifies damage penalty resulting from monster's size.",
+	"Random chance defeating monsters can drop ^0033CC<Item>^000000.",
+	"Random chance defeating ^0033CC<Monster>^000000 can drop ^0033CC<Item>^000000.",
+	"Random chance defeating ^FF0000<Race>^000000 race monsters can drop ^0033CC<Item>^000000.",
+	"^663399Indestructible in battle^000000",
+	"Skill casting cannot be interrupted.",
+	"Nullifies Gemstone Requirement of certain skills.",
+	"Restores MaxHP and MaxSP by 100% when resurrected.",
+	"Random chance to inflict ^663399Bleeding^000000 status when dealing physical damage.",
+	"Random chance to inflict ^663399Bleeding^000000 status when dealing magical damage.",
+	
+	- Damage:	
+	"Increases Damage against ^0033CC<Monster>^000000 by %.",
+	"Increases Physical Damage against ^0033CC<Monster>^000000 by %.",
+	"Increases Magic Damage against ^0033CC<Monster>^000000 by %.",
 	
 	"Increases Magical Damage with ^<Element>^000000 element by %.",
 	"Increases Magical Damage with every element by %.",
@@ -201,51 +226,66 @@ Item Description
 	"Increases Damage against monsters of ^<Element>^000000 element by %.",
 	"Increases Damage against monsters in Memorial Dungeon's ^0033CC<Instance Name>^000000 by 15%.",
 	
-	"Decreases damage taken from monsters of ^FF000<Race/Size/Class>^000000 race/size/class by %.",
-	"Decreases damage taken from monsters of every race/size/class by %.",
-	"Decreases damage taken from monsters of ^<Element>^000000 element by %.",
-	"Decreases damage taken from ranged physical attacks by 20%.",
+	"Decreases Damage taken from monsters of ^FF0000<Race/Size/Class>^000000 race/size/class by %.",
+	"Decreases Damage taken from monsters of every race/size/class by %.",
+	"Decreases Damage taken from monsters of ^<Element>^000000 element by %.",
+	
+	"Decreases Damage taken from physical attacks by %.",
+	"Decreases Damage taken from melee physical attacks by %.",
+	"Decreases Damage taken from ranged physical attacks by %.",
+	"Decreases Damage taken from magical attacks by %.",
+	"Decreases Damage taken from every elemental attack by %.",
+	
+	"Ignores physical defense of ^FF0000<Race>^000000 race enemies by %.",
+	"Ignores magical defense of ^FF0000<Race>^000000 race enemies by %.",
+	"Ignores both defense of all races, except ^FF0000Players^000000, by %.",
 	
 	"Increases experience gained from defeating ^FF0000<Race>^000000 race monsters by %.",
 	"Increases experience gained from defeating ^<Element>^000000 elemental monsters by %.",
 	"Increases experience gained by 100% and item drop chance by 50%.",
 	
-	"Ignores physical and magical defense of every race, except ^FF0000Players^000000, by %.",
+	
+	// New Effect since 2025-09 ~ "Increased Hit Physical Damage"
+	// The increased hit physical damage effect is calculated along the same lines as the "Increased Critical Damage" effect. It applies to regular physical attacks that do not trigger a critical hit, or to attacks that trigger a critical hit but do not trigger a critical hit due to the critical chance.
+	// ( However, the increased hit physical damage effect is not applied to attacks that are not based on base ATK, or to some skills.)
+	// Source: https://ro.gnjoy.com/news/devnote/View.asp?category=1&seq=4194130&curpage=1
+	"Increases Normal Physical Damage by %.", 
+	
+	- Healing 
+	"Increases HP Recovery Amount of ^009900Healing^000000 skills by %.",
+	"Increases HP Recovery Amount of ^990099Recovery Items^000000 by %.",
+	"Increases ^009900Healing^000000 skills effectiveness by %.",
 	
 	- Consumable Items:
 	^0033CC = Specific Recovery Item
-	^990099Recovery Items^000000
 	"^0000CCEffect:^000000", > Used at buff/heal items
 	
 	"<STAT> +1 multiplied with total skill level of ^0033CC<Class>^000000's exclusive/related skills:",
 	"^009900<Skill List> and <Last Skill>^000000",
 	
-	- Skill Codings:
+	- Skills:
 	"For each Level of ^009900<Skill>^000000:",
-	"Increases damage of ^009900<Skill>^000000 by %.",
+	"Increases Damage of ^009900<Skill>^000000 by %.",
 	"Enables the use of ^0000FF<Skill>^000000.",
 	"Enables the use of Level X ^0000FF<Skill>^000000.",
 	"Enables the use of ^0000FF<Skill>^000000 at the same level as the ^0000FFRefine Level^000000.",
 	"When ^009900<Skill>^000000 is used:",
 	"When ^009900<Skill>^000000 is mastered:",
 	"When Level X ^009900<Skill>^000000 is learned:",
+	"When ^009900<Skill>^000000 Level 5 or higher is learned:",
 	"Gain following effects when Level X ^009900<Skill>^000000 is learned:",
+	"Gain following effects when Level X ^009900<Skill>^000000 is casted:",
 	"When ^0033CC<Base Class>^000000 classes uses ^009900<Skill List>^000000 or ^009900<Last Skill>^000000:",
-	
-	"Skill casting cannot be interrupted.",
-	"Nullifies Gemstone Requirement of certain skills.",
-	"Nullifies Weapon Size Penalty.",
-	
+		
 	"Increases damage of ^009900<Skill>^000000 by %."
 	
-	"Decreases ^009900<Skill>^000000 skill cooldown by seconds.",
-	"Decreases ^009900<Skill>^000000 skill cooldown by second.",
+	"Decreases ^009900<Skill>^000000 skill cooldown by second(s).",
 	"Decreases ^009900<Skill>^000000 skill cooldown by %.",
 	
 	"Decreases SP Consumption by .",
 	"Decreases SP Consumption of ^009900<Skill>^000000 by .",
 	
-	"Decreases After Skill Delay by  %.",
+	"Decreases After Skill Delay by %.",
 	"Decreases After Skill Delay of ^009900<Skill>^000000 by %.",
 	
 	"Decreases Variable Casting Time by %.",
@@ -258,6 +298,27 @@ Item Description
 	"increase damage dealt with ^009900<Skill>^000000 by % per skill Level.",
 	
 	"Physical attacks have a certain chance to auto cast Level X ^009900<Skill>^000000. (If you learned a higher Level, it will auto cast that Level instead.)",
+	"Physical attacks have a certain chance to increase ATK by 200 for 3 seconds.",
+	
+	"Recovers 250 HP and 25 SP when defeating monsters with physical attacks.",
+	"Recovers 250 HP and 25 SP when defeating monsters with magical attacks.",
+	
+	"Physical attacks will absorb 1% of the inflicted damage as HP.",
+	"Physical attacks will absorb 1% of the inflicted damage as SP.",
+	
+	"Physical attacks have a 1% chance to absorb 1% of the inflicted damage as HP.",
+	"Physical attacks have a 1% chance to absorb 1% of the inflicted damage as SP.",
+	
+	"Unlimited effect of ^009900<Skill>^000000 skill.",
+	
+	- Special Status:
+	"^32CD32<Status>^000000:",
+	
+	"^32CD32Divine Power^000000:",
+	"For each ^0000FF10 ^CC6600Base Level^000000:",
+	"All Basic Stats +1, MaxHP +1%,",
+	"FLEE +10, ATK/MATK +10.",
+	
 
 	- Equipment Combination:
 	"When equipped with ^990099<Equipment>^000000:",
@@ -267,8 +328,6 @@ Item Description
 	"When equipped as ^990099Accessory Right^000000:", -> Accessory (1)
 	"When equipped as ^990099Accessory Left^000000:", -> Accessory (2)
 	"If ^990099Weapon^000000 type is a ^990099Two-Handed Sword, Two-Handed Spear, Two-Handed Staff, Two-Handed Axe, Katar, Bow, Huuma Shuriken^000000 or any ^990099Firearm^000000 class weapon:",
-	
-	"^663399Indestructible in battle^000000",
 	
 	- Compounding/Enchantment:
 	"When compounded on ^990099<Equipment>^000000:",
@@ -287,18 +346,35 @@ Item Description
 	"^0000FFFor each Refine Level^000000 equal or above ^0000FF+9^000000 of ^990099<Equipment>^000000 and ^990099<Equipment>^000000:",
 	"^0000FFFor each Refine Level^000000 equal or above ^0000FF+6^000000:",
 	"^0000FFFor each Refine Level^000000 above ^0000FF+6^000000:",
-	"^0000FFFor each 2 Refine Levels^000000 of equipped ^990099<Equipment Type>^000000:",
 	"^0000FFFor each 2 Refine Levels^000000:",
+	"^0000FFFor each 2 Refine Levels^000000 of equipped ^990099<Equipment Type>^000000:",
 	"^0000FFRefine Level +7^000000:",
 	"^0000FFUp to max +5 Refine Level^000000:",
 	"^0000FFRefine Level^000000 of equipped ^990099<Equipment Type>^000000 is ^0000FF+7 or higher^000000:",
 	"^0000FFRefine Level^000000 of ^990099<Equipment>^000000 is ^0000FF+7 or higher^000000:",
 	
-	> Refine Combinations:
+	- Equipment Sets:
 	"^0000FFTotal Refine Level^000000 of ^990099<Equipment>^000000, ^990099<Equipment>^000000 and ^990099<Equipment>^000000 is ^0000FF+27 or higher^000000:",
 	"^0000FFTotal Refine Level of entire set^000000 is at least ^0000FF+14^000000:",
 	"^0000FFFor each Refine Level^000000 of ^0000FFentire set^000000:",
 	"^0000FFFor each 5 Refine Levels^000000 of ^0000FFentire set^000000:",
+	
+	- Grade Options:
+	"If ^990099<Weapon>^000000's Grade is ^CC3D3DC^000000 or higher:",
+	"If the ^990099<Equipment>^000000's Grade is ^CC3D3DC^000000 or higher:",
+	"If enchanted ^990099Equipment^000000's Grade is ^CC3D3DD^000000 or higher:",
+	"<Bonus> for each Grade of the enchanted Weapon."
+	"Depending on the Grade of the enchanted ^990099<Equipment>^000000:",
+	
+	"^CC3D3D[Grade Bonus]^000000",
+	"[Grade D]: Effect",
+	
+	- Enchantments
+	"^CC3D3D[Bonus by Equipment's Grade]^000000",
+	"^CC3D3D[Bonus by <Equipment> Grade]^000000",
+
+	- Refine Level: <Effect> per ^0000FF2 Refine Levels^000000
+	- Stats: <Effect> per ^0000FF15^000000 base ^CC6600INT^000000
 	
 	- Player died:
 	"If you are incapacitated, the mercenary will disappear.",
@@ -314,6 +390,7 @@ Item Description
 	"^ff0000If you open this item, it is not refundable anymore.^000000",
 	"^ff0000This item cannot be traded with other accounts.^000000",
 	"^ff0000This item cannot be traded or moved to storage.^000000",
+	"^ff0000This item cannot be traded and can only put in storage.^000000",
 	
 	"^ff0000This item can only be sold to NPCs and moved to storage.^000000",
 	"^ff0000This item can only be sold to NPCs.",
@@ -339,37 +416,35 @@ Equipment Info Layout:
 			"^0000CCRefineable:^000000 No", > Only used when the item is NOT refinable
 			"^0000CCEnchantable:^000000 Yes",
 			"_______________________",
+			"^0000CCRequirement:^000000 None", > If there is no requirement (yes, Base Level 1 counts towards this)
 			"^0000CCRequirement:^000000",
 			"Base Level X",
 			"<Job Classes>"
 	
-Shadow Thump Box:
+- Shadow Thump Box:
 	"If you combine x of any of the following Shadow Equipments which are refined to +5 or higher, you can obtain <Reward>.",
 	"If you combine x of any of the following Shadow Equipments which are refined to +7 or higher, you can obtain <Reward>.",
 	"<List>",
 	"_______________________",
 	"^ff0000The Refine Level of the materials does not affect the result.^000000",
 
-Boxes:
+- Boxes:
 	"[Required Materials]",
 	"[Obtainable Items]",
 	"[Selectable Items]",
 	"[Target Items]",
 	
 	
-WoE/PvP:
+- WoE/PvP:
 	"*Effects in WoE TE area",
-	"Increases physical damage against ^FF0000Players^000000 by 40%.",
-	"Increases magical damage against ^FF0000Players^000000 by 40%.",
-	"Random chance to inflict ^663399Bleeding^000000 status when dealing physical damage.",
-	"Random chance to inflict ^663399Bleeding^000000 status when dealing magical damage.",
-	"Decreases damage taken from ^FF0000Players^000000 by 10%.",
+	"Increases Physical Damage against ^FF0000Players^000000 by 40%.",
+	"Increases Magical Damage against ^FF0000Players^000000 by 40%.",
+	"Decreases Damage taken from ^FF0000Players^000000 by 10%.",
 	
 	"Decreases the target's SP by 10% on each physical attack. (This effect does not work with skills.)",
 	"Has a chance to reflect damage back to the enemy as well as casting ^009900Magic Mirror^000000.",
-	"Physical attacks have a certain chance to increase ATK by 200 for 3 seconds.",
 
-Exchange NPC Locations:
+- Exchange NPC Locations:
 	"<NAVI>[Designer Heidam]<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI> can exchange it with Costume Enchant Stone Box <X>.",
 		
 	"X can be obtained from",
@@ -398,7 +473,7 @@ Exchange NPC Locations:
 	
 	"^32CD32This item can't receive additional enchantment from Piercing Brosnan.^000000",
 	
-Shadow Equipment:
+- Shadow Equipment:
 	> Armor: 
 	"A suit of armor worn on top of normal armor for additional defense. Needs a complete set to have bonus effect.",
 	
@@ -417,7 +492,7 @@ Shadow Equipment:
 	> Shoes: 
 	"A pair of shoes worn on top of normal shoes for additional defense. Needs a complete set to have bonus effect.",
 
-Unidentified Item Display Names when certain Resource Name is given:
+- Unidentified Item Display Names when certain Resource Name is given:
 	리본 = Ribbon
 	머리띠 = Hairband
 	캡 / 햇 = Hat
@@ -431,7 +506,7 @@ Unidentified Item Display Names when certain Resource Name is given:
 	바스타드소드 = Sword
 	코튼셔츠 = Clothing
 
-Enchant Stones:
+- Enchant Stones:
 	Item Display Names:
 	Upper
 	Mid
@@ -446,26 +521,7 @@ Enchant Stones:
 	"Gives the following effects when compounded on a slot of an Costume Lower Headgear.",
 	"Gives the following effects when compounded on a slot of an Costume Garment.",
 
-Grade Options:
-	"If ^990099<Weapon>^000000's Grade is ^CC3D3DC^000000 or higher:",
-	"If the ^990099<Equipment>^000000's Grade is ^CC3D3DC^000000 or higher:",
-	"If enchanted ^990099Armor^000000's Grade is ^CC3D3DD^000000:",
-	"If enchanted ^990099Equipment^000000's Grade is ^CC3D3DD^000000 or higher:",
-	"<Bonus> for each Grade of the enchanted Weapon."
-	"Depending on the Grade of the enchanted ^990099<Equipment>^000000:",
-	
-	"^CC3D3D[Bonus by Grade]^000000",
-	"^CC3D3D[Bonus by <Equipment> Grade]^000000",
-	"^CC3D3D[Bonus by Equipment's Grade]^000000",
-	"[Grade D]: Effect",
-
-	Refine Level:
-	<Effect> per ^0000FF2 Refine Levels^000000
-	
-	Stats:
-	<Effect> per ^0000FF15^000000 base ^CC6600INT^000000
-
-Equipped Effect:
+- Equipped Effect:
 	"^006400Since it is an equipped effect, it still will be displayed even when the effect (/effect) is turned off.^000000",
 	
 	"^006400This item is equipped with special effects:",
@@ -473,9 +529,9 @@ Equipped Effect:
 	"- When using a disappearing skill such as \"Hiding\", the effect will not be visible to other players.",
 	"- Even when equipped with an adopted character, the same effect as a normal character will be displayed.^000000",
 	
-	"^000088The graphic is reflected on the character.^000000",
+	"^0000FFGraphics are reflected in the character.^000000",
 	
-jRO Egg Description:
+- jRO Egg Description:
 			"A magical egg that pops out outfits when opened.",
 			"_______________________",
 			"Any of the following costume equipment will appear at random.^0000FF",
@@ -492,24 +548,26 @@ jRO Egg Description:
 			"_______________________",
 			"^0000CCWeight:^000000 1"
 			
+- Rune Tablet System - Divine-pride.net
+	https://www.divine-pride.net/forum/index.php?/topic/6983-kro-rune-tablet-system/#comment-13391
 			
-ItemReformSystem:
-	- InformationString:
+- ItemReformSystem:
 	<B>조합 결과 정보 안내</B>
-	> <B>Combination Result</B>
+	= <B>Combination Result</B>
 	
 	제련도 :
-	> Refine Level:
+	= Refine Level:
 	
 	랜덤 옵션 정보 :
 	랜덤옵션 :
-	> Random Options:
+	= Random Options:
 	
 	카드 및 인챈트 정보 :
-	> Cards:
+	카드 정보 :
+	= Cards:
 	
-	등급 정보 :
-	> Grade Rating:
+	등급 정보 : 
+	= Grade Rating:
 	
 	종부여 = types granted
 	
@@ -520,7 +578,7 @@ ItemReformSystem:
 	초기화 = Reset
 	삭제됨 = Deleted
 	
-EnchantList:
+- EnchantList:
 	- SetCaution:
 	기본 성공확률 > Success Chance:
 	인챈트 성공확률 > Success Chance:
