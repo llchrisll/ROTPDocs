@@ -39,7 +39,7 @@ ___
 
 Combiitem = {
 	[<ComboID>] = {
-		Item = { <ItemID>,<ItemID>,... }, -- contains the items which trigger the combo
+		Item = { },
 		OnStartEquip = function()
 			<functions>
 		end
@@ -48,6 +48,29 @@ Combiitem = {
 
 SkillGroup = {
   [<SkillGroup>] = {<SkillID>},
+}
+
+RefiningBonus = {
+  ARMOR_DEF = {},
+  ARMOR_RES = {},
+  WEAPON_ADV_ATK = {},
+  WEAPON_ATK = {},
+}
+
+GradeBonus = {
+  NORMAL_ARMOR = {
+    GRADE_MAGIC = {},
+    GRADE_RARE = {}
+  },
+  NORMAL_WEAPON = {
+    GRADE_ANCIENT = {REFINING_WEAPON_ATK_MULTIPLE = 25, REFINING_WEAPON_MATK_MULTIPLE = 25},
+    GRADE_AWAKEN = {REFINING_WEAPON_ATK_MULTIPLE = 40, REFINING_WEAPON_MATK_MULTIPLE = 40},
+    GRADE_EPIC = {REFINING_WEAPON_ATK_MULTIPLE = 5, REFINING_WEAPON_MATK_MULTIPLE = 5},
+    GRADE_LEGEND = {REFINING_WEAPON_ATK_MULTIPLE = 15, REFINING_WEAPON_MATK_MULTIPLE = 15},
+    GRADE_MAGIC = {REFINING_WEAPON_ATK_MULTIPLE = 1, REFINING_WEAPON_MATK_MULTIPLE = 1},
+    GRADE_RARE = {REFINING_WEAPON_ATK_MULTIPLE = 3, REFINING_WEAPON_MATK_MULTIPLE = 3},
+    GRADE_UNIQUE = {REFINING_WEAPON_ATK_MULTIPLE = 10, REFINING_WEAPON_MATK_MULTIPLE = 10}
+  }
 }
 ```
 ### Types and Stat table
@@ -314,7 +337,445 @@ end
 	| `<Size>` | 0 = Small</br>1 = Medium</br>2 = Large |
 	| `<Skill Group>` | refers to EquipmentProperties.lub "SkillGroup" table,</br> `[X]` is the skill group itself, can be 0 for all |
 	| `<Equip Slot>` | 1 = Lower Headgear</br>2 = Armor</br>3 = Shield</br>4 = Weapon</br>5 = Garment</br>6 = Shoes</br>7 = Right Accessory</br>8 = Left Accessory</br>10 = Upper Headgear</br>11 = Middle Headgear</br>30 = Shadow Armor</br>31 = Shadow Weapon</br>32 = Shadow Shield</br>33 = Shadow Shoes</br>34 = Shadow Right Accessory</br>35 = Shadow Left Accessory |
+___
+### Combiitem
+This table contains the combo effects and is sorted by an intern `ComboID`, which is also declared in the actual item entries as well, tho not linked to the server db.  
+The ID's start with `2000000000`, but I don't know if you can go lower.
+!!! info "Layout"
+	```
+	Combiitem = {
+		[<ComboID>] = {
+			Item = { <ItemID>,<ItemID>,... }, -- contains the items which trigger the combo
+			OnStartEquip = function()
+				<functions>
+			end
+		},
+	}
+	```
+### SkillGroup
+This is only used to adjust Fixed Casting Time of skills, I believe it's used only if they are not stackable and only the highest effect should be respected.  
+I don't believe there is a limit of an `<SkillGroup>`, but current max is 10000.  
+!!! info "Layout"
+	```
+	SkillGroup = {
+	  [<SkillGroup>] = {<SkillID>},
+	}
+	```
 
+___
+### RefiningBonus
+!!! info "ARMOR_DEF"
+	Defines the DEF bonus per armor level and refine.  
+!!! info "ARMOR_RES"
+	Defines the RES/MES bonus per refine for level 2 armors.  
+	Level 1 armors are 0's, otherwwise level 2 armors won't be displayed correctly.
+!!! info "WEAPON_ADV_ATK"
+	Defines the P.ATK/S.MATK bonus per refine for level 5 weapons.   
+	Level 1~4 weapons are 0's, otherwwise level 5 weapons won't be displayed correctly.
+!!! info "WEAPON_ATK"
+	Defines the ATK/MATK bonus per refine for weapons.
+!!! example "Layout Example - ARMOR_DEF"
+	!!! info "Level Separators"
+		Each of these define the armor/weapon level while the values are the bonus per refine.
+		```
+		{
+		},
+		```
+	```
+	RefiningBonus = {
+	  ARMOR_DEF = {
+		{ -- Armor Level 1
+		  1, -- +1
+		  2,
+		  3,
+		  4,
+		  6,
+		  8,
+		  10,
+		  12,
+		  15,
+		  18, -- +10
+		  21,
+		  24,
+		  28,
+		  32,
+		  36,
+		  40,
+		  45,
+		  50,
+		  55,
+		  60 -- +20
+		},
+		{ -- Armor Level 2
+		  1, -- +1
+		  2,
+		  4,
+		  5,
+		  7,
+		  10,
+		  12,
+		  14,
+		  18,
+		  22, -- +10
+		  25,
+		  29,
+		  34,
+		  38,
+		  43,
+		  48,
+		  54,
+		  60,
+		  66,
+		  72 -- +20
+		}
+	  },
+	```
+??? example "Pre-Renewal Data"
+	Here you have entries for pre-re:  
+	!!! warning "Note"
+		I left every refine past +10 as well as each new armor/weapon level as they were and added some comments for clarifcation.
+	!!! note "Decimals"
+		The client can't display decimal values, it will round it down entirely.
+	```
+	RefiningBonus = {
+	  ARMOR_DEF = {
+		{
+		  0.7,
+		  1.4,
+		  2.1,
+		  2.8,
+		  3.5,
+		  4.2,
+		  4.9,
+		  5.6,
+		  6.3,
+		  7, -- +10
+		  21, -- +11 from here (Renewal only)
+		  24,
+		  28,
+		  32,
+		  36,
+		  40,
+		  45,
+		  50,
+		  55,
+		  60
+		},
+		{ -- Level 2 Armor (Renewal only)
+		  1,
+		  2,
+		  4,
+		  5,
+		  7,
+		  10,
+		  12,
+		  14,
+		  18,
+		  22,
+		  25,
+		  29,
+		  34,
+		  38,
+		  43,
+		  48,
+		  54,
+		  60,
+		  66,
+		  72
+		}
+		}
+	  },
+	  ARMOR_RES = { -- RES/MRES per refine (Renewal only)
+		{
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		},
+		{
+		  2,
+		  4,
+		  6,
+		  8,
+		  10,
+		  12,
+		  14,
+		  16,
+		  18,
+		  20,
+		  22,
+		  24,
+		  26,
+		  28,
+		  30,
+		  32,
+		  34,
+		  36,
+		  38,
+		  40
+		}
+	  }, 
+	  WEAPON_ADV_ATK = { -- P.ATK/S.MATK per refine (Renewal only)
+		{
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		},
+		{
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		},
+		{
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		},
+		{
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		},
+		{
+		  2,
+		  4,
+		  6,
+		  8,
+		  10,
+		  12,
+		  14,
+		  16,
+		  18,
+		  20,
+		  22,
+		  24,
+		  26,
+		  28,
+		  30,
+		  32,
+		  34,
+		  36,
+		  38,
+		  40
+		}
+	  },
+	  WEAPON_ATK = {
+		{
+		  2,
+		  4,
+		  6,
+		  8,
+		  10,
+		  12,
+		  14,
+		  16,
+		  18,
+		  20,
+		  22, -- +11 from here (Renewal only)
+		  24,
+		  26,
+		  28,
+		  30,
+		  48,
+		  51,
+		  54,
+		  57,
+		  60
+		},
+		{
+		  3,
+		  6,
+		  9,
+		  12,
+		  15,
+		  18,
+		  21,
+		  24,
+		  27,
+		  30,
+		  33, -- +11 from here (Renewal only)
+		  36,
+		  39,
+		  42,
+		  45,
+		  80,
+		  85,
+		  90,
+		  95,
+		  100
+		},
+		{
+		  5,
+		  10,
+		  15,
+		  20,
+		  25,
+		  30,
+		  35,
+		  40,
+		  45,
+		  50,
+		  55, -- +11 from here (Renewal only)
+		  60,
+		  65,
+		  70,
+		  75,
+		  112,
+		  119,
+		  126,
+		  133,
+		  140
+		},
+		{
+		  7,
+		  14,
+		  21,
+		  28,
+		  35,
+		  42,
+		  49,
+		  56,
+		  63,
+		  70,
+		  77, -- +11 from here (Renewal only)
+		  84,
+		  91,
+		  98,
+		  105,
+		  160,
+		  170,
+		  180,
+		  190,
+		  200
+		},
+		{ -- Level 5 Weapons (Renewal only)
+		  8,
+		  16,
+		  24,
+		  32,
+		  40,
+		  48,
+		  56,
+		  64,
+		  72,
+		  80,
+		  88,
+		  96,
+		  104,
+		  112,
+		  120,
+		  128,
+		  136,
+		  144,
+		  152,
+		  160
+		}
+	  }
+	}
+	```
+___
+### GradeBonus
+I didn't find anything relevant yet about this, so if you have some info about this, let me know please.
+!!! info "NORMAL_ARMOR"
+	This currently holds for Armor `GRADE_MAGIC` and `GRADE_RARE` with no values, therefore I can't say anything about that.
+
+!!! info "NORMAL_WEAPON"
+
+___
+## Downloads
+* [Example - Renewal (21th Juney 2026)](../../downloads/EquipmentProperties.lub)  
+  > Generated with [Nevermore's app](#equipment-properties-generator)
+* [Example - Pre-RE (21th June 2026)](../../downloads/EquipmentProperties_PRERE.lub)  
+  > Generated with [Nevermore's app](#equipment-properties-generator)
+* [Template - Renewal](../../downloads/EquipmentProperties-tmpl.lub)
+  > emptied "Item" and "Combiitem" tables; uses renewal refine bonus
+* [Template - Pre-RE](../../downloads/EquipmentProperties_PRERE-tmpl.lub)
+  > emptied "Item" and "Combiitem" tables; uses pre-renewal refine bonus
+___ 
 ## Basic Lua
 To make use of the more advanced function calls, you need to understand lua to some degree.  
 [Lua 5.3 Reference Manual](https://www.lua.org/manual/5.3/manual.html)
@@ -391,10 +852,8 @@ Nevermore created an amazing tool to generate the `EquipmentProperties.lub` base
 		![](../../images/EquipmentPropGen/sessions.png)
 	=== "Custom files folder"
 		![](../../images/EquipmentPropGen/files.png)
+	=== "Example"
+		![](../../images/EquipmentPropGen/example.png)
 	
-??? Example
-	![](../../images/EquipmentPropGen/example.png)
-	
-!!! download
-	[GitHub](https://github.com/Gerzzie/Equipment-Property-Generator)
-___ 
+!!! downloads
+	[GitHub](https://github.com/Gerzzie/Equipment-Property-Generator)  
