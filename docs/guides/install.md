@@ -7,31 +7,6 @@ I recommend you to use TortoiseGit to download this project.
 * [TortoiseGit](https://tortoisegit.org/download/)
 
 Optional is that you download the repository, in a Zip format, but then you have to download the whole project again when I make updates, not just the updated files.
-
-## 2025 Full Clients and Ragexes
-___
-Disclaimer: This was written on 25th April 2026 and might/will change in the near future.
-___
-With the recent changes to the project and kRO clients (since 2025-07 and 2025-12-04),  
-I will recommend one of these two full kRO clients, which were kindly provided by skylove:
-
- 1. [2025-07-16](https://drive.google.com/file/d/1EAlnpYywf6ktli3v9DliDXMvrcFcClfq/view?usp=drive_link):  
-    You will need to update this client, otherwise you will get a few lua errors duo the project being more up to date.  
-	Or you'll get the files you error at from the `Tools\AdditionsGenerator.bat`.  
-	Feel free to also download the `kro_data.grf` to get newer resource files.  
- 2. [2026-02-19](https://drive.google.com/file/d/1NfZJb3WuDmeqfPGGcLzDlVJLnGKXWzXy/view):  
-    You don't need my custom `kro_data.grf`, as it already contains files from it.
-    Skylove told me to avoid updating this client as well. So you have been warned.  
-	From what I have seen, the `data.grf` in there is fully accessable by GRF Editor,  
-	but I might be wrong about that.
- 
-###Important kRO Client changes
- 
- 1. Clients/GRFs above 2025-07-16 implemented GRF v3 support, which increases the max size an GRF massively.  
-    But this also requires newer clients. Clients like 2022-04-06 will not work anymore.  
-	I didn't test which clients would still work with GRFs like that.
- 2. Clients/GRFs above 2025-12-04 received a new GRF encryption, which are also not accessable to older clients.  
-    Even GRF Editor (to this date) can't encrypt them.
    
 ## Translation Folder
 With commit of [10th December 2023](https://github.com/llchrisll/ROenglishRE/commit/649d35f956a1a5cee088557194b99822d132a5ad), the default version of this project is 2015-10-29 again!
@@ -82,11 +57,9 @@ To be able to patch an unpacked kRO Ragexe, you require one of these programs:
  * [WARP2026](https://github.com/zVictorHG/WARP2026-Project) by VictorHug0:  
    You can get an 2026-01-07 Ragexe in the [rAthena Forum](https://rathena.org/board/topic/149414-2026-01-07-ragexe-clientinfo-warp/).  
    I tested both with the 2026-02-19 kRO Full Client and the project files using `[27]` from the `ClientGenerator.bat` and didn't encounter any errors.
- * [FORGE](https://forge.legacygamers.net) by CrazyBepop:  
-   This is still in development, but should be good alternative for NEMO and WARP in general once it's ready.
 
 ### Session & Profiles
-The easiest way to use this project is by taking advantage of the NEMO Profile/WARP Session feature.
+The easiest way to use this project is by taking advantage of the WARP Session feature.
 
 * WARP [Sessions](https://github.com/llchrisll/ROenglishRE/tree/master/Addons/WARP%20Sessions)
 
@@ -109,3 +82,43 @@ in Nemo while in WARP it applies automatically.
 !!! note "Recommended Quests"
     `SystemEN\RecommendedQuests.lub` contains the latest kRO content which are mostly not implemented yet by rAthena.  
     So you can stick to the `SystemEN\RecommendedQuests_basic.lub` if you want as well.
+
+## 2025 Full Clients and Ragexes
+___
+Disclaimer: This was written on 25th April 2026 and might/will change in the near future.
+___
+With the recent changes to the project and kRO clients (since 2025-07 and 2025-12-04),  
+I will recommend one of these two full kRO clients, which were kindly provided by skylove:
+
+ 1. [2025-07-16](https://drive.google.com/file/d/1EAlnpYywf6ktli3v9DliDXMvrcFcClfq/view?usp=drive_link):  
+    You will need to update this client, otherwise you will get a few lua errors duo the project being more up to date.  
+	Or you'll get the files you error at from the `Tools\AdditionsGenerator.bat`.  
+	Feel free to also download the [kro_data.grf](../misc/custom_officials.md#kro_datagrf)` to get newer resource files.  
+ 2. [2026-02-19](https://drive.google.com/file/d/1NfZJb3WuDmeqfPGGcLzDlVJLnGKXWzXy/view):  
+    You don't need my custom [kro_data.grf](../misc/custom_officials.md#kro_datagrf), as it already contains files from it.
+    Skylove told me to avoid updating this client as well. So you have been warned.  
+	From what I have seen, the `data.grf` in there is fully accessable by GRF Editor,  
+	but I might be wrong about that.
+ 
+### Important kRO Client changes
+ 
+ 1. Clients/GRFs above 2025-07-16 implemented GRF v3 support, which increases the max size an GRF massively.  
+    But this also requires newer clients. Clients like 2022-04-06 will not work anymore.  
+	I didn't test which clients would still work with GRFs like that.
+ 2. Clients/GRFs above 2025-12-04 received a new GRF encryption, which are also not accessable to older clients.  
+    Even GRF Editor (to this date) can't encrypt them.
+
+## WARPGATE by CrazyBepop
+!!! info "Description" 
+	A multi-client downloader and auto-updater for Ragnarok Online. [rAthena Forum](https://rathena.org/board/topic/149485-tool-warpgate-multi-client-ro-client-downloader-auto-updater/)
+
+![](../images/WARPGATE.png "Warpgate v1.0.11")
+=== "Content Date"
+WARPGATE bases your client folder on a 2025-07-16 kRO Full Client with updates up to 2026-06-04 (based on CrazyBepop's last public share of encrypted GRF data). [rAthena Forum](https://rathena.org/board/topic/149447-kro-datagrf-patches-updated-june-4th-2026-latest-content-decrypted/)
+
+=== "Multi-Folder aka Gates"
+You can multiple client folders for various setups, which are handled by Warpgate as well.  
+It access my translation project and CrazyBepop's WARP (WARP0716) to patch your Ragexe with.
+
+=== "Summary"
+In other words, an all-in-one downloader without the need to look for other files, especially if you want to use a 2025-07-16 client.

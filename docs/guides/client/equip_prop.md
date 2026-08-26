@@ -483,7 +483,6 @@ ___
 		  66,
 		  72
 		}
-		}
 	  },
 	  ARMOR_RES = { -- RES/MRES per refine (Renewal only)
 		{
