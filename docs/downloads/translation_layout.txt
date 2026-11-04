@@ -170,7 +170,7 @@ Item Description
 	"Attack Range: x cells",
 	"Prevents ^663399<Status>^000000 status.",
 	"Increases resistance to ^663399<Status>^000000 status by %.",
-	"èIncreases Attack Speed (decreases After Attack Delay by %).",
+	"ASPD +%",
 	"All Basic Stats +",
 	
 	- 4th Classes:
@@ -249,7 +249,7 @@ Item Description
 	// The increased hit physical damage effect is calculated along the same lines as the "Increased Critical Damage" effect. It applies to regular physical attacks that do not trigger a critical hit, or to attacks that trigger a critical hit but do not trigger a critical hit due to the critical chance.
 	// ( However, the increased hit physical damage effect is not applied to attacks that are not based on base ATK, or to some skills.)
 	// Source: https://ro.gnjoy.com/news/devnote/View.asp?category=1&seq=4194130&curpage=1
-	"Increases Normal Physical Damage by %.", 
+	"Increases Hit Physical Damage by %.", 
 	
 	- Healing 
 	"Increases HP Recovery Amount of ^009900Healing^000000 skills by %.",
@@ -547,6 +547,19 @@ Equipment Info Layout:
 			"- Costume ^000000",
 			"_______________________",
 			"^0000CCWeight:^000000 1"
+			
+- Nyangvine Costume Mileage Package I ~ III(Stone Box X):
+			
+			"A box containing 100 Nyangvines.",
+			"In addition, 12 Event Stone Coin and 3 Costume Enchant Stone Box 41 are included.",
+
+
+			"A box containing 200 Nyangvines.",
+			"In addition, 25 Event Stone Coin and 5 Costume Enchant Stone Box 41 are included.",
+
+	
+			"A box containing 400 Nyangvines.",
+			"In addition, 50 Event Stone Coin and 10 Costume Enchant Stone Box 41 are included.",
 			
 - Rune Tablet System - Divine-pride.net
 	https://www.divine-pride.net/forum/index.php?/topic/6983-kro-rune-tablet-system/#comment-13391
