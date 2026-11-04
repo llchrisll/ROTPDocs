@@ -1,0 +1,366 @@
+From 8533c050f281d9edb6811e4b2c34b42bda428c9f Mon Sep 17 00:00:00 2001
+From: llchrisll <h0und3y3@gmail.com>
+Date: Wed, 8 Jul 2026 08:09:55 +0200
+Subject: [PATCH] Initial implementation of custom Taekwon status calls of Mild
+ Wind skill (TK_SEVENWIND) - buff_icons_tk battle flag added in
+ conf/battle/status.conf - Edited original Mild Wind status to support new
+ ones
+
+---
+ conf/battle/status.conf              |   3 +
+ db/re/status.yml                     | 133 +++++++++++++++++++++++++++
+ src/map/battle.cpp                   |   1 +
+ src/map/battle.hpp                   |   3 +
+ src/map/script_constants.hpp         |  15 +++
+ src/map/skills/taekwon/sevenwind.cpp |  32 ++++++-
+ src/map/status.hpp                   |  15 +++
+ 7 files changed, 201 insertions(+), 1 deletion(-)
+
+diff --git a/conf/battle/status.conf b/conf/battle/status.conf
+index c36da89ed..3c4d618f3 100644
+--- a/conf/battle/status.conf
++++ b/conf/battle/status.conf
+@@ -29,3 +29,6 @@ mob_status_def_rate: 100
+ // NOTE: Cards and equipment can go over this limit, so it only applies to natural resist.
+ pc_max_status_def: 100
+ mob_max_status_def: 100
++
++// Redirect Mild Wind EFST to separate ones, to support "Use icons from stateiconimginfo.lub" patch (Note 1)
++buff_icons_tk: no
+\ No newline at end of file
+diff --git a/db/re/status.yml b/db/re/status.yml
+index 0025fb922..ec637f68f 100644
+--- a/db/re/status.yml
++++ b/db/re/status.yml
+@@ -545,6 +545,11 @@ Body:
+       Shadowweapon: true
+       Ghostweapon: true
+       Enchantarms: true
++      Fireweapon_TK: true
++      Waterweapon_TK: true
++      Windweapon_TK: true
++      Earthweapon_TK: true
++      Holyweapon_TK: true
+   - Status: Benedictio
+     Icon: EFST_BENEDICTIO
+     DurationLookup: PR_BENEDICTIO
+@@ -1083,6 +1088,10 @@ Body:
+       Earthweapon: true
+       Shadowweapon: true
+       Ghostweapon: true
++      Holyweapon_TK: true
++      Waterweapon_TK: true
++      Windweapon_TK: true
++      Earthweapon_TK: true
+   - Status: Waterweapon
+     Icon: EFST_PROPERTYWATER
+     DurationLookup: SA_FROSTWEAPON
+@@ -1098,6 +1107,10 @@ Body:
+       Earthweapon: true
+       Shadowweapon: true
+       Ghostweapon: true
++      Holyweapon_TK: true
++      Fireweapon_TK: true
++      Windweapon_TK: true
++      Earthweapon_TK: true
+   - Status: Windweapon
+     Icon: EFST_PROPERTYWIND
+     DurationLookup: SA_LIGHTNINGLOADER
+@@ -1113,6 +1126,10 @@ Body:
+       Earthweapon: true
+       Shadowweapon: true
+       Ghostweapon: true
++      Holyweapon_TK: true
++      Fireweapon_TK: true
++      Waterweapon_TK: true
++      Earthweapon_TK: true
+   - Status: Earthweapon
+     Icon: EFST_PROPERTYGROUND
+     DurationLookup: SA_SEISMICWEAPON
+@@ -1128,6 +1145,10 @@ Body:
+       Windweapon: true
+       Shadowweapon: true
+       Ghostweapon: true
++      Holyweapon_TK: true
++      Fireweapon_TK: true
++      Waterweapon_TK: true
++      Windweapon_TK: true
+   - Status: Volcano
+     Icon: EFST_GROUNDMAGIC
+     DurationLookup: SA_VOLCANO
+@@ -1600,6 +1621,11 @@ Body:
+       Windweapon: true
+       Earthweapon: true
+       Ghostweapon: true
++      Fireweapon_TK: true
++      Waterweapon_TK: true
++      Windweapon_TK: true
++      Earthweapon_TK: true
++      Holyweapon_TK: true
+   - Status: Adrenaline2
+     Icon: EFST_ADRENALINE2
+     DurationLookup: BS_ADRENALINE2
+@@ -1630,6 +1656,11 @@ Body:
+       Windweapon: true
+       Earthweapon: true
+       Shadowweapon: true
++      Fireweapon_TK: true
++      Waterweapon_TK: true
++      Windweapon_TK: true
++      Earthweapon_TK: true
++      Holyweapon_TK: true
+   - Status: Kaizel
+     Icon: EFST_KAIZEL
+     DurationLookup: SL_KAIZEL
+@@ -9958,3 +9989,105 @@ Body:
+       NoDispell: true
+       NoBanishingBuster: true
+       NoClearance: true
++# Custom Entries for Mild Wind skill to show correct icons when using client patch "Use icons from stateiconimginfo.lub" [llchrisll]
++  - Status: Fireweapon_TK
++    Icon: EFST_PROPERTYFIRE_TK
++    DurationLookup: TK_SEVENWIND
++    CalcFlags:
++      All: true
++    Flags:
++      RemoveOnUnequipWeapon: true
++    EndOnStart:
++      Encpoison: true
++      Aspersio: true
++      Fireweapon: true
++      Waterweapon: true
++      Windweapon: true
++      Earthweapon: true
++      Shadowweapon: true
++      Ghostweapon: true
++      Holyweapon_TK: true
++      Waterweapon_TK: true
++      Windweapon_TK: true
++      Earthweapon_TK: true
++  - Status: Waterweapon_TK
++    Icon: EFST_PROPERTYWATER_TK
++    DurationLookup: TK_SEVENWIND
++    CalcFlags:
++      All: true
++    Flags:
++      RemoveOnUnequipWeapon: true
++    EndOnStart:
++      Encpoison: true
++      Aspersio: true
++      Fireweapon: true
++      Waterweapon: true
++      Windweapon: true
++      Earthweapon: true
++      Shadowweapon: true
++      Ghostweapon: true
++      Holyweapon_TK: true
++      Fireweapon_TK: true
++      Windweapon_TK: true
++      Earthweapon_TK: true
++  - Status: Windweapon_TK
++    Icon: EFST_PROPERTYWIND_TK
++    DurationLookup: TK_SEVENWIND
++    CalcFlags:
++      All: true
++    Flags:
++      RemoveOnUnequipWeapon: true
++    EndOnStart:
++      Encpoison: true
++      Aspersio: true
++      Fireweapon: true
++      Waterweapon: true
++      Earthweapon: true
++      Shadowweapon: true
++      Ghostweapon: true
++      Holyweapon_TK: true
++      Fireweapon_TK: true
++      Waterweapon_TK: true
++      Earthweapon_TK: true
++  - Status: Earthweapon_TK
++    Icon: EFST_PROPERTYGROUND_TK
++    DurationLookup: TK_SEVENWIND
++    CalcFlags:
++      All: true
++    Flags:
++      RemoveOnUnequipWeapon: true
++    EndOnStart:
++      Encpoison: true
++      Aspersio: true
++      Fireweapon: true
++      Waterweapon: true
++      Earthweapon: true
++      Windweapon: true
++      Shadowweapon: true
++      Ghostweapon: true
++      Holyweapon_TK: true
++      Fireweapon_TK: true
++      Waterweapon_TK: true
++      Windweapon_TK: true
++  - Status: Holyweapon_TK
++    Icon: EFST_PROPERTYHOLY_TK
++    DurationLookup: TK_SEVENWIND
++    CalcFlags:
++      Atk_Ele: true
++    Flags:
++      RemoveOnUnequipWeapon: true
++      RemoveOnHermode: true
++    EndOnStart:
++      Encpoison: true
++      Aspersio: true
++      Fireweapon: true
++      Waterweapon: true
++      Windweapon: true
++      Earthweapon: true
++      Shadowweapon: true
++      Ghostweapon: true
++      Enchantarms: true
++      Fireweapon_TK: true
++      Waterweapon_TK: true
++      Windweapon_TK: true
++      Earthweapon_TK: true
+\ No newline at end of file
+diff --git a/src/map/battle.cpp b/src/map/battle.cpp
+index 5420fbde0..1ceb9031c 100644
+--- a/src/map/battle.cpp
++++ b/src/map/battle.cpp
+@@ -8908,6 +8908,7 @@ static const struct _battle_data {
+ 	{ "enable_bonus_map_drops",             &battle_config.enable_bonus_map_drops,          1,      0,      1,              },
+ 	{ "hide_cloaked_units",                 &battle_config.hide_cloaked_units,              0,      0,      BL_ALL,         },
+ 	{ "oridecon_research_fix",              &battle_config.oridecon_research_fix,           0,      0,      1,              },
++	{ "buff_icons_tk",						&battle_config.buff_icons_tk,					0,		0,		1,				},
+ 
+ #include <custom/battle_config_init.inc>
+ };
+diff --git a/src/map/battle.hpp b/src/map/battle.hpp
+index 14cdc658f..0f27c9a5e 100644
+--- a/src/map/battle.hpp
++++ b/src/map/battle.hpp
+@@ -782,6 +782,9 @@ struct Battle_Config
+ 	int32 hide_cloaked_units;
+ 	int32 oridecon_research_fix;
+ 
++	// Redirect Mild Wind buff icons to separate ones, to support "Use icons from stateiconimginfo.lub" client patch
++	int32 buff_icons_tk;
++
+ #include <custom/battle_config_struct.inc>
+ };
+ 
+diff --git a/src/map/script_constants.hpp b/src/map/script_constants.hpp
+index 93524a11d..9cf5e1294 100644
+--- a/src/map/script_constants.hpp
++++ b/src/map/script_constants.hpp
+@@ -2005,6 +2005,13 @@
+ 	export_constant(SC_WIND_CHARM_POWER);
+ 	export_constant(SC_GROUND_CHARM_POWER);
+ 
++	// Custom Entries for Mild Wind skill to show correct icons when using client patch "Use icons from stateiconimginfo.lub" [llchrisll]
++	export_constant(SC_FIREWEAPON_TK);
++	export_constant(SC_WATERWEAPON_TK);
++	export_constant(SC_WINDWEAPON_TK);
++	export_constant(SC_EARTHWEAPON_TK);
++	export_constant(SC_HOLYWEAPON_TK);
++
+ /// Do not modify code below this, until the end of the API hook, since it will be automatically generated again
+ /// @APIHOOK_START(EFST_CONST)
+ 	export_constant(EFST_BLANK);
+@@ -3477,6 +3484,14 @@
+ 
+ /// @APIHOOK_END
+ /// Do not modify code above this, since it will be automatically generated by the API again
++
++	// Custom Entries for Mild Wind skill to show correct icons when using client patch "Use icons from stateiconimginfo.lub" [llchrisll]
++	export_constant(EFST_PROPERTYFIRE_TK);
++	export_constant(EFST_PROPERTYWATER_TK);
++	export_constant(EFST_PROPERTYWIND_TK);
++	export_constant(EFST_PROPERTYGROUND_TK);
++	export_constant(EFST_PROPERTYHOLY_TK);
++
+ 	export_constant(EFST_MAX);
+ 
+ 	/* elements */
+diff --git a/src/map/skills/taekwon/sevenwind.cpp b/src/map/skills/taekwon/sevenwind.cpp
+index 9619641b4..97bbf2061 100644
+--- a/src/map/skills/taekwon/sevenwind.cpp
++++ b/src/map/skills/taekwon/sevenwind.cpp
+@@ -12,7 +12,9 @@ SkillSevenWind::SkillSevenWind() : SkillImpl(TK_SEVENWIND) {
+ void SkillSevenWind::castendNoDamageId(block_list *src, block_list *target, uint16 skill_lv, t_tick tick, int32 &flag) const {
+ 	sc_type type = SC_NONE;
+ 
+-	switch (skill_get_ele(getSkillId(), skill_lv)) {
++	if (battle_config.buff_icons_tk == 0) { // [llchrisll]
++		switch (skill_get_ele(getSkillId(), skill_lv)) {
++
+ 		case ELE_EARTH:
+ 			type = SC_EARTHWEAPON;
+ 			break;
+@@ -34,6 +36,34 @@ void SkillSevenWind::castendNoDamageId(block_list *src, block_list *target, uint
+ 		case ELE_HOLY:
+ 			type = SC_ASPERSIO;
+ 			break;
++		}
++
++	}
++	else {
++		switch (skill_get_ele(getSkillId(), skill_lv)) {
++
++		case ELE_EARTH:
++			type = SC_EARTHWEAPON_TK;
++			break;
++		case ELE_WIND:
++			type = SC_WINDWEAPON_TK;
++			break;
++		case ELE_WATER:
++			type = SC_WATERWEAPON_TK;
++			break;
++		case ELE_FIRE:
++			type = SC_FIREWEAPON_TK;
++			break;
++		case ELE_GHOST:
++			type = SC_GHOSTWEAPON;
++			break;
++		case ELE_DARK:
++			type = SC_SHADOWWEAPON;
++			break;
++		case ELE_HOLY:
++			type = SC_HOLYWEAPON_TK;
++			break;
++		}
+ 	}
+ 
+ 	clif_skill_nodamage(src, *target, getSkillId(), skill_lv, sc_start(src, target, type, 100, skill_lv, skill_get_time(getSkillId(), skill_lv)));
+diff --git a/src/map/status.hpp b/src/map/status.hpp
+index ced87d11f..762a96450 100644
+--- a/src/map/status.hpp
++++ b/src/map/status.hpp
+@@ -1446,6 +1446,13 @@ enum sc_type : int16 {
+ 	SC_WIND_CHARM_POWER,
+ 	SC_GROUND_CHARM_POWER,
+ 
++	// Custom Entries for Mild Wind skill to show correct icons when using client patch "Use icons from stateiconimginfo.lub" [llchrisll]
++	SC_FIREWEAPON_TK = 1600,
++	SC_WATERWEAPON_TK,
++	SC_WINDWEAPON_TK,
++	SC_EARTHWEAPON_TK,
++	SC_HOLYWEAPON_TK,
++
+ 	SC_MAX, //Automatically updated max, used in for's to check we are within bounds.
+ };
+ 
+@@ -2945,6 +2952,14 @@ enum efst_type : int16{
+ 	EFST_BLOCK = 1688,
+ /// @APIHOOK_END
+ /// Do not modify code above this, since it will be automatically generated by the API again
++
++// Custom Entries for Mild Wind skill to show correct icons when using client patch "Use icons from stateiconimginfo.lub" [llchrisll]
++	EFST_PROPERTYFIRE_TK = 2000,
++	EFST_PROPERTYWATER_TK,
++	EFST_PROPERTYWIND_TK,
++	EFST_PROPERTYGROUND_TK,
++	EFST_PROPERTYHOLY_TK,
++
+ 	EFST_MAX,
+ };
+ 
+-- 
+2.48.1.windows.1
+
